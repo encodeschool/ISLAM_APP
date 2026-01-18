@@ -1,0 +1,15 @@
+{
+  "appTitle": "Mosque App",
+  "settings": "Settings",
+  "darkMode": "Dark Mode",
+  "language": "Language",
+  "prayerTimes": "Prayer Times",
+  "nextPrayer": "Next Prayer",
+  "timeLeft": "Time Left",
+  "qibla": "Qibla",
+  "zikr": "Zikr",
+  "reset": "Reset",
+  "custom": "Custom",
+  "manualAdjustment": "Manual Prayer Time Adjustment",
+  "comingSoon": "Coming soon"
+}

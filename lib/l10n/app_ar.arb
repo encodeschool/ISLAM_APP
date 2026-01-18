@@ -1,0 +1,15 @@
+{
+  "appTitle": "تطبيق المسجد",
+  "settings": "الإعدادات",
+  "darkMode": "الوضع الداكن",
+  "language": "اللغة",
+  "prayerTimes": "مواقيت الصلاة",
+  "nextPrayer": "الصلاة القادمة",
+  "timeLeft": "الوقت المتبقي",
+  "qibla": "القبلة",
+  "zikr": "الذكر",
+  "reset": "إعادة تعيين",
+  "custom": "مخصص",
+  "manualAdjustment": "تعديل وقت الصلاة يدويًا",
+  "comingSoon": "قريبًا"
+}
