@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import '../l10n/app_localizations.dart';
 import '../providers/prayer_provider.dart';
 import '../core/notification/notification_service.dart';
 import 'package:adhan/adhan.dart';
@@ -10,7 +11,10 @@ class PrayerPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     final provider = context.watch<PrayerProvider>();
+    final locale = Localizations.localeOf(context).languageCode;
+    final formattedDate = DateFormat.yMMMMd(locale).format(provider.selectedDate);
 
     if (provider.prayerTimes == null) {
       return const Center(child: CircularProgressIndicator());
@@ -24,6 +28,23 @@ class PrayerPage extends StatelessWidget {
       Prayer.isha,
     ];
 
+    String getPrayerName(Prayer prayer, AppLocalizations t) {
+      switch (prayer) {
+        case Prayer.fajr:
+          return t.prayerFajr;
+        case Prayer.dhuhr:
+          return t.prayerDhuhr;
+        case Prayer.asr:
+          return t.prayerAsr;
+        case Prayer.maghrib:
+          return t.prayerMaghrib;
+        case Prayer.isha:
+          return t.prayerIsha;
+        default:
+          return prayer.name;
+      }
+    }
+
     return Column(
       children: [
         Padding(
@@ -36,9 +57,12 @@ class PrayerPage extends StatelessWidget {
                 onPressed: () => provider.changeDate(-1),
               ),
               Text(
-                DateFormat.yMMMMd().format(provider.selectedDate),
-                style:
-                const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                DateFormat.yMMMMd(Localizations.localeOf(context).languageCode)
+                    .format(provider.selectedDate),
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               IconButton(
                 icon: const Icon(Icons.arrow_right),
@@ -68,7 +92,7 @@ class PrayerPage extends StatelessWidget {
                 ),
                 child: ListTile(
                   title: Text(
-                    prayer.name.toUpperCase(),
+                    getPrayerName(prayer, t),
                     style: TextStyle(
                       color: isActive ? Colors.white : null,
                       fontWeight: isActive ? FontWeight.bold : FontWeight.normal,

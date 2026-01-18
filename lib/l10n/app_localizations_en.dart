@@ -46,4 +46,49 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get comingSoon => 'Coming soon';
+
+  @override
+  String get navPrayer => 'Prayer';
+
+  @override
+  String get navQibla => 'Qibla';
+
+  @override
+  String get navZikr => 'Zikr';
+
+  @override
+  String get navMore => 'More';
+
+  @override
+  String get tap => 'TAP';
+
+  @override
+  String get setCustomZikr => 'Set Custom Zikr';
+
+  @override
+  String get enterNumber => 'Enter number';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get ok => 'OK';
+
+  @override
+  String get prayerFajr => 'Fajr';
+
+  @override
+  String get prayerDhuhr => 'Dhuhr';
+
+  @override
+  String get prayerAsr => 'Asr';
+
+  @override
+  String get prayerMaghrib => 'Maghrib';
+
+  @override
+  String get prayerIsha => 'Isha';
+
+  @override
+  String get loading => 'Loading...';
 }

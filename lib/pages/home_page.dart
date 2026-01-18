@@ -4,6 +4,7 @@ import 'package:mosque/pages/qibla_page.dart';
 import 'package:mosque/pages/settings_page.dart';
 import 'package:mosque/widgets/header_widget.dart';
 
+import '../l10n/app_localizations.dart';
 import 'counter_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,6 +35,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Stack(
       children: [
         Positioned.fill(
@@ -132,7 +134,7 @@ class _HomePageState extends State<HomePage> {
           // selectedItemColor: Color(0xFFC8A951),
           unselectedItemColor: Colors.black,
           showUnselectedLabels: true,
-          items: const [
+          items: [
             BottomNavigationBarItem(
               icon: ImageIcon(
                 AssetImage('assets/icons/prayer.png'),
@@ -140,7 +142,7 @@ class _HomePageState extends State<HomePage> {
               activeIcon: ImageIcon(
                 AssetImage('assets/icons/prayer_active.png'),
               ),
-              label: 'Prayer',
+              label: AppLocalizations.of(context)!.navPrayer,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
@@ -149,7 +151,7 @@ class _HomePageState extends State<HomePage> {
               activeIcon: ImageIcon(
                 AssetImage('assets/icons/compass_active.png'),
               ),
-              label: 'Qibla',
+              label: AppLocalizations.of(context)!.navQibla,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
@@ -158,7 +160,7 @@ class _HomePageState extends State<HomePage> {
               activeIcon: ImageIcon(
                 AssetImage('assets/icons/zikr_active.png'),
               ),
-              label: 'Zikr',
+              label: AppLocalizations.of(context)!.navZikr,
             ),
             BottomNavigationBarItem(
               icon: ImageIcon(
@@ -167,7 +169,7 @@ class _HomePageState extends State<HomePage> {
               activeIcon: ImageIcon(
                 AssetImage('assets/icons/books_active.png'),
               ),
-              label: 'More',
+              label: AppLocalizations.of(context)!.navMore,
             ),
           ],
         ),

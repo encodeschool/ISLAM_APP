@@ -42,7 +42,7 @@ class CounterPage extends StatelessWidget {
                 ),
 
                 // Right: Dropdown with presets
-                _presetDropdown(context, counter),
+                _presetDropdown(context, counter, t),
               ],
             ),
           ),
@@ -59,9 +59,9 @@ class CounterPage extends StatelessWidget {
                 shape: BoxShape.circle,
                 color: Colors.green[900],
               ),
-              child: const Center(
+              child: Center(
                 child: Text(
-                  "TAP",
+                  t.tap,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 28,
@@ -76,7 +76,7 @@ class CounterPage extends StatelessWidget {
   }
 
   // 🔹 Dropdown for presets
-  Widget _presetDropdown(BuildContext context, CounterProvider counter) {
+  Widget _presetDropdown(BuildContext context, CounterProvider counter, AppLocalizations t) {
     final items = [33, 99, -1]; // -1 for custom
     return DropdownButton<int>(
       value: counter.limit > 0 && (counter.limit == 33 || counter.limit == 99)
@@ -84,7 +84,7 @@ class CounterPage extends StatelessWidget {
           : -1,
       items: items.map((value) {
         String text;
-        if (value == -1) text = "Custom";
+        if (value == -1) text = t.custom;
         else text = "$value";
         return DropdownMenuItem<int>(
           value: value,
@@ -100,17 +100,17 @@ class CounterPage extends StatelessWidget {
           final result = await showDialog<int>(
             context: context,
             builder: (_) => AlertDialog(
-              title: const Text("Set Custom Zikr"),
+              title: Text(t.setCustomZikr),
               content: TextField(
                 controller: controller,
                 keyboardType: TextInputType.number,
                 decoration:
-                const InputDecoration(hintText: "Enter number"),
+                InputDecoration(hintText: t.enterNumber),
               ),
               actions: [
                 TextButton(
                   onPressed: () => Navigator.pop(context),
-                  child: const Text("Cancel"),
+                  child: Text(t.cancel),
                 ),
                 TextButton(
                   onPressed: () {
@@ -119,7 +119,7 @@ class CounterPage extends StatelessWidget {
                       Navigator.pop(context, val);
                     }
                   },
-                  child: const Text("OK"),
+                  child: Text(t.ok),
                 ),
               ],
             ),

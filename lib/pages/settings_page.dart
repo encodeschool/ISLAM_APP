@@ -36,19 +36,92 @@ class SettingsPage extends StatelessWidget {
           ),
         ],
       ),
+      // body: ListView(
+      //   padding: const EdgeInsets.all(16),
+      //   children: [
+      //     Padding(
+      //       padding: const EdgeInsetsDirectional.only(bottom: 8),
+      //       child: Text(
+      //         "Explore",
+      //         style: TextStyle(
+      //           fontSize: 14,
+      //           color: Colors.grey.shade600,
+      //         ),
+      //       ),
+      //     ),
+      //
+      //     _extraButton(context, "99 Names", Icons.auto_awesome_outlined),
+      //     _extraButton(context, "40 Phrases", Icons.format_list_bulleted),
+      //     _extraButton(context, "Motivation", Icons.favorite_border),
+      //     _extraButton(context, "Makka Live", Icons.live_tv_outlined),
+      //     _extraButton(context, "Shahada", Icons.mosque_outlined),
+      //   ],
+      // ),
+
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          Padding(
-            padding: const EdgeInsetsDirectional.only(bottom: 8),
-            child: Text(
-              "Explore",
-              style: TextStyle(
-                fontSize: 14,
-                color: Colors.grey.shade600,
+          SwitchListTile(
+            title: Text(t.darkMode),
+            value: theme.isDark,
+            onChanged: theme.toggleTheme,
+          ),
+
+          const Divider(),
+
+          ListTile(
+            title: const Text("Language"),
+            trailing: DropdownButton<String>(
+              value: language.locale.languageCode,
+              items: const [
+                DropdownMenuItem(value: 'en', child: Text("English")),
+                DropdownMenuItem(value: 'ar', child: Text("Arabic")),
+                DropdownMenuItem(value: 'ru', child: Text("Russian")),
+                DropdownMenuItem(value: 'uz', child: Text("Uzbek")),
+              ],
+              onChanged: (value) {
+                if (value != null) {
+                  language.setLanguage(value);
+                }
+              },
+            ),
+          ),
+
+          const Divider(),
+
+          const Text(
+            "Manual Prayer Time Adjustment (minutes)",
+            style: TextStyle(fontWeight: FontWeight.bold),
+          ),
+
+          const SizedBox(height: 8),
+
+          ...[
+            Prayer.fajr,
+            Prayer.dhuhr,
+            Prayer.asr,
+            Prayer.maghrib,
+            Prayer.isha
+          ].map(
+                (p) => ListTile(
+              title: Text(p.name.toUpperCase()),
+              trailing: SizedBox(
+                width: 60,
+                child: TextField(
+                  keyboardType: TextInputType.number,
+                  decoration: const InputDecoration(
+                    hintText: "0",
+                  ),
+                  onSubmitted: (value) {
+                    final minutes = int.tryParse(value) ?? 0;
+                    prayer.setManualOffset(p, minutes);
+                  },
+                ),
               ),
             ),
           ),
+
+          const Divider(),
 
           _extraButton(context, "99 Names", Icons.auto_awesome_outlined),
           _extraButton(context, "40 Phrases", Icons.format_list_bulleted),
@@ -57,77 +130,6 @@ class SettingsPage extends StatelessWidget {
           _extraButton(context, "Shahada", Icons.mosque_outlined),
         ],
       ),
-
-      // body: ListView(
-      //   padding: const EdgeInsets.all(16),
-      //   children: [
-          // SwitchListTile(
-          //   title: Text(t.darkMode),
-          //   value: theme.isDark,
-          //   onChanged: theme.toggleTheme,
-          // ),
-          //
-          // const Divider(),
-          //
-          // ListTile(
-          //   title: const Text("Language"),
-          //   trailing: DropdownButton<String>(
-          //     value: language.locale.languageCode,
-          //     items: const [
-          //       DropdownMenuItem(value: 'en', child: Text("English")),
-          //       DropdownMenuItem(value: 'ar', child: Text("Arabic")),
-          //     ],
-          //     onChanged: (value) {
-          //       if (value != null) {
-          //         language.setLanguage(value);
-          //       }
-          //     },
-          //   ),
-          // ),
-          //
-          // const Divider(),
-          //
-          // const Text(
-          //   "Manual Prayer Time Adjustment (minutes)",
-          //   style: TextStyle(fontWeight: FontWeight.bold),
-          // ),
-          //
-          // const SizedBox(height: 8),
-          //
-          // ...[
-          //   Prayer.fajr,
-          //   Prayer.dhuhr,
-          //   Prayer.asr,
-          //   Prayer.maghrib,
-          //   Prayer.isha
-          // ].map(
-          //       (p) => ListTile(
-          //     title: Text(p.name.toUpperCase()),
-          //     trailing: SizedBox(
-          //       width: 60,
-          //       child: TextField(
-          //         keyboardType: TextInputType.number,
-          //         decoration: const InputDecoration(
-          //           hintText: "0",
-          //         ),
-          //         onSubmitted: (value) {
-          //           final minutes = int.tryParse(value) ?? 0;
-          //           prayer.setManualOffset(p, minutes);
-          //         },
-          //       ),
-          //     ),
-          //   ),
-          // ),
-          //
-          // const Divider(),
-
-        //   _extraButton(context, "99 Names", Icons.auto_awesome_outlined),
-        //   _extraButton(context, "40 Phrases", Icons.format_list_bulleted),
-        //   _extraButton(context, "Motivation", Icons.favorite_border),
-        //   _extraButton(context, "Makka Live", Icons.live_tv_outlined),
-        //   _extraButton(context, "Shahada", Icons.mosque_outlined),
-        // ],
-      // ),
     );
   }
 

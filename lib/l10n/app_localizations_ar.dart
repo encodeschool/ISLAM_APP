@@ -46,4 +46,49 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get comingSoon => 'قريبًا';
+
+  @override
+  String get navPrayer => 'الصلاة';
+
+  @override
+  String get navQibla => 'القبلة';
+
+  @override
+  String get navZikr => 'الذكر';
+
+  @override
+  String get navMore => 'المزيد';
+
+  @override
+  String get tap => 'اضغط';
+
+  @override
+  String get setCustomZikr => 'تعيين عدد الذكر';
+
+  @override
+  String get enterNumber => 'أدخل الرقم';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get ok => 'موافق';
+
+  @override
+  String get prayerFajr => 'الفجر';
+
+  @override
+  String get prayerDhuhr => 'الظهر';
+
+  @override
+  String get prayerAsr => 'العصر';
+
+  @override
+  String get prayerMaghrib => 'المغرب';
+
+  @override
+  String get prayerIsha => 'العشاء';
+
+  @override
+  String get loading => 'جاري التحميل...';
 }

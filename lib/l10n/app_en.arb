@@ -11,5 +11,21 @@
   "reset": "Reset",
   "custom": "Custom",
   "manualAdjustment": "Manual Prayer Time Adjustment",
-  "comingSoon": "Coming soon"
+  "comingSoon": "Coming soon",
+  "navPrayer": "Prayer",
+  "navQibla": "Qibla",
+  "navZikr": "Zikr",
+  "navMore": "More",
+  "tap": "TAP",
+  "custom": "Custom",
+  "setCustomZikr": "Set Custom Zikr",
+  "enterNumber": "Enter number",
+  "cancel": "Cancel",
+  "ok": "OK",
+  "prayerFajr": "Fajr",
+  "prayerDhuhr": "Dhuhr",
+  "prayerAsr": "Asr",
+  "prayerMaghrib": "Maghrib",
+  "prayerIsha": "Isha",
+  "loading": "Loading..."
 }

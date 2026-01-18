@@ -11,5 +11,21 @@
   "reset": "إعادة تعيين",
   "custom": "مخصص",
   "manualAdjustment": "تعديل وقت الصلاة يدويًا",
-  "comingSoon": "قريبًا"
+  "comingSoon": "قريبًا",
+  "navPrayer": "الصلاة",
+  "navQibla": "القبلة",
+  "navZikr": "الذكر",
+  "navMore": "المزيد",
+  "tap": "اضغط",
+  "custom": "مخصص",
+  "setCustomZikr": "تعيين عدد الذكر",
+  "enterNumber": "أدخل الرقم",
+  "cancel": "إلغاء",
+  "ok": "موافق",
+  "prayerFajr": "الفجر",
+  "prayerDhuhr": "الظهر",
+  "prayerAsr": "العصر",
+  "prayerMaghrib": "المغرب",
+  "prayerIsha": "العشاء",
+  "loading": "جاري التحميل..."
 }

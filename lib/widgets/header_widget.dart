@@ -36,7 +36,7 @@ class HeaderWidget extends StatelessWidget {
           const SizedBox(height: 8),
           Text(
             prayer.nextPrayerName.isEmpty
-                ? "Loading..."
+                ? "${t.loading}"
                 : "${prayer.nextPrayerName}",
             style: const TextStyle(
                 color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
