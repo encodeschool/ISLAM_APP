@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mosque/core/localization/prayer_localization.dart';
 import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/prayer_provider.dart';
@@ -21,6 +22,15 @@ class HeaderWidget extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     final t = AppLocalizations.of(context)!;
 
+    String locationText;
+    if (prayer.isLocating) {
+      locationText = t.locating;
+    } else if (prayer.locationPermissionDenied) {
+      locationText = t.locationDenied;
+    } else {
+      locationText = prayer.locationName ?? t.unknownLocation;
+    }
+
     return Container(
       width: size.width,
       height: size.height,
@@ -30,18 +40,22 @@ class HeaderWidget extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            prayer.locationName,
+            locationText,
             style: const TextStyle(color: Colors.white, fontSize: 14),
           ),
           const SizedBox(height: 8),
-          Text(
-            prayer.nextPrayerName.isEmpty
-                ? "${t.loading}"
-                : "${prayer.nextPrayerName}",
-            style: const TextStyle(
-                color: Colors.white, fontSize: 50, fontWeight: FontWeight.bold),
-          ),
-          const SizedBox(height: 4),
+          if (prayer.nextPrayer != null) ...[
+            Text(
+              prayer.nextPrayer!.localizedName(t),
+              style: const TextStyle(
+                color: Colors.white,
+                fontFamily: 'Amiri',
+                fontSize: 40,
+                fontWeight: FontWeight.w900
+              ),
+            ),
+          ],
+          const SizedBox(height: 8),
           Text(
             "-${_formatDuration(prayer.timeLeft)}",
             style: const TextStyle(color: Colors.white, fontSize: 16),

@@ -27,5 +27,15 @@
   "prayerAsr": "العصر",
   "prayerMaghrib": "المغرب",
   "prayerIsha": "العشاء",
-  "loading": "جاري التحميل..."
+  "loading": "جاري التحميل...",
+  "fajr": "الفجر",
+  "dhuhr": "الظهر",
+  "asr": "العصر",
+  "maghrib": "المغرب",
+  "isha": "العشاء",
+  "locating": "جارٍ تحديد الموقع…",
+  "locationDenied": "تم رفض إذن الموقع",
+  "unknownLocation": "موقع غير معروف",
+  "nextPrayer": "الصلاة القادمة",
+  "timeLeft": "الوقت المتبقي"
 }

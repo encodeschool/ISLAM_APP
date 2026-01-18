@@ -91,4 +91,28 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get loading => 'Yuklanmoqda...';
+
+  @override
+  String get fajr => 'Bomdod';
+
+  @override
+  String get dhuhr => 'Peshin';
+
+  @override
+  String get asr => 'Asr';
+
+  @override
+  String get maghrib => 'Shom';
+
+  @override
+  String get isha => 'Xufton';
+
+  @override
+  String get locating => 'Joylashuv aniqlanmoqda…';
+
+  @override
+  String get locationDenied => 'Joylashuvga ruxsat berilmadi';
+
+  @override
+  String get unknownLocation => 'Noma\'lum joylashuv';
 }

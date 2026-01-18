@@ -7,11 +7,13 @@ import 'package:geocoding/geocoding.dart';
 import '../core/storage/local_storage.dart';
 
 class PrayerProvider extends ChangeNotifier {
-  String locationName = "Locating...";
+  String locationName = "";
+  bool isLocating = true;
+  bool locationPermissionDenied = false;
+
   DateTime currentTime = DateTime.now();
 
   PrayerTimes? prayerTimes;
-  String nextPrayerName = "";
   Duration timeLeft = Duration.zero;
   DateTime selectedDate = DateTime.now();
   Prayer? nextPrayer;
@@ -67,24 +69,53 @@ class PrayerProvider extends ChangeNotifier {
   }
 
   Future<void> _getLocation() async {
-    LocationPermission permission = await Geolocator.requestPermission();
-    Position position = await Geolocator.getCurrentPosition();
+    isLocating = true;
+    notifyListeners();
 
-    final placemarks =
-    await placemarkFromCoordinates(position.latitude, position.longitude);
+    bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      locationName = "";
+      isLocating = false;
+      notifyListeners();
+      return;
+    }
 
-    locationName =
-    "${placemarks.first.locality}, ${placemarks.first.country}";
+    LocationPermission permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+    }
+
+    if (permission == LocationPermission.denied ||
+        permission == LocationPermission.deniedForever) {
+      locationPermissionDenied = true;
+      isLocating = false;
+      notifyListeners();
+      return;
+    }
+
+    final position = await Geolocator.getCurrentPosition();
+
+    try {
+      final placemarks = await placemarkFromCoordinates(
+        position.latitude,
+        position.longitude,
+      );
+      locationName =
+      "${placemarks.first.locality}, ${placemarks.first.country}";
+    } catch (_) {
+      locationName = "";
+    }
 
     final params = CalculationMethod.muslim_world_league.getParameters();
     params.madhab = Madhab.hanafi;
 
     prayerTimes = PrayerTimes(
       Coordinates(position.latitude, position.longitude),
-      DateComponents.from(DateTime.now()),
+      DateComponents.from(selectedDate),
       params,
     );
 
+    isLocating = false;
     _updateNextPrayer();
     notifyListeners();
   }
@@ -117,30 +148,7 @@ class PrayerProvider extends ChangeNotifier {
     if (next == Prayer.none) return;
 
     nextPrayer = next;
-    nextPrayerName = next.name.toUpperCase();
     final nextTime = getPrayerTime(next);
-
-    // DateTime nextTime;
-    // switch (next) {
-    //   case Prayer.fajr:
-    //     nextTime = prayerTimes!.fajr;
-    //     break;
-    //   case Prayer.dhuhr:
-    //     nextTime = prayerTimes!.dhuhr;
-    //     break;
-    //   case Prayer.asr:
-    //     nextTime = prayerTimes!.asr;
-    //     break;
-    //   case Prayer.maghrib:
-    //     nextTime = prayerTimes!.maghrib;
-    //     break;
-    //   case Prayer.isha:
-    //     nextTime = prayerTimes!.isha;
-    //     break;
-    //   default:
-    //     return;
-    // }
-
     timeLeft = nextTime.difference(currentTime);
   }
 

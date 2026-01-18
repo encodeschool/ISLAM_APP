@@ -27,5 +27,15 @@
   "prayerAsr": "Asr",
   "prayerMaghrib": "Maghrib",
   "prayerIsha": "Isha",
-  "loading": "Loading..."
+  "loading": "Loading...",
+  "fajr": "Fajr",
+  "dhuhr": "Dhuhr",
+  "asr": "Asr",
+  "maghrib": "Maghrib",
+  "isha": "Isha",
+  "locating": "Locating…",
+  "locationDenied": "Location permission denied",
+  "unknownLocation": "Unknown location",
+  "nextPrayer": "Next Prayer",
+  "timeLeft": "Time left"
 }

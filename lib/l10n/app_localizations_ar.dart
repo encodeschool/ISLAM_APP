@@ -91,4 +91,28 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get loading => 'جاري التحميل...';
+
+  @override
+  String get fajr => 'الفجر';
+
+  @override
+  String get dhuhr => 'الظهر';
+
+  @override
+  String get asr => 'العصر';
+
+  @override
+  String get maghrib => 'المغرب';
+
+  @override
+  String get isha => 'العشاء';
+
+  @override
+  String get locating => 'جارٍ تحديد الموقع…';
+
+  @override
+  String get locationDenied => 'تم رفض إذن الموقع';
+
+  @override
+  String get unknownLocation => 'موقع غير معروف';
 }

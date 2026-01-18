@@ -27,5 +27,15 @@
   "prayerAsr": "Аср",
   "prayerMaghrib": "Магриб",
   "prayerIsha": "Иша",
-  "loading": "Загрузка..."
+  "loading": "Загрузка...",
+  "fajr": "Фаджр",
+  "dhuhr": "Зухр",
+  "asr": "Аср",
+  "maghrib": "Магриб",
+  "isha": "Иша",
+  "locating": "Определение местоположения…",
+  "locationDenied": "Доступ к местоположению запрещён",
+  "unknownLocation": "Неизвестное местоположение",
+  "nextPrayer": "Следующая молитва",
+  "timeLeft": "Осталось времени"
 }

@@ -27,7 +27,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get nextPrayer => 'Next Prayer';
 
   @override
-  String get timeLeft => 'Time Left';
+  String get timeLeft => 'Time left';
 
   @override
   String get qibla => 'Qibla';
@@ -91,4 +91,28 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loading => 'Loading...';
+
+  @override
+  String get fajr => 'Fajr';
+
+  @override
+  String get dhuhr => 'Dhuhr';
+
+  @override
+  String get asr => 'Asr';
+
+  @override
+  String get maghrib => 'Maghrib';
+
+  @override
+  String get isha => 'Isha';
+
+  @override
+  String get locating => 'Locating…';
+
+  @override
+  String get locationDenied => 'Location permission denied';
+
+  @override
+  String get unknownLocation => 'Unknown location';
 }

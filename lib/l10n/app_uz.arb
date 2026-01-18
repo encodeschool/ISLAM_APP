@@ -27,5 +27,15 @@
   "prayerAsr": "Asr",
   "prayerMaghrib": "Shom",
   "prayerIsha": "Xufton",
-  "loading": "Yuklanmoqda..."
+  "loading": "Yuklanmoqda...",
+  "fajr": "Bomdod",
+  "dhuhr": "Peshin",
+  "asr": "Asr",
+  "maghrib": "Shom",
+  "isha": "Xufton",
+  "locating": "Joylashuv aniqlanmoqda…",
+  "locationDenied": "Joylashuvga ruxsat berilmadi",
+  "unknownLocation": "Noma'lum joylashuv",
+  "nextPrayer": "Keyingi namoz",
+  "timeLeft": "Qolgan vaqt"
 }

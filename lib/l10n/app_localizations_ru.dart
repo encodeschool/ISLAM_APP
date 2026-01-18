@@ -24,10 +24,10 @@ class AppLocalizationsRu extends AppLocalizations {
   String get prayerTimes => 'Времена намаза';
 
   @override
-  String get nextPrayer => 'Следующий намаз';
+  String get nextPrayer => 'Следующая молитва';
 
   @override
-  String get timeLeft => 'Оставшееся время';
+  String get timeLeft => 'Осталось времени';
 
   @override
   String get qibla => 'Кибла';
@@ -91,4 +91,28 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get loading => 'Загрузка...';
+
+  @override
+  String get fajr => 'Фаджр';
+
+  @override
+  String get dhuhr => 'Зухр';
+
+  @override
+  String get asr => 'Аср';
+
+  @override
+  String get maghrib => 'Магриб';
+
+  @override
+  String get isha => 'Иша';
+
+  @override
+  String get locating => 'Определение местоположения…';
+
+  @override
+  String get locationDenied => 'Доступ к местоположению запрещён';
+
+  @override
+  String get unknownLocation => 'Неизвестное местоположение';
 }
