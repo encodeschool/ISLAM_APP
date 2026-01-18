@@ -37,5 +37,20 @@
   "locationDenied": "Доступ к местоположению запрещён",
   "unknownLocation": "Неизвестное местоположение",
   "nextPrayer": "Следующая молитва",
-  "timeLeft": "Осталось времени"
+  "timeLeft": "Осталось времени",
+  "settings": "Настройки",
+  "darkMode": "Тёмный режим",
+  "language": "Язык",
+  "manualPrayerAdjustment": "Ручная настройка времени молитвы (минуты)",
+  "explore": "Разделы",
+  "names99": "99 имён Аллаха",
+  "phrases40": "40 зикров",
+  "motivation": "Мотивация",
+  "makkaLive": "Мекка онлайн",
+  "shahada": "Шахада",
+  "comingSoon": "{title} скоро будет доступно",
+  "langEnglish": "Английский",
+  "langArabic": "Арабский",
+  "langRussian": "Русский",
+  "langUzbek": "Узбекский"
 }

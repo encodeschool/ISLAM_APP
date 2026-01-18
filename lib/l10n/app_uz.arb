@@ -37,5 +37,20 @@
   "locationDenied": "Joylashuvga ruxsat berilmadi",
   "unknownLocation": "Noma'lum joylashuv",
   "nextPrayer": "Keyingi namoz",
-  "timeLeft": "Qolgan vaqt"
+  "timeLeft": "Qolgan vaqt",
+  "settings": "Sozlamalar",
+  "darkMode": "Tungi rejim",
+  "language": "Til",
+  "manualPrayerAdjustment": "Namoz vaqtini qo‘lda sozlash (daqiqalar)",
+  "explore": "Bo‘limlar",
+  "names99": "Allohning 99 ismi",
+  "phrases40": "40 zikr",
+  "motivation": "Motivatsiya",
+  "makkaLive": "Makka jonli efir",
+  "shahada": "Shahodat",
+  "comingSoon": "{title} tez orada",
+  "langEnglish": "Inglizcha",
+  "langArabic": "Arabcha",
+  "langRussian": "Ruscha",
+  "langUzbek": "O‘zbekcha"
 }

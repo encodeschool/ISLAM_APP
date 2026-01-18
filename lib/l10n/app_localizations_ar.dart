@@ -45,7 +45,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get manualAdjustment => 'تعديل وقت الصلاة يدويًا';
 
   @override
-  String get comingSoon => 'قريبًا';
+  String comingSoon(Object title) {
+    return '$title قريبًا';
+  }
 
   @override
   String get navPrayer => 'الصلاة';
@@ -115,4 +117,37 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get unknownLocation => 'موقع غير معروف';
+
+  @override
+  String get manualPrayerAdjustment => 'تعديل وقت الصلاة يدويًا (بالدقائق)';
+
+  @override
+  String get explore => 'استكشف';
+
+  @override
+  String get names99 => 'الأسماء الحسنى';
+
+  @override
+  String get phrases40 => 'الأذكار الأربعون';
+
+  @override
+  String get motivation => 'تحفيز';
+
+  @override
+  String get makkaLive => 'بث مباشر من مكة';
+
+  @override
+  String get shahada => 'الشهادة';
+
+  @override
+  String get langEnglish => 'الإنجليزية';
+
+  @override
+  String get langArabic => 'العربية';
+
+  @override
+  String get langRussian => 'الروسية';
+
+  @override
+  String get langUzbek => 'الأوزبكية';
 }

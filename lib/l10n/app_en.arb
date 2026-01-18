@@ -37,5 +37,20 @@
   "locationDenied": "Location permission denied",
   "unknownLocation": "Unknown location",
   "nextPrayer": "Next Prayer",
-  "timeLeft": "Time left"
+  "timeLeft": "Time left",
+  "settings": "Settings",
+  "darkMode": "Dark Mode",
+  "language": "Language",
+  "manualPrayerAdjustment": "Manual Prayer Time Adjustment (minutes)",
+  "explore": "Explore",
+  "names99": "99 Names",
+  "phrases40": "40 Phrases",
+  "motivation": "Motivation",
+  "makkaLive": "Makka Live",
+  "shahada": "Shahada",
+  "comingSoon": "{title} coming soon",
+  "langEnglish": "English",
+  "langArabic": "Arabic",
+  "langRussian": "Russian",
+  "langUzbek": "Uzbek"
 }

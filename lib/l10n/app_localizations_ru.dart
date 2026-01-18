@@ -45,7 +45,9 @@ class AppLocalizationsRu extends AppLocalizations {
   String get manualAdjustment => 'Ручная корректировка времени намаза';
 
   @override
-  String get comingSoon => 'Скоро';
+  String comingSoon(Object title) {
+    return '$title скоро будет доступно';
+  }
 
   @override
   String get navPrayer => 'Намаз';
@@ -115,4 +117,37 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get unknownLocation => 'Неизвестное местоположение';
+
+  @override
+  String get manualPrayerAdjustment => 'Ручная настройка времени молитвы (минуты)';
+
+  @override
+  String get explore => 'Разделы';
+
+  @override
+  String get names99 => '99 имён Аллаха';
+
+  @override
+  String get phrases40 => '40 зикров';
+
+  @override
+  String get motivation => 'Мотивация';
+
+  @override
+  String get makkaLive => 'Мекка онлайн';
+
+  @override
+  String get shahada => 'Шахада';
+
+  @override
+  String get langEnglish => 'Английский';
+
+  @override
+  String get langArabic => 'Арабский';
+
+  @override
+  String get langRussian => 'Русский';
+
+  @override
+  String get langUzbek => 'Узбекский';
 }

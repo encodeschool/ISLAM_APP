@@ -174,8 +174,8 @@ abstract class AppLocalizations {
   /// No description provided for @comingSoon.
   ///
   /// In en, this message translates to:
-  /// **'Coming soon'**
-  String get comingSoon;
+  /// **'{title} coming soon'**
+  String comingSoon(Object title);
 
   /// No description provided for @navPrayer.
   ///
@@ -314,6 +314,72 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Unknown location'**
   String get unknownLocation;
+
+  /// No description provided for @manualPrayerAdjustment.
+  ///
+  /// In en, this message translates to:
+  /// **'Manual Prayer Time Adjustment (minutes)'**
+  String get manualPrayerAdjustment;
+
+  /// No description provided for @explore.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore'**
+  String get explore;
+
+  /// No description provided for @names99.
+  ///
+  /// In en, this message translates to:
+  /// **'99 Names'**
+  String get names99;
+
+  /// No description provided for @phrases40.
+  ///
+  /// In en, this message translates to:
+  /// **'40 Phrases'**
+  String get phrases40;
+
+  /// No description provided for @motivation.
+  ///
+  /// In en, this message translates to:
+  /// **'Motivation'**
+  String get motivation;
+
+  /// No description provided for @makkaLive.
+  ///
+  /// In en, this message translates to:
+  /// **'Makka Live'**
+  String get makkaLive;
+
+  /// No description provided for @shahada.
+  ///
+  /// In en, this message translates to:
+  /// **'Shahada'**
+  String get shahada;
+
+  /// No description provided for @langEnglish.
+  ///
+  /// In en, this message translates to:
+  /// **'English'**
+  String get langEnglish;
+
+  /// No description provided for @langArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic'**
+  String get langArabic;
+
+  /// No description provided for @langRussian.
+  ///
+  /// In en, this message translates to:
+  /// **'Russian'**
+  String get langRussian;
+
+  /// No description provided for @langUzbek.
+  ///
+  /// In en, this message translates to:
+  /// **'Uzbek'**
+  String get langUzbek;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

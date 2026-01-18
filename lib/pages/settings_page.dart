@@ -16,13 +16,28 @@ class SettingsPage extends StatelessWidget {
     final language = context.watch<LanguageProvider>();
     final prayer = context.watch<PrayerProvider>();
 
+    String getPrayerName(Prayer prayer, AppLocalizations t) {
+      switch (prayer) {
+        case Prayer.fajr:
+          return t.prayerFajr;
+        case Prayer.dhuhr:
+          return t.prayerDhuhr;
+        case Prayer.asr:
+          return t.prayerAsr;
+        case Prayer.maghrib:
+          return t.prayerMaghrib;
+        case Prayer.isha:
+          return t.prayerIsha;
+        default:
+          return prayer.name;
+      }
+    }
+
     return Scaffold(
-      // attach the drawer here
       drawer: Drawer(
         child: ListView(
           padding: const EdgeInsets.all(16),
           children: [
-            // Dark Mode Switch
             SwitchListTile(
               title: Text(t.darkMode),
               value: theme.isDark,
@@ -30,16 +45,15 @@ class SettingsPage extends StatelessWidget {
             ),
             const Divider(),
 
-            // Language Selector
             ListTile(
-              title: const Text("Language"),
+              title: Text(t.language),
               trailing: DropdownButton<String>(
                 value: language.locale.languageCode,
-                items: const [
-                  DropdownMenuItem(value: 'en', child: Text("English")),
-                  DropdownMenuItem(value: 'ar', child: Text("Arabic")),
-                  DropdownMenuItem(value: 'ru', child: Text("Russian")),
-                  DropdownMenuItem(value: 'uz', child: Text("Uzbek")),
+                items: [
+                  DropdownMenuItem(value: 'en', child: Text(t.langEnglish)),
+                  DropdownMenuItem(value: 'ar', child: Text(t.langArabic)),
+                  DropdownMenuItem(value: 'ru', child: Text(t.langRussian)),
+                  DropdownMenuItem(value: 'uz', child: Text(t.langUzbek)),
                 ],
                 onChanged: (value) {
                   if (value != null) {
@@ -51,8 +65,8 @@ class SettingsPage extends StatelessWidget {
             const Divider(),
 
             // Manual Prayer Time Adjustments
-            const Text(
-              "Manual Prayer Time Adjustment (minutes)",
+            Text(
+              t.manualPrayerAdjustment,
               style: TextStyle(fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 8),
@@ -65,7 +79,7 @@ class SettingsPage extends StatelessWidget {
               Prayer.isha
             ].map(
                   (p) => ListTile(
-                title: Text(p.name.toUpperCase()),
+                title: Text(getPrayerName(p, t).toUpperCase()),
                 trailing: SizedBox(
                   width: 60,
                   child: TextField(
@@ -109,10 +123,10 @@ class SettingsPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const Padding(
+          Padding(
             padding: EdgeInsetsDirectional.only(bottom: 8),
             child: Text(
-              "Explore",
+              t.explore,
               style: TextStyle(
                 fontSize: 14,
                 color: Colors.grey,
@@ -120,17 +134,17 @@ class SettingsPage extends StatelessWidget {
             ),
           ),
 
-          _extraButton(context, "99 Names", Icons.auto_awesome_outlined),
-          _extraButton(context, "40 Phrases", Icons.format_list_bulleted),
-          _extraButton(context, "Motivation", Icons.favorite_border),
-          _extraButton(context, "Makka Live", Icons.live_tv_outlined),
-          _extraButton(context, "Shahada", Icons.mosque_outlined),
+          _extraButton(context, t.names99, Icons.auto_awesome_outlined,t),
+          _extraButton(context, t.phrases40, Icons.format_list_bulleted,t),
+          _extraButton(context, t.motivation, Icons.favorite_border,t),
+          _extraButton(context, t.makkaLive, Icons.live_tv_outlined,t),
+          _extraButton(context, t.shahada, Icons.mosque_outlined,t),
         ],
       ),
     );
   }
 
-  Widget _extraButton(BuildContext context, String title, IconData icon) {
+  Widget _extraButton(BuildContext context, String title, IconData icon, AppLocalizations t) {
     return SettingsCard(
       child: ListTile(
         leading: Icon(icon, color: Theme.of(context).colorScheme.primary),
@@ -141,7 +155,7 @@ class SettingsPage extends StatelessWidget {
         trailing: const Icon(Icons.arrow_forward_ios, size: 16),
         onTap: () {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("$title coming soon")),
+            SnackBar(content: Text("${t.comingSoon}")),
           );
         },
       ),

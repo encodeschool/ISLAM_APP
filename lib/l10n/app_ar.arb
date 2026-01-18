@@ -37,5 +37,20 @@
   "locationDenied": "تم رفض إذن الموقع",
   "unknownLocation": "موقع غير معروف",
   "nextPrayer": "الصلاة القادمة",
-  "timeLeft": "الوقت المتبقي"
+  "timeLeft": "الوقت المتبقي",
+  "settings": "الإعدادات",
+  "darkMode": "الوضع الداكن",
+  "language": "اللغة",
+  "manualPrayerAdjustment": "تعديل وقت الصلاة يدويًا (بالدقائق)",
+  "explore": "استكشف",
+  "names99": "الأسماء الحسنى",
+  "phrases40": "الأذكار الأربعون",
+  "motivation": "تحفيز",
+  "makkaLive": "بث مباشر من مكة",
+  "shahada": "الشهادة",
+  "comingSoon": "{title} قريبًا",
+  "langEnglish": "الإنجليزية",
+  "langArabic": "العربية",
+  "langRussian": "الروسية",
+  "langUzbek": "الأوزبكية"
 }

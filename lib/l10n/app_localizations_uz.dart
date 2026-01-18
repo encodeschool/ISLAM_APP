@@ -15,7 +15,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get settings => 'Sozlamalar';
 
   @override
-  String get darkMode => 'Qorong‘i rejim';
+  String get darkMode => 'Tungi rejim';
 
   @override
   String get language => 'Til';
@@ -45,7 +45,9 @@ class AppLocalizationsUz extends AppLocalizations {
   String get manualAdjustment => 'Namoz vaqtlarini qo‘lda sozlash';
 
   @override
-  String get comingSoon => 'Tez orada';
+  String comingSoon(Object title) {
+    return '$title tez orada';
+  }
 
   @override
   String get navPrayer => 'Namoz';
@@ -115,4 +117,37 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get unknownLocation => 'Noma\'lum joylashuv';
+
+  @override
+  String get manualPrayerAdjustment => 'Namoz vaqtini qo‘lda sozlash (daqiqalar)';
+
+  @override
+  String get explore => 'Bo‘limlar';
+
+  @override
+  String get names99 => 'Allohning 99 ismi';
+
+  @override
+  String get phrases40 => '40 zikr';
+
+  @override
+  String get motivation => 'Motivatsiya';
+
+  @override
+  String get makkaLive => 'Makka jonli efir';
+
+  @override
+  String get shahada => 'Shahodat';
+
+  @override
+  String get langEnglish => 'Inglizcha';
+
+  @override
+  String get langArabic => 'Arabcha';
+
+  @override
+  String get langRussian => 'Ruscha';
+
+  @override
+  String get langUzbek => 'O‘zbekcha';
 }

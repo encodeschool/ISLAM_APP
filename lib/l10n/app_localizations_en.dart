@@ -45,7 +45,9 @@ class AppLocalizationsEn extends AppLocalizations {
   String get manualAdjustment => 'Manual Prayer Time Adjustment';
 
   @override
-  String get comingSoon => 'Coming soon';
+  String comingSoon(Object title) {
+    return '$title coming soon';
+  }
 
   @override
   String get navPrayer => 'Prayer';
@@ -115,4 +117,37 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get unknownLocation => 'Unknown location';
+
+  @override
+  String get manualPrayerAdjustment => 'Manual Prayer Time Adjustment (minutes)';
+
+  @override
+  String get explore => 'Explore';
+
+  @override
+  String get names99 => '99 Names';
+
+  @override
+  String get phrases40 => '40 Phrases';
+
+  @override
+  String get motivation => 'Motivation';
+
+  @override
+  String get makkaLive => 'Makka Live';
+
+  @override
+  String get shahada => 'Shahada';
+
+  @override
+  String get langEnglish => 'English';
+
+  @override
+  String get langArabic => 'Arabic';
+
+  @override
+  String get langRussian => 'Russian';
+
+  @override
+  String get langUzbek => 'Uzbek';
 }
