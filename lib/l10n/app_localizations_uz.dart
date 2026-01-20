@@ -150,4 +150,10 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get langUzbek => 'O‘zbekcha';
+
+  @override
+  String get namesOfAllah => 'Allohning 99 ismi';
+
+  @override
+  String get search => 'Qidiruv / Izlash';
 }

@@ -150,4 +150,10 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get langUzbek => 'الأوزبكية';
+
+  @override
+  String get namesOfAllah => 'أسماء الله الحسنى';
+
+  @override
+  String get search => 'بحث';
 }

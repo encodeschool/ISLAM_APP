@@ -380,6 +380,18 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Uzbek'**
   String get langUzbek;
+
+  /// No description provided for @namesOfAllah.
+  ///
+  /// In en, this message translates to:
+  /// **'99 Names of Allah'**
+  String get namesOfAllah;
+
+  /// No description provided for @search.
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get search;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -52,6 +52,9 @@ class CounterPage extends StatelessWidget {
           // 🔹 TAP AREA
           GestureDetector(
             onTap: counter.increment,
+            // onTap:  () {
+            //   counter.incrementWithAudio(name.audioAsset);
+            // },
             child: Container(
               width: 250,
               height: 250,

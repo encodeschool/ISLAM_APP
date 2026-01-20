@@ -150,4 +150,10 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get langUzbek => 'Узбекский';
+
+  @override
+  String get namesOfAllah => '99 имён Аллаха';
+
+  @override
+  String get search => 'Поиск';
 }

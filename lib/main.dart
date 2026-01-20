@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mosque/providers/counter_provider.dart';
+import 'package:mosque/providers/daily_card_provider.dart';
 import 'package:mosque/providers/language_provider.dart';
 import 'package:mosque/providers/prayer_provider.dart';
 import 'package:mosque/providers/theme_provider.dart';
@@ -26,6 +27,7 @@ class RootApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => LanguageProvider()),
         ChangeNotifierProvider(create: (context) => PrayerProvider()),
         ChangeNotifierProvider(create: (context) => CounterProvider()),
+        ChangeNotifierProvider(create: (context) => DailyCardProvider()),
       ],
       child: const MosqueApp(),
     );

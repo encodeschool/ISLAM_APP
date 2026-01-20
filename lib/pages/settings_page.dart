@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mosque/pages/more/40_phrases.dart';
+import 'package:mosque/pages/more/99_names.dart';
+import 'package:mosque/pages/more/live_stream.dart';
+import 'package:mosque/pages/more/motivation.dart';
+import 'package:mosque/pages/more/shahada.dart';
 import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/theme_provider.dart';
@@ -109,7 +114,6 @@ class SettingsPage extends StatelessWidget {
             letterSpacing: 0.5,
           ),
         ),
-        // open drawer button
         leading: Builder(
           builder: (context) => IconButton(
             icon: const Icon(Icons.tune_outlined),
@@ -134,28 +138,35 @@ class SettingsPage extends StatelessWidget {
             ),
           ),
 
-          _extraButton(context, t.names99, Icons.auto_awesome_outlined,t),
-          _extraButton(context, t.phrases40, Icons.format_list_bulleted,t),
-          _extraButton(context, t.motivation, Icons.favorite_border,t),
-          _extraButton(context, t.makkaLive, Icons.live_tv_outlined,t),
-          _extraButton(context, t.shahada, Icons.mosque_outlined,t),
+          _extraButton(context, t.names99, Icons.auto_awesome_outlined, NinetyNineNames(), t),
+          _extraButton(context, t.phrases40, Icons.format_list_bulleted, FortyPhrases(),t),
+          _extraButton(context, t.motivation, Icons.favorite_border, Motivation(),t),
+          _extraButton(context, t.makkaLive, Icons.live_tv_outlined, LiveStream(),t),
+          _extraButton(context, t.shahada, Icons.mosque_outlined, Shahada(),t),
         ],
       ),
     );
   }
 
-  Widget _extraButton(BuildContext context, String title, IconData icon, AppLocalizations t) {
+  Widget _extraButton(BuildContext context, String title, IconData icon, Widget page, AppLocalizations t) {
     return SettingsCard(
       child: ListTile(
-        leading: Icon(icon, color: Theme.of(context).colorScheme.primary),
+        leading: Icon(
+          icon,
+          color: Colors.green[900],
+        ),
         title: Text(
           title,
           style: const TextStyle(fontSize: 16),
         ),
-        trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+        trailing: Icon(
+          Icons.arrow_forward_ios,
+          size: 16,
+          color: Colors.green[900],
+        ),
         onTap: () {
-          ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("${t.comingSoon}")),
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (_) => page),
           );
         },
       ),
