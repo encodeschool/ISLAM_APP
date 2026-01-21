@@ -168,4 +168,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get retry => 'Повторить';
+
+  @override
+  String get foundationOfIslam => 'This is the foundation of Islam';
+
+  @override
+  String get shahadaTitle => 'Шахада';
+
+  @override
+  String get shahadaArabic => 'أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا ٱللَّٰهُ\nوَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ ٱللَّٰهِ';
+
+  @override
+  String get shahadaTranslation => 'Я свидетельствую, что нет божества, кроме Аллаха, и свидетельствую, что Мухаммад — Посланник Аллаха.';
 }

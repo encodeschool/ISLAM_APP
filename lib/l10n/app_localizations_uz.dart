@@ -168,4 +168,16 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get retry => 'Qayta urinish';
+
+  @override
+  String get foundationOfIslam => 'This is the foundation of Islam';
+
+  @override
+  String get shahadaTitle => 'Shahodat';
+
+  @override
+  String get shahadaArabic => 'أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا ٱللَّٰهُ\nوَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ ٱللَّٰهِ';
+
+  @override
+  String get shahadaTranslation => 'Men guvohlik beramanki, Allohdan o‘zga iloh yo‘q va Muhammad ﷺ Allohning elchisidir.';
 }

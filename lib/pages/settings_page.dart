@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mosque/pages/more/40_phrases.dart';
-import 'package:mosque/pages/more/99_names.dart';
-import 'package:mosque/pages/more/live_stream.dart';
-import 'package:mosque/pages/more/motivation.dart';
-import 'package:mosque/pages/more/shahada.dart';
+import 'package:mosque/pages/more/40_phrases_page.dart';
+import 'package:mosque/pages/more/99_names_page.dart';
+import 'package:mosque/pages/more/live_stream_page.dart';
+import 'package:mosque/pages/more/motivation_page.dart';
+import 'package:mosque/pages/more/shahada_page.dart';
 import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
 import '../providers/theme_provider.dart';
@@ -142,7 +142,7 @@ class SettingsPage extends StatelessWidget {
           // _extraButton(context, t.phrases40, Icons.format_list_bulleted, FortyPhrases(),t),
           // _extraButton(context, t.motivation, Icons.favorite_border, Motivation(),t),
           _extraButton(context, t.makkaLive, Icons.live_tv_outlined, LiveStream(),t),
-          // _extraButton(context, t.shahada, Icons.mosque_outlined, Shahada(),t),
+          _extraButton(context, t.shahada, Icons.mosque_outlined, ShahadaPage(),t),
         ],
       ),
     );

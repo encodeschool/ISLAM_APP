@@ -59,5 +59,8 @@
   "makkaLive": "Makka jonli efiri",
   "noInternet": "Internet aloqasi yo'q",
   "checkConnection": "Internet aloqangizni tekshiring va qayta urinib ko'ring",
-  "retry": "Qayta urinish"
+  "retry": "Qayta urinish",
+  "shahadaTitle": "Shahodat",
+  "shahadaArabic": "أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا ٱللَّٰهُ\nوَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ ٱللَّٰهِ",
+  "shahadaTranslation": "Men guvohlik beramanki, Allohdan o‘zga iloh yo‘q va Muhammad ﷺ Allohning elchisidir."
 }

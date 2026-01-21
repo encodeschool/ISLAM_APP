@@ -416,6 +416,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Retry'**
   String get retry;
+
+  /// No description provided for @foundationOfIslam.
+  ///
+  /// In en, this message translates to:
+  /// **'This is the foundation of Islam'**
+  String get foundationOfIslam;
+
+  /// No description provided for @shahadaTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Shahada'**
+  String get shahadaTitle;
+
+  /// No description provided for @shahadaArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا ٱللَّٰهُ\nوَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ ٱللَّٰهِ'**
+  String get shahadaArabic;
+
+  /// No description provided for @shahadaTranslation.
+  ///
+  /// In en, this message translates to:
+  /// **'I bear witness that there is no god but Allah, and I bear witness that Muhammad is the Messenger of Allah.'**
+  String get shahadaTranslation;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
