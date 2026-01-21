@@ -7,6 +7,8 @@ List<AllahName> allahNames = [
     transliteration: "Ar-Rahman",
     meaning: "The Most Merciful",
     audioAsset: "assets/audio/asma/01_ar_rahman.mp3",
+    meaningRu: "Милостивый (Ар-Рахман)",
+    meaningUz: "Mehribon (Ar-Rohmon)",
   ),
   AllahName(
     id: 2,
@@ -14,6 +16,8 @@ List<AllahName> allahNames = [
     transliteration: "Ar-Raheem",
     meaning: "The Most Compassionate",
     audioAsset: "assets/audio/asma/02_ar_raheem.mp3",
+    meaningRu: "Милосердный (Ар-Рахим)",
+    meaningUz: "Rahmli (Ar-Rohim)",
   ),
   AllahName(
     id: 3,
@@ -21,6 +25,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Malik",
     meaning: "The King and Owner of Dominion",
     audioAsset: "assets/audio/asma/03_al_malik.mp3",
+    meaningRu: "Царь (Аль-Малик)",
+    meaningUz: "Podshoh (Al-Malik)",
   ),
   AllahName(
     id: 4,
@@ -28,6 +34,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Quddus",
     meaning: "The Absolutely Pure",
     audioAsset: "assets/audio/asma/04_al_quddus.mp3",
+    meaningRu: "Святой (Аль-Куддус)",
+    meaningUz: "Muqaddas (Al-Quddus)",
   ),
   AllahName(
     id: 5,
@@ -35,6 +43,8 @@ List<AllahName> allahNames = [
     transliteration: "As-Salaam",
     meaning: "The Source of Peace",
     audioAsset: "assets/audio/asma/05_as_salaam.mp3",
+    meaningRu: "Мирный (Ас-Салям)",
+    meaningUz: "Salomatlik beruvchi (As-Salom)",
   ),
   AllahName(
     id: 6,
@@ -42,6 +52,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mu'min",
     meaning: "The Giver of Faith",
     audioAsset: "assets/audio/asma/06_al_mumin.mp3",
+    meaningRu: "Дарующий веру (Аль-Мумин)",
+    meaningUz: "Iymon beruvchi (Al-Mu'min)",
   ),
   AllahName(
     id: 7,
@@ -49,6 +61,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muhaymin",
     meaning: "The Guardian",
     audioAsset: "assets/audio/asma/07_al_muhaymin.mp3",
+    meaningRu: "Хранитель (Аль-Мухаймин)",
+    meaningUz: "Himoyachi (Al-Muhaymin)",
   ),
   AllahName(
     id: 8,
@@ -56,6 +70,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Aziz",
     meaning: "The Almighty",
     audioAsset: "assets/audio/asma/08_al_aziz.mp3",
+    meaningRu: "Могущественный (Аль-Азиз)",
+    meaningUz: "Quvvatli, Aziz (Al-Aziz)",
   ),
   AllahName(
     id: 9,
@@ -63,6 +79,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Jabbar",
     meaning: "The Compeller",
     audioAsset: "assets/audio/asma/09_al_jabbar.mp3",
+    meaningRu: "Принуждающий (Аль-Джаббар)",
+    meaningUz: "Majbur qiluvchi (Al-Jabbor)",
   ),
   AllahName(
     id: 10,
@@ -70,6 +88,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mutakabbir",
     meaning: "The Supreme",
     audioAsset: "assets/audio/asma/10_al_mutakabbir.mp3",
+    meaningRu: "Великий (Аль-Мутаккбир)",
+    meaningUz: "Ulug'vor (Al-Mutakabbir)",
   ),
   AllahName(
     id: 11,
@@ -77,6 +97,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Khaliq",
     meaning: "The Creator",
     audioAsset: "assets/audio/asma/11_al_khaliq.mp3",
+    meaningRu: "Творец (Аль-Халик)",
+    meaningUz: "Yaratguvchi (Al-Xoliq)",
   ),
   AllahName(
     id: 12,
@@ -84,6 +106,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Bari",
     meaning: "The Maker",
     audioAsset: "assets/audio/asma/12_al_bari.mp3",
+    meaningRu: "Создатель (Аль-Бари)",
+    meaningUz: "Barpo etuvchi (Al-Bari')",
   ),
   AllahName(
     id: 13,
@@ -91,6 +115,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Musawwir",
     meaning: "The Fashioner",
     audioAsset: "assets/audio/asma/13_al_musawwir.mp3",
+    meaningRu: "Придающий форму (Аль-Мусаввир)",
+    meaningUz: "Shakllantiruvchi (Al-Musavvir)",
   ),
   AllahName(
     id: 14,
@@ -98,6 +124,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Ghaffar",
     meaning: "The All-Forgiving",
     audioAsset: "assets/audio/asma/14_al_ghaffar.mp3",
+    meaningRu: "Прощающий (Аль-Гаффар)",
+    meaningUz: "Ke chiruvchi (Al-G'offor)",
   ),
   AllahName(
     id: 15,
@@ -105,6 +133,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Qahhar",
     meaning: "The Subduer",
     audioAsset: "assets/audio/asma/15_al_qahhar.mp3",
+    meaningRu: "Побеждающий (Аль-Каххар)",
+    meaningUz: "Bo'ysundiruvchi (Al-Qahhor)",
   ),
   AllahName(
     id: 16,
@@ -112,6 +142,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Wahhab",
     meaning: "The Bestower",
     audioAsset: "assets/audio/asma/16_al_wahhab.mp3",
+    meaningRu: "Дарующий (Аль-Ваххаб)",
+    meaningUz: "Bexisob beruvchi (Al-Vahhob)",
   ),
   AllahName(
     id: 17,
@@ -119,6 +151,8 @@ List<AllahName> allahNames = [
     transliteration: "Ar-Razzaq",
     meaning: "The Provider",
     audioAsset: "assets/audio/asma/17_ar_razzaq.mp3",
+    meaningRu: "Дающий удел (Ар-Раззак)",
+    meaningUz: "Rizq beruvchi (Ar-Razzoq)",
   ),
   AllahName(
     id: 18,
@@ -126,6 +160,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Fattah",
     meaning: "The Opener",
     audioAsset: "assets/audio/asma/18_al_fattah.mp3",
+    meaningRu: "Открывающий (Аль-Фаттах)",
+    meaningUz: "Ochuvchi (Al-Fattoh)",
   ),
   AllahName(
     id: 19,
@@ -133,6 +169,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Alim",
     meaning: "The All-Knowing",
     audioAsset: "assets/audio/asma/19_al_alim.mp3",
+    meaningRu: "Всезнающий (Аль-Алим)",
+    meaningUz: "Biluvchi (Al-Alim)",
   ),
   AllahName(
     id: 20,
@@ -140,6 +178,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Qabid",
     meaning: "The Constrictor",
     audioAsset: "assets/audio/asma/20_al_qabid.mp3",
+    meaningRu: "Сжимающий (Аль-Кабид)",
+    meaningUz: "Siqib qo'yuvchi (Al-Qobiz)",
   ),
   AllahName(
     id: 21,
@@ -147,6 +187,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Basit",
     meaning: "The Expander",
     audioAsset: "assets/audio/asma/21_al_basit.mp3",
+    meaningRu: "Распространяющий (Аль-Басит)",
+    meaningUz: "Yoyuvchi (Al-Bosit)",
   ),
   AllahName(
     id: 22,
@@ -154,6 +196,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Khafid",
     meaning: "The Abaser",
     audioAsset: "assets/audio/asma/22_al_khafid.mp3",
+    meaningRu: "Унижающий (Аль-Хафид)",
+    meaningUz: "Pastlatuvchi (Al-Xofiz)",
   ),
   AllahName(
     id: 23,
@@ -161,6 +205,8 @@ List<AllahName> allahNames = [
     transliteration: "Ar-Rafi",
     meaning: "The Exalter",
     audioAsset: "assets/audio/asma/23_ar_rafi.mp3",
+    meaningRu: "Возвышающий (Ар-Рафи)",
+    meaningUz: "Ko'taruvchi (Ar-Rofi')",
   ),
   AllahName(
     id: 24,
@@ -168,6 +214,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mu'izz",
     meaning: "The Honourer",
     audioAsset: "assets/audio/asma/24_al_muizz.mp3",
+    meaningRu: "Дарующий почет (Аль-Муизз)",
+    meaningUz: "Izzat beruvchi (Al-Mu'izz)",
   ),
   AllahName(
     id: 25,
@@ -175,6 +223,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mudhill",
     meaning: "The Humiliator",
     audioAsset: "assets/audio/asma/25_al_mudhill.mp3",
+    meaningRu: "Унижающий (Аль-Музилл)",
+    meaningUz: "Xor qiluvchi (Al-Muzill)",
   ),
   AllahName(
     id: 26,
@@ -182,6 +232,8 @@ List<AllahName> allahNames = [
     transliteration: "As-Sami",
     meaning: "The All-Hearing",
     audioAsset: "assets/audio/asma/26_as_sami.mp3",
+    meaningRu: "Все слышащий (Ас-Сами)",
+    meaningUz: "Eshituvchi (As-Sami')",
   ),
   AllahName(
     id: 27,
@@ -189,6 +241,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Basir",
     meaning: "The All-Seeing",
     audioAsset: "assets/audio/asma/27_al_basir.mp3",
+    meaningRu: "Все видящий (Аль-Басир)",
+    meaningUz: "Ko'ruvchi (Al-Basir)",
   ),
   AllahName(
     id: 28,
@@ -196,6 +250,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Hakam",
     meaning: "The Judge",
     audioAsset: "assets/audio/asma/28_al_hakam.mp3",
+    meaningRu: "Судья (Аль-Хакам)",
+    meaningUz: "Hukm chiqaruvchi (Al-Hakam)",
   ),
   AllahName(
     id: 29,
@@ -203,6 +259,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Adl",
     meaning: "The Utterly Just",
     audioAsset: "assets/audio/asma/29_al_adl.mp3",
+    meaningRu: "Справедливый (Аль-Адль)",
+    meaningUz: "Adolatli (Al-Adl)",
   ),
   AllahName(
     id: 30,
@@ -210,6 +268,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Latif",
     meaning: "The Subtle One",
     audioAsset: "assets/audio/asma/30_al_latif.mp3",
+    meaningRu: "Милостивый, Проницательный (Аль-Латиф)",
+    meaningUz: "Latif, Nozik (Al-Latif)",
   ),
   AllahName(
     id: 31,
@@ -217,6 +277,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Khabir",
     meaning: "The All-Aware",
     audioAsset: "assets/audio/asma/31_al_khabir.mp3",
+    meaningRu: "Всеосведомленный (Аль-Хабир)",
+    meaningUz: "Xabardor (Al-Xabir)",
   ),
   AllahName(
     id: 32,
@@ -224,6 +286,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Halim",
     meaning: "The Forbearing",
     audioAsset: "assets/audio/asma/32_al_halim.mp3",
+    meaningRu: "Снисходительный (Аль-Халим)",
+    meaningUz: "Yumshoq, Sabrli (Al-Halim)",
   ),
   AllahName(
     id: 33,
@@ -231,6 +295,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Azim",
     meaning: "The Magnificent",
     audioAsset: "assets/audio/asma/33_al_azim.mp3",
+    meaningRu: "Великий (Аль-Азим)",
+    meaningUz: "Ulug' (Al-A'zim)",
   ),
   AllahName(
     id: 34,
@@ -238,6 +304,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Ghafur",
     meaning: "The All-Forgiving",
     audioAsset: "assets/audio/asma/34_al_ghafur.mp3",
+    meaningRu: "Всепрощающий (Аль-Гафур)",
+    meaningUz: "Ko'p kechiruvchi (Al-G'afur)",
   ),
   AllahName(
     id: 35,
@@ -245,6 +313,8 @@ List<AllahName> allahNames = [
     transliteration: "Ash-Shakur",
     meaning: "The Appreciative",
     audioAsset: "assets/audio/asma/35_ash_shakur.mp3",
+    meaningRu: "Благодарный (Аш-Шакур)",
+    meaningUz: "Shukr qabul qiluvchi (Ash-Shakur)",
   ),
   AllahName(
     id: 36,
@@ -252,6 +322,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Ali",
     meaning: "The Most High",
     audioAsset: "assets/audio/asma/36_al_ali.mp3",
+    meaningRu: "Высочайший (Аль-Алий)",
+    meaningUz: "Eng oliy (Al-Aliy)",
   ),
   AllahName(
     id: 37,
@@ -259,6 +331,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Kabir",
     meaning: "The Greatest",
     audioAsset: "assets/audio/asma/37_al_kabir.mp3",
+    meaningRu: "Великий (Аль-Кабир)",
+    meaningUz: "Buyuk (Al-Kabir)",
   ),
   AllahName(
     id: 38,
@@ -266,6 +340,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Hafiz",
     meaning: "The Preserver",
     audioAsset: "assets/audio/asma/38_al_hafiz.mp3",
+    meaningRu: "Хранитель (Аль-Хафиз)",
+    meaningUz: "Saqlovchi (Al-Hafiz)",
   ),
   AllahName(
     id: 39,
@@ -273,6 +349,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muqit",
     meaning: "The Sustainer",
     audioAsset: "assets/audio/asma/39_al_muqit.mp3",
+    meaningRu: "Питающий (Аль-Мукит)",
+    meaningUz: "Oziqlantiruvchi (Al-Muqit)",
   ),
   AllahName(
     id: 40,
@@ -280,6 +358,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Hasib",
     meaning: "The Reckoner",
     audioAsset: "assets/audio/asma/40_al_hasib.mp3",
+    meaningRu: "Считающий (Аль-Хасиб)",
+    meaningUz: "Hisobchi (Al-Hasib)",
   ),
   AllahName(
     id: 41,
@@ -287,6 +367,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Jalil",
     meaning: "The Majestic",
     audioAsset: "assets/audio/asma/41_al_jalil.mp3",
+    meaningRu: "Величественный (Аль-Джалиль)",
+    meaningUz: "Jaloliy (Al-Jalil)",
   ),
   AllahName(
     id: 42,
@@ -294,6 +376,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Karim",
     meaning: "The Generous",
     audioAsset: "assets/audio/asma/42_al_karim.mp3",
+    meaningRu: "Щедрый (Аль-Карим)",
+    meaningUz: "Saxiy (Al-Karim)",
   ),
   AllahName(
     id: 43,
@@ -301,6 +385,8 @@ List<AllahName> allahNames = [
     transliteration: "Ar-Raqib",
     meaning: "The Watchful",
     audioAsset: "assets/audio/asma/43_ar_raqib.mp3",
+    meaningRu: "Наблюдающий (Ар-Ракиб)",
+    meaningUz: "Kuzatuvchi (Ar-Raqib)",
   ),
   AllahName(
     id: 44,
@@ -308,6 +394,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mujib",
     meaning: "The Responsive",
     audioAsset: "assets/audio/asma/44_al_mujib.mp3",
+    meaningRu: "Отвечающий (Аль-Муджиб)",
+    meaningUz: "Javob beruvchi (Al-Mujib)",
   ),
   AllahName(
     id: 45,
@@ -315,6 +403,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Wasi",
     meaning: "The All-Encompassing",
     audioAsset: "assets/audio/asma/45_al_wasi.mp3",
+    meaningRu: "Объемлющий (Аль-Васи)",
+    meaningUz: "Keng qamrovli (Al-Vosi')",
   ),
   AllahName(
     id: 46,
@@ -322,6 +412,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Hakim",
     meaning: "The All-Wise",
     audioAsset: "assets/audio/asma/46_al_hakim.mp3",
+    meaningRu: "Мудрый (Аль-Хаким)",
+    meaningUz: "Donishmand (Al-Hakim)",
   ),
   AllahName(
     id: 47,
@@ -329,6 +421,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Wadud",
     meaning: "The Most Loving",
     audioAsset: "assets/audio/asma/47_al_wadud.mp3",
+    meaningRu: "Любящий (Аль-Вадуд)",
+    meaningUz: "Sevuvchi (Al-Vadud)",
   ),
   AllahName(
     id: 48,
@@ -336,6 +430,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Majid",
     meaning: "The Glorious",
     audioAsset: "assets/audio/asma/48_al_majid.mp3",
+    meaningRu: "Славный (Аль-Маджид)",
+    meaningUz: "Ulug'vor (Al-Majid)",
   ),
   AllahName(
     id: 49,
@@ -343,6 +439,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Ba'ith",
     meaning: "The Resurrector",
     audioAsset: "assets/audio/asma/49_al_baith.mp3",
+    meaningRu: "Воскрешающий (Аль-Баис)",
+    meaningUz: "Tiriltiruvchi (Al-Bo'is)",
   ),
   AllahName(
     id: 50,
@@ -350,6 +448,8 @@ List<AllahName> allahNames = [
     transliteration: "Ash-Shahid",
     meaning: "The Witness",
     audioAsset: "assets/audio/asma/50_ash_shahid.mp3",
+    meaningRu: "Свидетель (Аш-Шахид)",
+    meaningUz: "Guvoh (Ash-Shahid)",
   ),
   AllahName(
     id: 51,
@@ -357,6 +457,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Haqq",
     meaning: "The Truth",
     audioAsset: "assets/audio/asma/51_al_haqq.mp3",
+    meaningRu: "Истинный (Аль-Хакк)",
+    meaningUz: "Haqiqiy (Al-Haq)",
   ),
   AllahName(
     id: 52,
@@ -364,6 +466,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Wakil",
     meaning: "The Trustee",
     audioAsset: "assets/audio/asma/52_al_wakil.mp3",
+    meaningRu: "Доверенный (Аль-Вакиль)",
+    meaningUz: "Ishonchli vakil (Al-Vakil)",
   ),
   AllahName(
     id: 53,
@@ -371,6 +475,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Qawiyy",
     meaning: "The All-Strong",
     audioAsset: "assets/audio/asma/53_al_qawiyy.mp3",
+    meaningRu: "Сильный (Аль-Кауий)",
+    meaningUz: "Kuchli (Al-Qaviy)",
   ),
   AllahName(
     id: 54,
@@ -378,6 +484,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Matin",
     meaning: "The Firm",
     audioAsset: "assets/audio/asma/54_al_matin.mp3",
+    meaningRu: "Крепкий (Аль-Матин)",
+    meaningUz: "Mustahkam (Al-Matin)",
   ),
   AllahName(
     id: 55,
@@ -385,6 +493,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Waliyy",
     meaning: "The Protecting Friend",
     audioAsset: "assets/audio/asma/55_al_waliyy.mp3",
+    meaningRu: "Покровитель (Аль-Валий)",
+    meaningUz: "Do'st, homiy (Al-Valiy)",
   ),
   AllahName(
     id: 56,
@@ -392,6 +502,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Hamid",
     meaning: "The Praiseworthy",
     audioAsset: "assets/audio/asma/56_al_hamid.mp3",
+    meaningRu: "Достойный похвалы (Аль-Хамид)",
+    meaningUz: "Maqtovga sazovor (Al-Hamid)",
   ),
   AllahName(
     id: 57,
@@ -399,6 +511,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muhsi",
     meaning: "The Reckoner",
     audioAsset: "assets/audio/asma/57_al_muhsi.mp3",
+    meaningRu: "Считающий (Аль-Мухси)",
+    meaningUz: "Sanovchi (Al-Muhsi)",
   ),
   AllahName(
     id: 58,
@@ -406,6 +520,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mubdi",
     meaning: "The Originator",
     audioAsset: "assets/audio/asma/58_al_mubdi.mp3",
+    meaningRu: "Начинающий (Аль-Мубди)",
+    meaningUz: "Boshlovchi (Al-Mubdi')",
   ),
   AllahName(
     id: 59,
@@ -413,6 +529,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mu'id",
     meaning: "The Restorer",
     audioAsset: "assets/audio/asma/59_al_muid.mp3",
+    meaningRu: "Возвращающий (Аль-Муид)",
+    meaningUz: "Qaytaruvchi (Al-Mu'id)",
   ),
   AllahName(
     id: 60,
@@ -420,6 +538,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muhyi",
     meaning: "The Giver of Life",
     audioAsset: "assets/audio/asma/60_al_muhyi.mp3",
+    meaningRu: "Дающий жизнь (Аль-Мухйи)",
+    meaningUz: "Hayot beruvchi (Al-Muhyi)",
   ),
   AllahName(
     id: 61,
@@ -427,6 +547,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mumit",
     meaning: "The Bringer of Death",
     audioAsset: "assets/audio/asma/61_al_mumit.mp3",
+    meaningRu: "Умертвляющий (Аль-Мумит)",
+    meaningUz: "O'lim keltiruvchi (Al-Mumit)",
   ),
   AllahName(
     id: 62,
@@ -434,6 +556,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Hayy",
     meaning: "The Ever-Living",
     audioAsset: "assets/audio/asma/62_al_hayy.mp3",
+    meaningRu: "Живой (Аль-Хайй)",
+    meaningUz: "Tirik (Al-Hayy)",
   ),
   AllahName(
     id: 63,
@@ -441,6 +565,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Qayyum",
     meaning: "The Self-Subsisting",
     audioAsset: "assets/audio/asma/63_al_qayyum.mp3",
+    meaningRu: "Самосущий (Аль-Кайюм)",
+    meaningUz: "O'z-o'zidan mavjud (Al-Qayyum)",
   ),
   AllahName(
     id: 64,
@@ -448,6 +574,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Wajid",
     meaning: "The Finder",
     audioAsset: "assets/audio/asma/64_al_wajid.mp3",
+    meaningRu: "Находящий (Аль-Ваджид)",
+    meaningUz: "Topuvchi (Al-Vojid)",
   ),
   AllahName(
     id: 65,
@@ -455,6 +583,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Majid",
     meaning: "The Illustrious",
     audioAsset: "assets/audio/asma/65_al_majid.mp3",
+    meaningRu: "Славный (Аль-Маджид)",
+    meaningUz: "Jaloliy (Al-Mojid)",
   ),
   AllahName(
     id: 66,
@@ -462,6 +592,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Wahid",
     meaning: "The One",
     audioAsset: "assets/audio/asma/66_al_wahid.mp3",
+    meaningRu: "Единый (Аль-Вахид)",
+    meaningUz: "Yagona (Al-Vohid)",
   ),
   AllahName(
     id: 67,
@@ -469,6 +601,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Ahad",
     meaning: "The Unique",
     audioAsset: "assets/audio/asma/67_al_ahad.mp3",
+    meaningRu: "Единственный (Аль-Ахад)",
+    meaningUz: "Bir (Al-Ahad)",
   ),
   AllahName(
     id: 68,
@@ -476,6 +610,8 @@ List<AllahName> allahNames = [
     transliteration: "As-Samad",
     meaning: "The Eternal Refuge",
     audioAsset: "assets/audio/asma/68_as_samad.mp3",
+    meaningRu: "Вечный Прибежище (Ас-Самад)",
+    meaningUz: "Muhtoj bo'lmagan (As-Samad)",
   ),
   AllahName(
     id: 69,
@@ -483,6 +619,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Qadir",
     meaning: "The All-Powerful",
     audioAsset: "assets/audio/asma/69_al_qadir.mp3",
+    meaningRu: "Всемогущий (Аль-Кадир)",
+    meaningUz: "Qodir (Al-Qodir)",
   ),
   AllahName(
     id: 70,
@@ -490,6 +628,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muqtadir",
     meaning: "The Dominant",
     audioAsset: "assets/audio/asma/70_al_muqtadir.mp3",
+    meaningRu: "Могущественный (Аль-Муктадир)",
+    meaningUz: "Qudratli (Al-Muqtadir)",
   ),
   AllahName(
     id: 71,
@@ -497,6 +637,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muqaddim",
     meaning: "The Expediter",
     audioAsset: "assets/audio/asma/71_al_muqaddim.mp3",
+    meaningRu: "Предваряющий (Аль-Мукаддим)",
+    meaningUz: "Oldinga suruvchi (Al-Muqaddim)",
   ),
   AllahName(
     id: 72,
@@ -504,6 +646,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mu'akhkhir",
     meaning: "The Delayer",
     audioAsset: "assets/audio/asma/72_al_muakhkhir.mp3",
+    meaningRu: "Отсрочивающий (Аль-Муаххир)",
+    meaningUz: "Orqaga suruvchi (Al-Mu'axxir)",
   ),
   AllahName(
     id: 73,
@@ -511,6 +655,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Awwal",
     meaning: "The First",
     audioAsset: "assets/audio/asma/73_al_awwal.mp3",
+    meaningRu: "Первый (Аль-Авваль)",
+    meaningUz: "Birinchi (Al-Avval)",
   ),
   AllahName(
     id: 74,
@@ -518,6 +664,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Akhir",
     meaning: "The Last",
     audioAsset: "assets/audio/asma/74_al_akhir.mp3",
+    meaningRu: "Последний (Аль-Ахир)",
+    meaningUz: "Oxirgi (Al-Oxir)",
   ),
   AllahName(
     id: 75,
@@ -525,6 +673,8 @@ List<AllahName> allahNames = [
     transliteration: "Az-Zahir",
     meaning: "The Manifest",
     audioAsset: "assets/audio/asma/75_az_zahir.mp3",
+    meaningRu: "Явный (Аз-Захир)",
+    meaningUz: "Ochiq-oydin (Az-Zohir)",
   ),
   AllahName(
     id: 76,
@@ -532,6 +682,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Batin",
     meaning: "The Hidden",
     audioAsset: "assets/audio/asma/76_al_batin.mp3",
+    meaningRu: "Скрытый (Аль-Батин)",
+    meaningUz: "Yashirin (Al-Botin)",
   ),
   AllahName(
     id: 77,
@@ -539,6 +691,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Wali",
     meaning: "The Governor",
     audioAsset: "assets/audio/asma/77_al_wali.mp3",
+    meaningRu: "Правитель (Аль-Вали)",
+    meaningUz: "Hukmdor (Al-Valiy)",
   ),
   AllahName(
     id: 78,
@@ -546,6 +700,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muta'ali",
     meaning: "The Exalted",
     audioAsset: "assets/audio/asma/78_al_mutaali.mp3",
+    meaningRu: "Превышающий (Аль-Мутаали)",
+    meaningUz: "Yuqori (Al-Muta'ali)",
   ),
   AllahName(
     id: 79,
@@ -553,6 +709,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Barr",
     meaning: "The Source of Goodness",
     audioAsset: "assets/audio/asma/79_al_barr.mp3",
+    meaningRu: "Благодетельный (Аль-Барр)",
+    meaningUz: "Yaxshilik manbai (Al-Barr)",
   ),
   AllahName(
     id: 80,
@@ -560,6 +718,8 @@ List<AllahName> allahNames = [
     transliteration: "At-Tawwab",
     meaning: "The Acceptor of Repentance",
     audioAsset: "assets/audio/asma/80_at_tawwab.mp3",
+    meaningRu: "Принимающий покаяние (Ат-Тавваб)",
+    meaningUz: "Tavba qabul qiluvchi (At-Tavvob)",
   ),
   AllahName(
     id: 81,
@@ -567,6 +727,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muntaqim",
     meaning: "The Avenger",
     audioAsset: "assets/audio/asma/81_al_muntaqim.mp3",
+    meaningRu: "Мстящий (Аль-Мунтаким)",
+    meaningUz: "Qasos oluvchi (Al-Muntaqim)",
   ),
   AllahName(
     id: 82,
@@ -574,6 +736,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Afuww",
     meaning: "The Pardoner",
     audioAsset: "assets/audio/asma/82_al_afuww.mp3",
+    meaningRu: "Прощающий (Аль-Афувв)",
+    meaningUz: "Afv etuvchi (Al-Afuww)",
   ),
   AllahName(
     id: 83,
@@ -581,6 +745,8 @@ List<AllahName> allahNames = [
     transliteration: "Ar-Ra'uf",
     meaning: "The Compassionate",
     audioAsset: "assets/audio/asma/83_ar_rauf.mp3",
+    meaningRu: "Сострадательный (Ар-Рауф)",
+    meaningUz: "Mehribon (Ar-Ra'uf)",
   ),
   AllahName(
     id: 84,
@@ -588,6 +754,8 @@ List<AllahName> allahNames = [
     transliteration: "Malik ul-Mulk",
     meaning: "The Owner of Sovereignty",
     audioAsset: "assets/audio/asma/84_malik_ul_mulk.mp3",
+    meaningRu: "Владыка владений (Малик аль-Мульк)",
+    meaningUz: "Mulk egasi (Malik ul-Mulk)",
   ),
   AllahName(
     id: 85,
@@ -595,6 +763,8 @@ List<AllahName> allahNames = [
     transliteration: "Dhu al-Jalal wa al-Ikram",
     meaning: "Lord of Majesty and Honor",
     audioAsset: "assets/audio/asma/85_dhu_al_jalal_wa_al_ikram.mp3",
+    meaningRu: "Владыка величия и почета (Зуль-Джалали валь-Икрам)",
+    meaningUz: "Jalol va ikrom egasi (Zu-l-Jaloli val-Ikrom)",
   ),
   AllahName(
     id: 86,
@@ -602,6 +772,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Muqsit",
     meaning: "The Equitable",
     audioAsset: "assets/audio/asma/86_al_muqsit.mp3",
+    meaningRu: "Справедливый (Аль-Муксит)",
+    meaningUz: "Adolatli (Al-Muqsit)",
   ),
   AllahName(
     id: 87,
@@ -609,6 +781,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Jami",
     meaning: "The Gatherer",
     audioAsset: "assets/audio/asma/87_al_jami.mp3",
+    meaningRu: "Собирающий (Аль-Джами)",
+    meaningUz: "Jamlaguvchi (Al-Jomi')",
   ),
   AllahName(
     id: 88,
@@ -616,6 +790,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Ghaniyy",
     meaning: "The Self-Sufficient",
     audioAsset: "assets/audio/asma/88_al_ghaniyy.mp3",
+    meaningRu: "Богатый (Аль-Ганий)",
+    meaningUz: "Boy, muhtoj bo'lmagan (Al-G'aniy)",
   ),
   AllahName(
     id: 89,
@@ -623,6 +799,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mughni",
     meaning: "The Enricher",
     audioAsset: "assets/audio/asma/89_al_mughni.mp3",
+    meaningRu: "Обогащающий (Аль-Мугни)",
+    meaningUz: "Boyituvchi (Al-Mug'niy)",
   ),
   AllahName(
     id: 90,
@@ -630,6 +808,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Mani",
     meaning: "The Preventer",
     audioAsset: "assets/audio/asma/90_al_mani.mp3",
+    meaningRu: "Предотвращающий (Аль-Мани)",
+    meaningUz: "To'sqinlik qiluvchi (Al-Moni')",
   ),
   AllahName(
     id: 91,
@@ -637,6 +817,8 @@ List<AllahName> allahNames = [
     transliteration: "Ad-Darr",
     meaning: "The Distresser",
     audioAsset: "assets/audio/asma/91_ad_darr.mp3",
+    meaningRu: "Вредящий (Ад-Дарр)",
+    meaningUz: "Zarar yetkazuvchi (Ad-Dorr)",
   ),
   AllahName(
     id: 92,
@@ -644,6 +826,8 @@ List<AllahName> allahNames = [
     transliteration: "An-Nafi",
     meaning: "The Benefactor",
     audioAsset: "assets/audio/asma/92_an_nafi.mp3",
+    meaningRu: "Полезный (Ан-Нафи)",
+    meaningUz: "Foyda beruvchi (An-Nofi')",
   ),
   AllahName(
     id: 93,
@@ -651,6 +835,8 @@ List<AllahName> allahNames = [
     transliteration: "An-Nur",
     meaning: "The Light",
     audioAsset: "assets/audio/asma/93_an_nur.mp3",
+    meaningRu: "Свет (Ан-Нур)",
+    meaningUz: "Nur (An-Nur)",
   ),
   AllahName(
     id: 94,
@@ -658,6 +844,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Hadi",
     meaning: "The Guide",
     audioAsset: "assets/audio/asma/94_al_hadi.mp3",
+    meaningRu: "Ведущий (Аль-Хади)",
+    meaningUz: "Yo'l ko'rsatuvchi (Al-Hodi)",
   ),
   AllahName(
     id: 95,
@@ -665,6 +853,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Badi",
     meaning: "The Originator",
     audioAsset: "assets/audio/asma/95_al_badi.mp3",
+    meaningRu: "Новатор (Аль-Бади)",
+    meaningUz: "Boshlovchi, betakror (Al-Badi')",
   ),
   AllahName(
     id: 96,
@@ -672,6 +862,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Baqi",
     meaning: "The Everlasting",
     audioAsset: "assets/audio/asma/96_al_baqi.mp3",
+    meaningRu: "Вечный (Аль-Баки)",
+    meaningUz: "Doimiy (Al-Boqi)",
   ),
   AllahName(
     id: 97,
@@ -679,6 +871,8 @@ List<AllahName> allahNames = [
     transliteration: "Al-Warith",
     meaning: "The Inheritor",
     audioAsset: "assets/audio/asma/97_al_warith.mp3",
+    meaningRu: "Наследник (Аль-Варис)",
+    meaningUz: "Merosxo'r (Al-Voris)",
   ),
   AllahName(
     id: 98,
@@ -686,6 +880,8 @@ List<AllahName> allahNames = [
     transliteration: "Ar-Rashid",
     meaning: "The Rightly Guided",
     audioAsset: "assets/audio/asma/98_ar_rashid.mp3",
+    meaningRu: "Правильно ведущий (Ар-Рашид)",
+    meaningUz: "To'g'ri yo'l ko'rsatuvchi (Ar-Roshid)",
   ),
   AllahName(
     id: 99,
@@ -693,5 +889,7 @@ List<AllahName> allahNames = [
     transliteration: "As-Sabur",
     meaning: "The Patient",
     audioAsset: "assets/audio/asma/99_as_sabur.mp3",
+    meaningRu: "Терпеливый (Ас-Сабур)",
+    meaningUz: "Sabrli (As-Sabur)",
   ),
 ];

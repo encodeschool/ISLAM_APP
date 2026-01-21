@@ -134,7 +134,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get motivation => 'Motivatsiya';
 
   @override
-  String get makkaLive => 'Makka jonli efir';
+  String get makkaLive => 'Makka jonli efiri';
 
   @override
   String get shahada => 'Shahodat';
@@ -156,4 +156,16 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get search => 'Qidiruv / Izlash';
+
+  @override
+  String get dailyNameTitle => 'Bugungi o\'rganiladigan ism';
+
+  @override
+  String get noInternet => 'Internet aloqasi yo\'q';
+
+  @override
+  String get checkConnection => 'Internet aloqangizni tekshiring va qayta urinib ko\'ring';
+
+  @override
+  String get retry => 'Qayta urinish';
 }

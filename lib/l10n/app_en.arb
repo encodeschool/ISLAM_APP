@@ -54,5 +54,10 @@
   "langRussian": "Russian",
   "langUzbek": "Uzbek",
   "namesOfAllah": "99 Names of Allah",
-  "search": "Search"
+  "search": "Search",
+  "dailyNameTitle": "Daily Name to Learn",
+  "makkaLive": "Makkah Live",
+  "noInternet": "No Internet Connection",
+  "checkConnection": "Please check your internet connection and try again.",
+  "retry": "Retry"
 }

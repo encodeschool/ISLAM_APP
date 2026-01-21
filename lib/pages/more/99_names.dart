@@ -20,12 +20,29 @@ class _NinetyNineNamesState extends State<NinetyNineNames> {
   @override
   Widget build(BuildContext context) {
     final t = AppLocalizations.of(context)!;
+    final locale = Localizations.localeOf(context).languageCode;
+
+    String getLocalizedMeaning(AllahName n) {
+      switch (locale) {
+        case 'ru':
+          return n.meaningRu ?? n.meaning;
+        case 'uz':
+          return n.meaningUz ?? n.meaning;
+        default:
+          return n.meaning;
+      }
+    }
 
     final filtered = allahNames.where((n) {
-      final q = query.toLowerCase();
-      return n.arabic.contains(query) ||
+      final q = query.toLowerCase().trim();
+      if (q.isEmpty) return true;
+
+      final localized = getLocalizedMeaning(n).toLowerCase();
+
+      return n.arabic.contains(q) ||
           n.transliteration.toLowerCase().contains(q) ||
-          n.meaning.toLowerCase().contains(q);
+          n.meaning.toLowerCase().contains(q) ||
+          localized.contains(q);
     }).toList();
 
     final daily = context.watch<DailyCardProvider>();
@@ -76,7 +93,7 @@ class _NinetyNineNamesState extends State<NinetyNineNames> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      'Daily Random Name to learn',
+                      t.dailyNameTitle,
                       style: TextStyle(
                           fontFamily: 'Amiri',
                           fontSize: 12,
@@ -104,7 +121,7 @@ class _NinetyNineNamesState extends State<NinetyNineNames> {
                     ),
                     const SizedBox(height: 4),
                     Text(
-                      today.meaning,
+                      getLocalizedMeaning(today),
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: Colors.green[900]
@@ -128,7 +145,8 @@ class _NinetyNineNamesState extends State<NinetyNineNames> {
                     final name = filtered[index];
                     return AllahNameCard(
                       name: name,
-                      onTap: () => _openDetails(context, name),
+                      localizedMeaning: getLocalizedMeaning(name),
+                      onTap: () => _openDetails(context, name, getLocalizedMeaning),
                     );
                   },
                   childCount: filtered.length,
@@ -146,7 +164,7 @@ class _NinetyNineNamesState extends State<NinetyNineNames> {
     );
   }
 
-  void _openDetails(BuildContext context, AllahName name) {
+  void _openDetails(BuildContext context, AllahName name, Function getLocalizedMeaning) {
     showModalBottomSheet(
       context: context,
       shape: const RoundedRectangleBorder(
@@ -171,7 +189,7 @@ class _NinetyNineNamesState extends State<NinetyNineNames> {
             ),
             const SizedBox(height: 8),
             Text(
-              name.meaning,
+              getLocalizedMeaning(name),
               textAlign: TextAlign.center,
             ),
           ],

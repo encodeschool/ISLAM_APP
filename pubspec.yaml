@@ -51,6 +51,9 @@ dependencies:
   flutter_native_splash:
   flutter_launcher_icons:
   audioplayers: ^6.0.0
+  youtube_player_flutter: ^9.1.0
+  flutter_inappwebview: ^6.0.0
+  youtube_player_iframe: ^5.1.0
 
 flutter_launcher_icons:
   android: true

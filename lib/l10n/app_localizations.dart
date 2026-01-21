@@ -348,7 +348,7 @@ abstract class AppLocalizations {
   /// No description provided for @makkaLive.
   ///
   /// In en, this message translates to:
-  /// **'Makka Live'**
+  /// **'Makkah Live'**
   String get makkaLive;
 
   /// No description provided for @shahada.
@@ -392,6 +392,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Search'**
   String get search;
+
+  /// No description provided for @dailyNameTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Name to Learn'**
+  String get dailyNameTitle;
+
+  /// No description provided for @noInternet.
+  ///
+  /// In en, this message translates to:
+  /// **'No Internet Connection'**
+  String get noInternet;
+
+  /// No description provided for @checkConnection.
+  ///
+  /// In en, this message translates to:
+  /// **'Please check your internet connection and try again.'**
+  String get checkConnection;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

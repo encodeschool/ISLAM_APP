@@ -54,5 +54,10 @@
   "langRussian": "Ruscha",
   "langUzbek": "O‘zbekcha",
   "namesOfAllah": "Allohning 99 ismi",
-  "search": "Qidiruv / Izlash"
+  "search": "Qidiruv / Izlash",
+  "dailyNameTitle": "Bugungi o'rganiladigan ism",
+  "makkaLive": "Makka jonli efiri",
+  "noInternet": "Internet aloqasi yo'q",
+  "checkConnection": "Internet aloqangizni tekshiring va qayta urinib ko'ring",
+  "retry": "Qayta urinish"
 }

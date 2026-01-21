@@ -5,11 +5,13 @@ import '../models/allah_name.dart';
 class AllahNameCard extends StatelessWidget {
   final AllahName name;
   final VoidCallback onTap;
+  final String localizedMeaning;
 
   const AllahNameCard({
     super.key,
     required this.name,
     required this.onTap,
+    required this.localizedMeaning
   });
 
   @override
@@ -54,7 +56,7 @@ class AllahNameCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 4),
                 Text(
-                  name.meaning,
+                  localizedMeaning,
                   style: TextStyle(
                     fontSize: 12,
                     color: Colors.grey.shade700,

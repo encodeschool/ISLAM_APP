@@ -134,7 +134,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get motivation => 'تحفيز';
 
   @override
-  String get makkaLive => 'بث مباشر من مكة';
+  String get makkaLive => 'بث مباشر من مكة المكرمة';
 
   @override
   String get shahada => 'الشهادة';
@@ -156,4 +156,16 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get search => 'بحث';
+
+  @override
+  String get dailyNameTitle => 'الاسم اليومي للتعلم';
+
+  @override
+  String get noInternet => 'لا يوجد اتصال بالإنترنت';
+
+  @override
+  String get checkConnection => 'يرجى التحقق من اتصالك بالإنترنت والمحاولة مرة أخرى.';
+
+  @override
+  String get retry => 'إعادة المحاولة';
 }

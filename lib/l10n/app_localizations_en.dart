@@ -134,7 +134,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get motivation => 'Motivation';
 
   @override
-  String get makkaLive => 'Makka Live';
+  String get makkaLive => 'Makkah Live';
 
   @override
   String get shahada => 'Shahada';
@@ -156,4 +156,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get search => 'Search';
+
+  @override
+  String get dailyNameTitle => 'Daily Name to Learn';
+
+  @override
+  String get noInternet => 'No Internet Connection';
+
+  @override
+  String get checkConnection => 'Please check your internet connection and try again.';
+
+  @override
+  String get retry => 'Retry';
 }

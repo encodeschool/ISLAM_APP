@@ -139,10 +139,10 @@ class SettingsPage extends StatelessWidget {
           ),
 
           _extraButton(context, t.names99, Icons.auto_awesome_outlined, NinetyNineNames(), t),
-          _extraButton(context, t.phrases40, Icons.format_list_bulleted, FortyPhrases(),t),
-          _extraButton(context, t.motivation, Icons.favorite_border, Motivation(),t),
+          // _extraButton(context, t.phrases40, Icons.format_list_bulleted, FortyPhrases(),t),
+          // _extraButton(context, t.motivation, Icons.favorite_border, Motivation(),t),
           _extraButton(context, t.makkaLive, Icons.live_tv_outlined, LiveStream(),t),
-          _extraButton(context, t.shahada, Icons.mosque_outlined, Shahada(),t),
+          // _extraButton(context, t.shahada, Icons.mosque_outlined, Shahada(),t),
         ],
       ),
     );

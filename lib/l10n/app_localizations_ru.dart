@@ -134,7 +134,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get motivation => 'Мотивация';
 
   @override
-  String get makkaLive => 'Мекка онлайн';
+  String get makkaLive => 'Прямая трансляция из Мекки';
 
   @override
   String get shahada => 'Шахада';
@@ -156,4 +156,16 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get search => 'Поиск';
+
+  @override
+  String get dailyNameTitle => 'Ежедневное имя для изучения';
+
+  @override
+  String get noInternet => 'Нет подключения к интернету';
+
+  @override
+  String get checkConnection => 'Проверьте подключение к интернету и попробуйте снова';
+
+  @override
+  String get retry => 'Повторить';
 }
