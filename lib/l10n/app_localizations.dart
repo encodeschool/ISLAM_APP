@@ -336,7 +336,7 @@ abstract class AppLocalizations {
   /// No description provided for @phrases40.
   ///
   /// In en, this message translates to:
-  /// **'40 Phrases'**
+  /// **'Hadith'**
   String get phrases40;
 
   /// No description provided for @motivation.
@@ -440,6 +440,60 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'I bear witness that there is no god but Allah, and I bear witness that Muhammad is the Messenger of Allah.'**
   String get shahadaTranslation;
+
+  /// No description provided for @hadith.
+  ///
+  /// In en, this message translates to:
+  /// **'Hadith'**
+  String get hadith;
+
+  /// No description provided for @qaza_prayers.
+  ///
+  /// In en, this message translates to:
+  /// **'Missed (Qaza) Prayers'**
+  String get qaza_prayers;
+
+  /// No description provided for @start_date.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Date'**
+  String get start_date;
+
+  /// No description provided for @end_date.
+  ///
+  /// In en, this message translates to:
+  /// **'End Date'**
+  String get end_date;
+
+  /// No description provided for @select.
+  ///
+  /// In en, this message translates to:
+  /// **'Select'**
+  String get select;
+
+  /// No description provided for @calculate_qaza.
+  ///
+  /// In en, this message translates to:
+  /// **'Calculate Qaza'**
+  String get calculate_qaza;
+
+  /// No description provided for @total_remaining.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Remaining'**
+  String get total_remaining;
+
+  /// No description provided for @remaining.
+  ///
+  /// In en, this message translates to:
+  /// **'Remaining'**
+  String get remaining;
+
+  /// No description provided for @mark_done.
+  ///
+  /// In en, this message translates to:
+  /// **'Mark as Completed'**
+  String get mark_done;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

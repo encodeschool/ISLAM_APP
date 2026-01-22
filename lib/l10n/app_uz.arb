@@ -44,7 +44,7 @@
   "manualPrayerAdjustment": "Namoz vaqtini qo‘lda sozlash (daqiqalar)",
   "explore": "Bo‘limlar",
   "names99": "Allohning 99 ismi",
-  "phrases40": "40 zikr",
+  "phrases40": "Hadis",
   "motivation": "Motivatsiya",
   "makkaLive": "Makka jonli efir",
   "shahada": "Shahodat",
@@ -62,5 +62,15 @@
   "retry": "Qayta urinish",
   "shahadaTitle": "Shahodat",
   "shahadaArabic": "أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا ٱللَّٰهُ\nوَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ ٱللَّٰهِ",
-  "shahadaTranslation": "Men guvohlik beramanki, Allohdan o‘zga iloh yo‘q va Muhammad ﷺ Allohning elchisidir."
+  "shahadaTranslation": "Men guvohlik beramanki, Allohdan o‘zga iloh yo‘q va Muhammad ﷺ Allohning elchisidir.",
+  "hadith": "Hadis",
+  "qaza_prayers": "Qazo Namozlari",
+  "start_date": "Boshlanish sanasi",
+  "end_date": "Tugash sanasi",
+  "select": "Tanlash",
+  "calculate_qaza": "Qazoni hisoblash",
+  "total_remaining": "Qolgan jami",
+  "remaining": "Qolgan",
+  "reset": "Qayta tiklash",
+  "mark_done": "Bajarildi deb belgilash"
 }

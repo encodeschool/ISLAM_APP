@@ -180,4 +180,31 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get shahadaTranslation => 'أشهد أن لا إله إلا الله، وأشهد أن محمدًا رسول الله';
+
+  @override
+  String get hadith => 'حديث';
+
+  @override
+  String get qaza_prayers => 'الصلوات الفائتة (قضاء)';
+
+  @override
+  String get start_date => 'تاريخ البداية';
+
+  @override
+  String get end_date => 'تاريخ النهاية';
+
+  @override
+  String get select => 'اختر';
+
+  @override
+  String get calculate_qaza => 'حساب القضاء';
+
+  @override
+  String get total_remaining => 'المجموع المتبقي';
+
+  @override
+  String get remaining => 'المتبقي';
+
+  @override
+  String get mark_done => 'تم القضاء';
 }

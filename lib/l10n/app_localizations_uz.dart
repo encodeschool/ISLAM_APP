@@ -36,7 +36,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get zikr => 'Zikr';
 
   @override
-  String get reset => 'Tiklash';
+  String get reset => 'Qayta tiklash';
 
   @override
   String get custom => 'Maxsus';
@@ -128,7 +128,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get names99 => 'Allohning 99 ismi';
 
   @override
-  String get phrases40 => '40 zikr';
+  String get phrases40 => 'Hadis';
 
   @override
   String get motivation => 'Motivatsiya';
@@ -180,4 +180,31 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get shahadaTranslation => 'Men guvohlik beramanki, Allohdan o‘zga iloh yo‘q va Muhammad ﷺ Allohning elchisidir.';
+
+  @override
+  String get hadith => 'Hadis';
+
+  @override
+  String get qaza_prayers => 'Qazo Namozlari';
+
+  @override
+  String get start_date => 'Boshlanish sanasi';
+
+  @override
+  String get end_date => 'Tugash sanasi';
+
+  @override
+  String get select => 'Tanlash';
+
+  @override
+  String get calculate_qaza => 'Qazoni hisoblash';
+
+  @override
+  String get total_remaining => 'Qolgan jami';
+
+  @override
+  String get remaining => 'Qolgan';
+
+  @override
+  String get mark_done => 'Bajarildi deb belgilash';
 }

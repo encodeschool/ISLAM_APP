@@ -128,7 +128,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get names99 => '99 Names';
 
   @override
-  String get phrases40 => '40 Phrases';
+  String get phrases40 => 'Hadith';
 
   @override
   String get motivation => 'Motivation';
@@ -180,4 +180,31 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get shahadaTranslation => 'I bear witness that there is no god but Allah, and I bear witness that Muhammad is the Messenger of Allah.';
+
+  @override
+  String get hadith => 'Hadith';
+
+  @override
+  String get qaza_prayers => 'Missed (Qaza) Prayers';
+
+  @override
+  String get start_date => 'Start Date';
+
+  @override
+  String get end_date => 'End Date';
+
+  @override
+  String get select => 'Select';
+
+  @override
+  String get calculate_qaza => 'Calculate Qaza';
+
+  @override
+  String get total_remaining => 'Total Remaining';
+
+  @override
+  String get remaining => 'Remaining';
+
+  @override
+  String get mark_done => 'Mark as Completed';
 }

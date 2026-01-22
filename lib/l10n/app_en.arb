@@ -44,7 +44,7 @@
   "manualPrayerAdjustment": "Manual Prayer Time Adjustment (minutes)",
   "explore": "Explore",
   "names99": "99 Names",
-  "phrases40": "40 Phrases",
+  "phrases40": "Hadith",
   "motivation": "Motivation",
   "makkaLive": "Makka Live",
   "shahada": "Shahada",
@@ -64,5 +64,15 @@
   "foundationOfIslam": "This is the foundation of Islam",
   "shahadaTitle": "Shahada",
   "shahadaArabic": "أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا ٱللَّٰهُ\nوَأَشْهَدُ أَنَّ مُحَمَّدًا رَسُولُ ٱللَّٰهِ",
-  "shahadaTranslation": "I bear witness that there is no god but Allah, and I bear witness that Muhammad is the Messenger of Allah."
+  "shahadaTranslation": "I bear witness that there is no god but Allah, and I bear witness that Muhammad is the Messenger of Allah.",
+  "hadith": "Hadith",
+  "qaza_prayers": "Missed (Qaza) Prayers",
+  "start_date": "Start Date",
+  "end_date": "End Date",
+  "select": "Select",
+  "calculate_qaza": "Calculate Qaza",
+  "total_remaining": "Total Remaining",
+  "remaining": "Remaining",
+  "reset": "Reset",
+  "mark_done": "Mark as Completed"
 }

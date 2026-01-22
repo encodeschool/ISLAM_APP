@@ -128,7 +128,7 @@ class AppLocalizationsRu extends AppLocalizations {
   String get names99 => '99 имён Аллаха';
 
   @override
-  String get phrases40 => '40 зикров';
+  String get phrases40 => 'Хадисы';
 
   @override
   String get motivation => 'Мотивация';
@@ -180,4 +180,31 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get shahadaTranslation => 'Я свидетельствую, что нет божества, кроме Аллаха, и свидетельствую, что Мухаммад — Посланник Аллаха.';
+
+  @override
+  String get hadith => 'Хадис';
+
+  @override
+  String get qaza_prayers => 'Пропущенные (Каза) намазы';
+
+  @override
+  String get start_date => 'Дата начала';
+
+  @override
+  String get end_date => 'Дата окончания';
+
+  @override
+  String get select => 'Выбрать';
+
+  @override
+  String get calculate_qaza => 'Рассчитать каза';
+
+  @override
+  String get total_remaining => 'Всего осталось';
+
+  @override
+  String get remaining => 'Осталось';
+
+  @override
+  String get mark_done => 'Отметить выполненным';
 }

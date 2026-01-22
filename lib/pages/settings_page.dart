@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mosque/pages/more/40_phrases_page.dart';
+import 'package:mosque/pages/more/hadith_detail_page.dart';
 import 'package:mosque/pages/more/99_names_page.dart';
 import 'package:mosque/pages/more/live_stream_page.dart';
 import 'package:mosque/pages/more/motivation_page.dart';
+import 'package:mosque/pages/more/qaza_page.dart';
 import 'package:mosque/pages/more/shahada_page.dart';
 import 'package:provider/provider.dart';
 import '../l10n/app_localizations.dart';
@@ -10,6 +11,8 @@ import '../providers/theme_provider.dart';
 import '../providers/language_provider.dart';
 import '../providers/prayer_provider.dart';
 import 'package:adhan/adhan.dart';
+
+import 'more/hadith_list_page.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -138,8 +141,9 @@ class SettingsPage extends StatelessWidget {
             ),
           ),
 
+          _extraButton(context, t.calculate_qaza, Icons.calculate, QazaPage(),t),
           _extraButton(context, t.names99, Icons.auto_awesome_outlined, NinetyNineNames(), t),
-          // _extraButton(context, t.phrases40, Icons.format_list_bulleted, FortyPhrases(),t),
+          _extraButton(context, t.phrases40, Icons.format_list_bulleted, HadithListPage(),t),
           // _extraButton(context, t.motivation, Icons.favorite_border, Motivation(),t),
           _extraButton(context, t.makkaLive, Icons.live_tv_outlined, LiveStream(),t),
           _extraButton(context, t.shahada, Icons.mosque_outlined, ShahadaPage(),t),
