@@ -74,5 +74,6 @@
   "total_remaining": "المجموع المتبقي",
   "remaining": "المتبقي",
   "reset": "إعادة تعيين",
-  "mark_done": "تم القضاء"
+  "mark_done": "تم القضاء",
+  "select_start_and_end_dates": "حدد تواريخ البداية والنهاية"
 }

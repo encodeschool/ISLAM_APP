@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class QazaProvider extends ChangeNotifier {
   DateTime? startDate;
   DateTime endDate = DateTime.now();
+  bool get datesSelected => startDate != null && endDate != null;
 
   final Map<Prayer, int> remaining = {
     Prayer.fajr: 0,

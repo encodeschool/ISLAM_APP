@@ -74,5 +74,6 @@
   "total_remaining": "Total Remaining",
   "remaining": "Remaining",
   "reset": "Reset",
-  "mark_done": "Mark as Completed"
+  "mark_done": "Mark as Completed",
+  "select_start_and_end_dates": "Select Start and End Dates"
 }

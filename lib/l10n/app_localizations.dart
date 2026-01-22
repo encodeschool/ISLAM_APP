@@ -494,6 +494,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Mark as Completed'**
   String get mark_done;
+
+  /// No description provided for @select_start_and_end_dates.
+  ///
+  /// In en, this message translates to:
+  /// **'Select Start and End Dates'**
+  String get select_start_and_end_dates;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

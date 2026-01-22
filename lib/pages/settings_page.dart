@@ -72,7 +72,6 @@ class SettingsPage extends StatelessWidget {
             ),
             const Divider(),
 
-            // Manual Prayer Time Adjustments
             Text(
               t.manualPrayerAdjustment,
               style: TextStyle(fontWeight: FontWeight.bold),

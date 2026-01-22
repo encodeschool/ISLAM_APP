@@ -207,4 +207,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get mark_done => 'Отметить выполненным';
+
+  @override
+  String get select_start_and_end_dates => 'Выберите даты начала и окончания';
 }

@@ -207,4 +207,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get mark_done => 'Mark as Completed';
+
+  @override
+  String get select_start_and_end_dates => 'Select Start and End Dates';
 }

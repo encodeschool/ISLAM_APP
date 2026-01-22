@@ -51,7 +51,7 @@ class QazaPage extends StatelessWidget {
               const SizedBox(height: 12),
 
               ElevatedButton(
-                onPressed: qaza.calculate,
+                onPressed: qaza.datesSelected ? qaza.calculate : null,
                 child: Text(
                     t.calculate_qaza,
                     style: TextStyle(
@@ -80,26 +80,43 @@ class QazaPage extends StatelessWidget {
 
               const SizedBox(height: 16),
 
-              Column(
-                children: qaza.remaining.entries.map((entry) {
-                  return Card(
-                    elevation: 1,
-                    child: ListTile(
-                      title: Text(entry.key.localizedName(t)),
-                      trailing: IconButton(
-                        icon: Icon(
+              if (!qaza.datesSelected)
+                Padding(
+                  padding: const EdgeInsets.only(top: 16),
+                  child: Text(
+                    t.select_start_and_end_dates,
+                    style: TextStyle(
+                      color: Colors.grey[600],
+                      fontStyle: FontStyle.italic,
+                    ),
+                  ),
+                )
+              else
+                Column(
+                  children: qaza.remaining.entries.map((entry) {
+                    return Card(
+                      elevation: 1,
+                      child: ListTile(
+                        enabled: entry.value > 0,
+                        title: Text(entry.key.localizedName(t)),
+                        trailing: IconButton(
+                          icon: Icon(
                             Icons.check_circle,
-                            color: Colors.green[400],
+                            color: entry.value > 0
+                                ? Colors.green[400]
+                                : Colors.grey,
+                          ),
+                          onPressed: entry.value > 0
+                              ? () => qaza.markDone(entry.key)
+                              : null,
                         ),
-                        onPressed: entry.value > 0
+                        onTap: entry.value > 0
                             ? () => qaza.markDone(entry.key)
                             : null,
                       ),
-                      onTap: () => qaza.markDone(entry.key),
-                    ),
-                  );
-                }).toList(),
-              ),
+                    );
+                  }).toList(),
+                ),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -110,7 +127,7 @@ class QazaPage extends StatelessWidget {
                       color: Colors.blue,
                   ),
                   TextButton(
-                    onPressed: qaza.reset,
+                    onPressed: qaza.datesSelected ? qaza.reset : null,
                     child: Text(
                         t.reset,
                         style: TextStyle(

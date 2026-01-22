@@ -72,5 +72,6 @@
   "total_remaining": "Qolgan jami",
   "remaining": "Qolgan",
   "reset": "Qayta tiklash",
-  "mark_done": "Bajarildi deb belgilash"
+  "mark_done": "Bajarildi deb belgilash",
+  "select_start_and_end_dates": "Boshlanish va tugash sanalarini tanlang"
 }

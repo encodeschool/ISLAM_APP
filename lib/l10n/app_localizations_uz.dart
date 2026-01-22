@@ -207,4 +207,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get mark_done => 'Bajarildi deb belgilash';
+
+  @override
+  String get select_start_and_end_dates => 'Boshlanish va tugash sanalarini tanlang';
 }
