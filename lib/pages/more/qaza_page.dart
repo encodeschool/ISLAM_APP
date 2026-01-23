@@ -16,6 +16,7 @@ class QazaPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         title: Text(t.qaza_prayers),
       ),
       body: SingleChildScrollView(
@@ -55,13 +56,14 @@ class QazaPage extends StatelessWidget {
                 child: Text(
                     t.calculate_qaza,
                     style: TextStyle(
-                      color: Colors.green[900]
+                      color: Colors.green[500]
                     ),
                 ),
                 style: ElevatedButton.styleFrom(
+                  elevation: 0,
                   backgroundColor: Colors.green[50],
                   side: BorderSide(
-                    color: Color(0xFF1B5D20),
+                    color: Color(0xFF4BAE4F),
                     width: 2
                   ),
                 ),

@@ -26,6 +26,7 @@ class HadithListPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         title: Text(t.hadith),
       ),
       body: ListView.builder(

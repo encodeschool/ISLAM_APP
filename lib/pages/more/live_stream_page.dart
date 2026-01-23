@@ -17,8 +17,7 @@ class _LiveStreamState extends State<LiveStream> {
   bool _isLoading = true;
   String? _error;
 
-  // Stable Makkah live stream ID (check YouTube for current live if needed)
-  static const String _videoId = 'kt-DxR3s0hU'; // replace if expired
+  static const String _videoId = 'PbnhNdaeQFI'; // replace if expired
 
   @override
   void initState() {
@@ -59,7 +58,10 @@ class _LiveStreamState extends State<LiveStream> {
     final t = AppLocalizations.of(context)!;
 
     return Scaffold(
-      appBar: AppBar(title: Text(t.makkaLive ?? 'Makkah Live')),
+      appBar: AppBar(
+          title: Text(t.makkaLive ?? 'Makkah Live'),
+          scrolledUnderElevation: 0,
+      ),
       body: _isLoading
           ? const Center(child: CircularProgressIndicator())
           : !_isOnline

@@ -4,12 +4,15 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:geocoding/geocoding.dart';
 
+import '../core/notification/notification_service.dart';
 import '../core/storage/local_storage.dart';
+import '../models/prayer_notification_settings.dart';
 
 class PrayerProvider extends ChangeNotifier {
   String locationName = "";
   bool isLocating = true;
   bool locationPermissionDenied = false;
+  Map<Prayer, PrayerNotificationSettings> notificationSettings = {};
 
   DateTime currentTime = DateTime.now();
 
@@ -25,6 +28,13 @@ class PrayerProvider extends ChangeNotifier {
     Prayer.maghrib: 0,
     Prayer.isha: 0,
   };
+
+  void _loadNotificationSettings() {
+    for (var prayer in Prayer.values) {
+      notificationSettings[prayer] =
+          LocalStorage.getPrayerNotification(prayer.name);
+    }
+  }
 
   void changeDate(int days) {
     selectedDate = selectedDate.add(Duration(days: days));
@@ -51,6 +61,7 @@ class PrayerProvider extends ChangeNotifier {
     await _getLocation();
     _startClock();
     _loadOffsets();
+    _loadNotificationSettings();
   }
 
   void _loadOffsets() {
@@ -150,6 +161,33 @@ class PrayerProvider extends ChangeNotifier {
     nextPrayer = next;
     final nextTime = getPrayerTime(next);
     timeLeft = nextTime.difference(currentTime);
+  }
+
+  void updatePrayerNotification(
+      Prayer prayer,
+      PrayerNotificationSettings settings,
+      ) {
+    notificationSettings[prayer] = settings;
+
+    LocalStorage.setPrayerNotification(
+      prayer.name,
+      settings.enabled,
+      settings.minutesBefore,
+      settings.sound.name,
+    );
+
+    if (settings.enabled) {
+      NotificationService.schedulePrayerNotification(
+        prayer: prayer,
+        time: getPrayerTime(prayer),
+        minutesBefore: settings.minutesBefore,
+        sound: settings.sound,
+      );
+    } else {
+      NotificationService.cancelPrayerNotification(prayer);
+    }
+
+    notifyListeners();
   }
 
   @override

@@ -52,6 +52,7 @@ class _NinetyNineNamesState extends State<NinetyNineNames> {
 
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         title: Text(t.namesOfAllah),
       ),
         body: CustomScrollView(

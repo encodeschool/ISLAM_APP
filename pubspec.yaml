@@ -38,7 +38,6 @@ dependencies:
   geolocator:
   geocoding:
   adhan:
-#  flutter_local_notifications: ^17.0.0
   timezone: ^0.9.4
   flutter_timezone:
   flutter_compass: ^0.8.0
@@ -55,6 +54,7 @@ dependencies:
   flutter_inappwebview: ^6.0.0
   youtube_player_iframe: ^5.1.0
   flutter_svg:
+  flutter_local_notifications: ^17.0.0
 
 flutter_launcher_icons:
   android: true

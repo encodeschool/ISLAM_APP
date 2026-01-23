@@ -105,8 +105,9 @@ class SettingsPage extends StatelessWidget {
       ),
 
       appBar: AppBar(
-        centerTitle: false,
+        centerTitle: true,
         elevation: 0,
+        scrolledUnderElevation: 0,
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         title: Text(
           t.settings,
@@ -192,7 +193,7 @@ class SettingsCard extends StatelessWidget {
         color: Theme.of(context).cardColor,
         boxShadow: [
           BoxShadow(
-            color: Colors.black.withOpacity(0.04),
+            color: Colors.black.withOpacity(0.05),
             blurRadius: 10,
           ),
         ],

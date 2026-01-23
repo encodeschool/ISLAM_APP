@@ -26,6 +26,7 @@ class HadithDetailPage extends StatelessWidget {
     }
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         title: Text("Hadith ${hadith.id}"),
       ),
       body: SingleChildScrollView(

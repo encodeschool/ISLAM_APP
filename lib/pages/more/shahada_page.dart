@@ -44,6 +44,7 @@ class _ShahadaPageState extends State<ShahadaPage> with SingleTickerProviderStat
 
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         title: Text(t.shahadaTitle),
       ),
       body: SingleChildScrollView(

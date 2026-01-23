@@ -9,11 +9,15 @@ import 'package:provider/provider.dart';
 import 'app.dart';
 import 'core/notification/notification_service.dart';
 import 'core/storage/local_storage.dart';
+import 'package:timezone/data/latest.dart' as tz;
+import 'package:timezone/timezone.dart' as tz;
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  tz.initializeTimeZones();
   await LocalStorage.init();
-  // await NotificationService.init();
+  await NotificationService.init();
   runApp(const RootApp());
 }
 
