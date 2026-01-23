@@ -50,43 +50,71 @@ class PrayerPage extends StatelessWidget {
                   ),
 
                   if (settings.enabled) ...[
-                    DropdownButton<int>(
-                      value: settings.minutesBefore,
-                      items: const [
-                        DropdownMenuItem(value: 0, child: Text("At time")),
-                        DropdownMenuItem(value: 5, child: Text("5 minutes before")),
-                        DropdownMenuItem(value: 10, child: Text("10 minutes before")),
-                        DropdownMenuItem(value: 15, child: Text("15 minutes before")),
-                      ],
-                      onChanged: (v) {
-                        setState(() {
-                          settings = settings.copyWith(minutesBefore: v!);
-                        });
-                      },
+                    Padding(
+                      padding: EdgeInsets.only(
+                        left: 15,
+                        right: 15
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                              'At what time?'
+                          ),
+                          DropdownButton<int>(
+                            value: settings.minutesBefore,
+                            items: const [
+                              DropdownMenuItem(value: 0, child: Text("At time")),
+                              DropdownMenuItem(value: 5, child: Text("5 minutes before")),
+                              DropdownMenuItem(value: 10, child: Text("10 minutes before")),
+                              DropdownMenuItem(value: 15, child: Text("15 minutes before")),
+                            ],
+                            onChanged: (v) {
+                              setState(() {
+                                settings = settings.copyWith(minutesBefore: v!);
+                              });
+                            },
+                          ),
+                        ],
+                      ),
                     ),
 
-                    DropdownButton<NotificationSound>(
-                      value: settings.sound,
-                      items: const [
-                        DropdownMenuItem(
-                          value: NotificationSound.adhan,
-                          child: Text("Adhan"),
-                        ),
-                        DropdownMenuItem(
-                          value: NotificationSound.simple,
-                          child: Text("Simple"),
-                        ),
-                        DropdownMenuItem(
-                          value: NotificationSound.silent,
-                          child: Text("Silent"),
-                        ),
-                      ],
-                      onChanged: (v) {
-                        setState(() {
-                          settings = settings.copyWith(sound: v!);
-                        });
-                      },
-                    ),
+                    Padding(
+                      padding: EdgeInsets.only(
+                          left: 15,
+                          right: 15
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                              'What sound?'
+                          ),
+                          DropdownButton<NotificationSound>(
+                            value: settings.sound,
+                            items: const [
+                              DropdownMenuItem(
+                                value: NotificationSound.adhan,
+                                child: Text("Adhan"),
+                              ),
+                              DropdownMenuItem(
+                                value: NotificationSound.simple,
+                                child: Text("Simple"),
+                              ),
+                              DropdownMenuItem(
+                                value: NotificationSound.silent,
+                                child: Text("Silent"),
+                              ),
+                            ],
+                            onChanged: (v) {
+                              setState(() {
+                                settings = settings.copyWith(sound: v!);
+                              });
+                            },
+                          ),
+                        ],
+                      ),
+                    )
                   ],
 
                   const SizedBox(height: 12),
@@ -96,7 +124,20 @@ class PrayerPage extends StatelessWidget {
                       provider.updatePrayerNotification(prayer, settings);
                       Navigator.pop(context);
                     },
-                    child: const Text("Save"),
+                    child: Text(
+                        "Save",
+                        style: TextStyle(
+                          color: Colors.green[900]
+                        ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      elevation: 0,
+                      backgroundColor: Colors.green[50],
+                      side: BorderSide(
+                        color: Color(0xFF4BAE4F),
+                        width: 2
+                      )
+                    )
                   ),
                 ],
               ),

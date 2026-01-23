@@ -36,6 +36,18 @@ class HadithListPage extends StatelessWidget {
           final hadith = fortyHadith[index];
 
           return Container(
+            margin: const EdgeInsets.only(bottom: 16),
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
+              color: Theme.of(context).cardColor,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.05),
+                  blurRadius: 10,
+                ),
+              ],
+            ),
             child: ListTile(
               title: Text(
                 "${t.hadith} ${hadith.id}",

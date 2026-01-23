@@ -3,9 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class QazaProvider extends ChangeNotifier {
-  DateTime? startDate;
-  DateTime endDate = DateTime.now();
-  bool get datesSelected => startDate != null && endDate != null;
+  DateTime? _startDate;
+  DateTime? _endDate;
+
+  DateTime? get startDate => _startDate;
+  DateTime? get endDate => _endDate;
+
+  set startDate(DateTime date) {
+    _startDate = date;
+    notifyListeners();
+  }
+
+  set endDate(DateTime date) {
+    _endDate = date;
+    notifyListeners();
+  }
+
+  bool get datesSelected => _startDate != null && _endDate != null;
 
   final Map<Prayer, int> remaining = {
     Prayer.fajr: 0,
@@ -26,7 +40,7 @@ class QazaProvider extends ChangeNotifier {
     if (startDate == null) return;
 
     final days =
-        endDate.difference(startDate!).inDays + 1;
+        endDate!.difference(startDate!).inDays + 1;
 
     for (final key in remaining.keys) {
       remaining[key] = days;
@@ -45,7 +59,7 @@ class QazaProvider extends ChangeNotifier {
   }
 
   void reset() {
-    startDate = null;
+    _startDate = null;
     for (final key in remaining.keys) {
       remaining[key] = 0;
     }
