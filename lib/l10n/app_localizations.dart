@@ -506,6 +506,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Learn Arabic'**
   String get learnArabic;
+
+  /// No description provided for @arabicLetter.
+  ///
+  /// In en, this message translates to:
+  /// **'Arabic Letters'**
+  String get arabicLetter;
+
+  /// No description provided for @basicWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Basic Words'**
+  String get basicWords;
+
+  /// No description provided for @everyDayArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Everyday Arabic'**
+  String get everyDayArabic;
+
+  /// No description provided for @prayerWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Prayer Words'**
+  String get prayerWords;
+
+  /// No description provided for @islamicWords.
+  ///
+  /// In en, this message translates to:
+  /// **'Islamic vocabulary'**
+  String get islamicWords;
+
+  /// No description provided for @typeTheAnswer.
+  ///
+  /// In en, this message translates to:
+  /// **'Type the answer'**
+  String get typeTheAnswer;
+
+  /// No description provided for @submit.
+  ///
+  /// In en, this message translates to:
+  /// **'Submit'**
+  String get submit;
+
+  /// No description provided for @incorrect.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect! Try again.'**
+  String get incorrect;
+
+  /// No description provided for @match.
+  ///
+  /// In en, this message translates to:
+  /// **'Match Arabic → English'**
+  String get match;
+
+  /// No description provided for @correct.
+  ///
+  /// In en, this message translates to:
+  /// **'Correct! 🎉'**
+  String get correct;
+
+  /// No description provided for @continueBtn.
+  ///
+  /// In en, this message translates to:
+  /// **'Continue'**
+  String get continueBtn;
+
+  /// No description provided for @level.
+  ///
+  /// In en, this message translates to:
+  /// **'Lv'**
+  String get level;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

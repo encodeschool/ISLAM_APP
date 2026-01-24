@@ -76,5 +76,18 @@
   "reset": "Reset",
   "mark_done": "Mark as Completed",
   "select_start_and_end_dates": "Select Start and End Dates",
-  "learnArabic": "Learn Arabic"
+  "learnArabic": "Learn Arabic",
+  "arabicLetter": "Arabic Letters",
+  "basicWords": "Basic Words",
+  "everyDayArabic": "Everyday Arabic",
+  "prayerWords": "Prayer Words",
+  "islamicWords": "Islamic vocabulary",
+
+  "typeTheAnswer": "Type the answer",
+  "submit": "Submit",
+  "incorrect": "Incorrect! Try again.",
+  "match": "Match Arabic → English",
+  "correct": "Correct! 🎉",
+  "continueBtn": "Continue",
+  "level": "Lv"
 }

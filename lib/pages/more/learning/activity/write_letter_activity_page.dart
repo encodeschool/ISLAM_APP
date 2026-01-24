@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../../../models/learning/arabic_letter.dart';
 import '../../../../widgets/learning/success_dialog.dart';
 
 class WriteLetterActivity extends StatefulWidget {
   final ArabicLetter letter;
   final VoidCallback onCorrect;
-  final VoidCallback onNext; // <-- new callback to go to next step
+  final VoidCallback onNext; // go to next step
 
   const WriteLetterActivity({
     super.key,
@@ -39,7 +40,7 @@ class _WriteLetterActivityState extends State<WriteLetterActivity> {
     super.dispose();
   }
 
-  void _checkAnswer() {
+  void _checkAnswer(AppLocalizations t) {
     if (answered) return;
 
     if (controller.text.trim().toLowerCase() ==
@@ -60,15 +61,16 @@ class _WriteLetterActivityState extends State<WriteLetterActivity> {
         ),
       );
     } else {
-      // Optional: show error feedback
+      // Show error feedback
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Incorrect! Try again.")),
+        SnackBar(content: Text(t.incorrect)),
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Stack(
       children: [
         Column(
@@ -83,17 +85,29 @@ class _WriteLetterActivityState extends State<WriteLetterActivity> {
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: TextField(
                 controller: controller,
-                onSubmitted: (_) => _checkAnswer(),
-                decoration: const InputDecoration(
-                  hintText: 'Type the name',
-                  border: OutlineInputBorder(),
+                onSubmitted: (_) => _checkAnswer(t),
+                decoration: InputDecoration(
+                  hintText: t.typeTheAnswer,
+                  border: const OutlineInputBorder(),
                 ),
               ),
             ),
             const SizedBox(height: 16),
             ElevatedButton(
-              onPressed: _checkAnswer,
-              child: const Text("Submit"),
+              // Pass the localization object
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.green[50],
+                side: BorderSide(
+                  color: Colors.green.shade900
+                )
+              ),
+              onPressed: () => _checkAnswer(t),
+              child: Text(
+                  t.submit,
+                  style: TextStyle(
+                    color: Colors.green[900]
+                  ),
+              ),
             ),
           ],
         ),

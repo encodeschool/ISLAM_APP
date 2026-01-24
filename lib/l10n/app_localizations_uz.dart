@@ -213,4 +213,40 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get learnArabic => 'Arab tilini o\'rganing';
+
+  @override
+  String get arabicLetter => 'Arabcha harflar';
+
+  @override
+  String get basicWords => 'Asosiy so\'zlar';
+
+  @override
+  String get everyDayArabic => 'Har kuni arabcha';
+
+  @override
+  String get prayerWords => 'Namoz so\'zlari';
+
+  @override
+  String get islamicWords => 'Islomiy lug\'at';
+
+  @override
+  String get typeTheAnswer => 'Javobni yozing';
+
+  @override
+  String get submit => 'Yuborish';
+
+  @override
+  String get incorrect => 'Noto\'g\'ri! Qayta urinib ko\'ring.';
+
+  @override
+  String get match => 'Arabcha → Inglizcha moslash';
+
+  @override
+  String get correct => 'To\'g\'ri! 🎉';
+
+  @override
+  String get continueBtn => 'Davom etish';
+
+  @override
+  String get level => 'Dar';
 }

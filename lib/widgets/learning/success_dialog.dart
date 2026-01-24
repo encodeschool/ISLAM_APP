@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:confetti/confetti.dart';
 
+import '../../l10n/app_localizations.dart';
+
 class SuccessDialog extends StatefulWidget {
   final VoidCallback onContinue;
 
@@ -29,18 +31,22 @@ class _SuccessDialogState extends State<SuccessDialog> {
     _controller.dispose();
     super.dispose();
   }
-
   @override
   Widget build(BuildContext context) {
+    final t = AppLocalizations.of(context)!;
     return Stack(
       children: [
         AlertDialog(
-          title: const Text("Correct! 🎉"),
+          title: Text(
+            t.correct
+          ),
           content: const Text("+10 XP"),
           actions: [
             TextButton(
               onPressed: widget.onContinue,
-              child: const Text("Continue"),
+              child: Text(
+                t.continueBtn
+              ),
             ),
           ],
         ),

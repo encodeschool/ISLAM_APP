@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'dart:math';
 
 import '../../../data/learning/arabic_letters.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../models/learning/arabic_letter.dart';
 import '../../../models/learning/learning_activity_type.dart';
 import '../../../models/learning/learning_step.dart';
@@ -69,6 +70,7 @@ class _ArabicLettersPageState extends State<ArabicLettersPage> {
   @override
   Widget build(BuildContext context) {
     final learning = context.watch<LearningProvider>();
+    final t = AppLocalizations.of(context)!;
 
     if (learning.currentLesson == null) {
       return const Scaffold(
@@ -78,7 +80,9 @@ class _ArabicLettersPageState extends State<ArabicLettersPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Arabic Letters"),
+        title: Text(
+          t.arabicLetter
+        ),
       ),
       body: Column(
         children: [

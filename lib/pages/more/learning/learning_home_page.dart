@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../l10n/app_localizations.dart';
 import '../../../models/learning/lesson_type.dart';
 import '../../../providers/learning_provider.dart';
 import '../../../widgets/learning/lesson_card.dart';
@@ -18,37 +19,43 @@ class LearningHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final learning = context.watch<LearningProvider>();
+    final t = AppLocalizations.of(context)!;
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Learn Arabic"),
-        centerTitle: true,
+        title: Text(
+          t.learnArabic
+        ),
+        centerTitle: false,
       ),
       body: Column(
         children: [
           Expanded(
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 20),
-              children: const [
+              children: [
                 LessonCard(
-                  title: "Arabic Letters",
+                  title: t.arabicLetter,
                   subtitle: "Alif → Ya",
                   icon: Icons.sort_by_alpha,
-                  color: Color(0xFF2E7D32),
+                  color: Colors.white,
+                  // color: Color(0xFF2E7D32),
                   type: LessonType.letters,
                 ),
                 LessonCard(
-                  title: "Basic Words",
-                  subtitle: "Everyday Arabic",
+                  title: t.basicWords,
+                  subtitle: t.everyDayArabic,
                   icon: Icons.translate,
-                  color: Color(0xFF1565C0),
+                  color: Colors.white,
+                  // color: Color(0xFF1565C0),
                   type: LessonType.basicWords,
                 ),
                 LessonCard(
-                  title: "Prayer Words",
-                  subtitle: "Islamic vocabulary",
+                  title: t.prayerWords,
+                  subtitle: t.islamicWords,
                   icon: Icons.mosque,
-                  color: Color(0xFF6A1B9A),
+                  color: Colors.white,
+                  // color: Color(0xFF6A1B9A),
                   type: LessonType.prayerWords,
                 ),
               ],

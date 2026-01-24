@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import '../../../../l10n/app_localizations.dart';
 import '../../../../widgets/learning/success_dialog.dart';
 
 import 'package:flutter/material.dart';
@@ -76,14 +77,15 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
+    final t = AppLocalizations.of(context)!;
     return Stack(
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
-              const Text(
-                "Match Arabic → English",
+              Text(
+                t.match,
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
               Expanded(

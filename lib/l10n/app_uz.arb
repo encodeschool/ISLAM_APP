@@ -75,5 +75,17 @@
   "mark_done": "Bajarildi deb belgilash",
   "select_start_and_end_dates": "Boshlanish va tugash sanalarini tanlang",
   "learnArabic": "Learn Arabic",
-  "learnArabic": "Arab tilini o'rganing"
+  "learnArabic": "Arab tilini o'rganing",
+  "arabicLetter": "Arabcha harflar",
+  "basicWords": "Asosiy so'zlar",
+  "everyDayArabic": "Har kuni arabcha",
+  "prayerWords": "Namoz so'zlari",
+  "islamicWords": "Islomiy lug'at",
+  "typeTheAnswer": "Javobni yozing",
+  "submit": "Yuborish",
+  "incorrect": "Noto'g'ri! Qayta urinib ko'ring.",
+  "match": "Arabcha → Inglizcha moslash",
+  "correct": "To'g'ri! 🎉",
+  "continueBtn": "Davom etish",
+  "level": "Dar"
 }

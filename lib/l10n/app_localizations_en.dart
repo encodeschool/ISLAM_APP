@@ -213,4 +213,40 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get learnArabic => 'Learn Arabic';
+
+  @override
+  String get arabicLetter => 'Arabic Letters';
+
+  @override
+  String get basicWords => 'Basic Words';
+
+  @override
+  String get everyDayArabic => 'Everyday Arabic';
+
+  @override
+  String get prayerWords => 'Prayer Words';
+
+  @override
+  String get islamicWords => 'Islamic vocabulary';
+
+  @override
+  String get typeTheAnswer => 'Type the answer';
+
+  @override
+  String get submit => 'Submit';
+
+  @override
+  String get incorrect => 'Incorrect! Try again.';
+
+  @override
+  String get match => 'Match Arabic → English';
+
+  @override
+  String get correct => 'Correct! 🎉';
+
+  @override
+  String get continueBtn => 'Continue';
+
+  @override
+  String get level => 'Lv';
 }

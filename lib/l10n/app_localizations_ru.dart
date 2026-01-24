@@ -213,4 +213,40 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get learnArabic => 'Изучайте арабский язык';
+
+  @override
+  String get arabicLetter => 'Арабские буквы';
+
+  @override
+  String get basicWords => 'Основные слова';
+
+  @override
+  String get everyDayArabic => 'Повседневный арабский';
+
+  @override
+  String get prayerWords => 'Слова для молитвы';
+
+  @override
+  String get islamicWords => 'Исламская лексика';
+
+  @override
+  String get typeTheAnswer => 'Введите ответ';
+
+  @override
+  String get submit => 'Отправить';
+
+  @override
+  String get incorrect => 'Неверно! Попробуйте еще раз.';
+
+  @override
+  String get match => 'Сопоставить арабский → английский';
+
+  @override
+  String get correct => 'Правильно! 🎉';
+
+  @override
+  String get continueBtn => 'Продолжить';
+
+  @override
+  String get level => 'Ур';
 }

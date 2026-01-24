@@ -50,13 +50,15 @@ class LessonCard extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 12),
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: color,
+          color: Colors.white,
+          // color: color,
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
-              color: color.withOpacity(0.4),
+              color: Colors.white,
+              // color: color.withOpacity(0.4),
               blurRadius: 12,
-              offset: const Offset(0, 6),
+              offset: const Offset(0, 5),
             ),
           ],
         ),
@@ -65,7 +67,7 @@ class LessonCard extends StatelessWidget {
             CircleAvatar(
               radius: 26,
               backgroundColor: Colors.white.withOpacity(0.2),
-              child: Icon(icon, color: Colors.white, size: 28),
+              child: Icon(icon, color: Colors.green[900], size: 28),
             ),
             const SizedBox(width: 16),
             Expanded(
@@ -74,8 +76,8 @@ class LessonCard extends StatelessWidget {
                 children: [
                   Text(
                     title,
-                    style: const TextStyle(
-                      color: Colors.white,
+                    style: TextStyle(
+                      color: Colors.green[900],
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
@@ -84,15 +86,15 @@ class LessonCard extends StatelessWidget {
                   Text(
                     subtitle,
                     style: TextStyle(
-                      color: Colors.white.withOpacity(0.85),
+                      color: Colors.green[900],
                     ),
                   ),
                 ],
               ),
             ),
-            const Icon(
+            Icon(
               Icons.arrow_forward_ios,
-              color: Colors.white70,
+              color: Colors.green[900],
               size: 18,
             ),
           ],
