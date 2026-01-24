@@ -33,6 +33,7 @@ class _ListenActivityState extends State<ListenActivity> {
     super.initState();
     _confettiController =
         ConfettiController(duration: const Duration(seconds: 2));
+    Future.delayed(const Duration(milliseconds: 400), _playSound);
   }
 
   @override
@@ -67,10 +68,16 @@ class _ListenActivityState extends State<ListenActivity> {
     }
   }
 
-  void _playSound() async {
+  Future<void> _playSound() async {
     try {
-      await _audioPlayer.play(AssetSource(widget.letter.sound));
+      await _audioPlayer.stop();
+      await _audioPlayer.setReleaseMode(ReleaseMode.stop);
+      await _audioPlayer.play(
+        AssetSource(widget.letter.sound),
+        volume: 1.0,
+      );
     } catch (e) {
+      if (!mounted) return;
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text("Audio not available")),
       );

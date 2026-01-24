@@ -93,6 +93,7 @@ flutter:
     - assets/images/splash/
     - assets/icons/
     - assets/icon/
+    - assets/audio/alphabet/
 
   fonts:
     - family: Cairo

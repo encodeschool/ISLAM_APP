@@ -16,6 +16,8 @@ class XPBar extends StatelessWidget {
           const SizedBox(width: 12),
           Expanded(
             child: LinearProgressIndicator(
+              color: Colors.green[900],
+              backgroundColor: Colors.green.shade50,
               value: xp / (level * 100),
             ),
           ),

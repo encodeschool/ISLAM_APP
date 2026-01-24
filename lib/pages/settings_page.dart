@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:mosque/pages/more/hadith_detail_page.dart';
 import 'package:mosque/pages/more/99_names_page.dart';
-import 'package:mosque/pages/more/learning/learning_home_page.dart';
+import 'package:mosque/pages/more/learning_home_page.dart';
 import 'package:mosque/pages/more/live_stream_page.dart';
 import 'package:mosque/pages/more/motivation_page.dart';
 import 'package:mosque/pages/more/qaza_page.dart';
@@ -142,24 +143,24 @@ class SettingsPage extends StatelessWidget {
             ),
           ),
 
-          _extraButton(context, t.learnArabic, Icons.games, LearningHomePage(),t),
-          _extraButton(context, t.calculate_qaza, Icons.calculate, QazaPage(),t),
-          _extraButton(context, t.names99, Icons.auto_awesome_outlined, NinetyNineNames(), t),
-          _extraButton(context, t.phrases40, Icons.format_list_bulleted, HadithListPage(),t),
-          // _extraButton(context, t.motivation, Icons.favorite_border, Motivation(),t),
-          _extraButton(context, t.makkaLive, Icons.live_tv_outlined, LiveStream(),t),
-          _extraButton(context, t.shahada, Icons.mosque_outlined, ShahadaPage(),t),
+          _extraButton(context, t.learnArabic, 'assets/icons/arabic.png', LearningHomePage(),t),
+          _extraButton(context, t.calculate_qaza, 'assets/icons/calculator.png', QazaPage(),t),
+          _extraButton(context, t.names99, 'assets/icons/99Names.png', NinetyNineNames(), t),
+          _extraButton(context, t.phrases40, 'assets/icons/hadith.png', HadithListPage(),t),
+          _extraButton(context, t.makkaLive, 'assets/icons/online.png', LiveStream(),t),
+          _extraButton(context, t.shahada, 'assets/icons/shahada.png', ShahadaPage(),t),
         ],
       ),
     );
   }
 
-  Widget _extraButton(BuildContext context, String title, IconData icon, Widget page, AppLocalizations t) {
+  Widget _extraButton(BuildContext context, String title, String icon, Widget page, AppLocalizations t) {
     return SettingsCard(
       child: ListTile(
-        leading: Icon(
+        leading: Image.asset(
           icon,
-          color: Colors.green[900],
+          width: 35,
+          fit: BoxFit.cover,
         ),
         title: Text(
           title,

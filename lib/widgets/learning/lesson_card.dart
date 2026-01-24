@@ -47,60 +47,44 @@ class LessonCard extends StatelessWidget {
     return GestureDetector(
       onTap: () => _openLesson(context),
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 12),
-        padding: const EdgeInsets.all(20),
+        margin: const EdgeInsets.only(bottom: 16),
+        padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
-          color: Colors.white,
-          // color: color,
-          borderRadius: BorderRadius.circular(24),
+          borderRadius: BorderRadius.circular(16),
+          color: Theme.of(context).cardColor,
           boxShadow: [
             BoxShadow(
               color: Colors.black.withOpacity(0.05),
               blurRadius: 10,
             ),
-            // BoxShadow(
-            //   color: color.withOpacity(0.4),
-            //   blurRadius: 12,
-            //   offset: const Offset(0, 5),
-            // ),
           ],
         ),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 26,
-              backgroundColor: Colors.green.withOpacity(0.2),
-              child: Icon(icon, color: Colors.green[900], size: 28),
-            ),
-            const SizedBox(width: 16),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    title,
-                    style: TextStyle(
-                      color: Colors.green[900],
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(height: 4),
-                  Text(
-                    subtitle,
-                    style: TextStyle(
-                      color: Colors.green[900],
-                    ),
-                  ),
-                ],
+        child: ListTile(
+          leading: Icon(icon, color: Colors.black, size: 28),
+          title: Column(
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-            Icon(
-              Icons.arrow_forward_ios,
-              color: Colors.green[900],
-              size: 18,
-            ),
-          ],
+              // const SizedBox(height: 4),
+              // Text(
+              //   subtitle,
+              //   style: TextStyle(
+              //     color: Colors.black,
+              //   ),
+              // ),
+            ],
+          ),
+          trailing: Icon(
+            Icons.arrow_forward_ios,
+            size: 16,
+            color: Colors.black,
+          ),
         ),
       ),
     );

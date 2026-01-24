@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../l10n/app_localizations.dart';
-import '../../../models/learning/lesson_type.dart';
-import '../../../providers/learning_provider.dart';
-import '../../../widgets/learning/lesson_card.dart';
-import '../../../widgets/learning/xp_bar.dart';
+import '../../l10n/app_localizations.dart';
+import '../../models/learning/lesson_type.dart';
+import '../../providers/learning_provider.dart';
+import '../../widgets/learning/lesson_card.dart';
+import '../../widgets/learning/xp_bar.dart';
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../providers/learning_provider.dart';
-import '../../../widgets/learning/xp_bar.dart';
+import '../../providers/learning_provider.dart';
+import '../../widgets/learning/xp_bar.dart';
 
 class LearningHomePage extends StatelessWidget {
   const LearningHomePage({super.key});
