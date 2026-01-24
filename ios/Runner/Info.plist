@@ -54,5 +54,7 @@
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
     <string>Location is needed to determine Qibla direction</string>
+    <key>NSUserNotificationUsageDescription</key>
+    <string>Notifications are used for prayer reminders and learning progress</string>
 </dict>
 </plist>

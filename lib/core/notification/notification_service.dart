@@ -13,10 +13,42 @@ class NotificationService {
 
   static Future<void> init() async {
     tz.initializeTimeZones();
+
     const android = AndroidInitializationSettings('@mipmap/ic_launcher');
     const ios = DarwinInitializationSettings();
-    const settings = InitializationSettings(android: android, iOS: ios);
+
+    const settings = InitializationSettings(
+      android: android,
+      iOS: ios,
+    );
+
     await _notifications.initialize(settings);
+  }
+
+  static Future<void> showInstantNotification({
+    required String title,
+    required String body,
+  }) async {
+    const android = AndroidNotificationDetails(
+      'general_channel',
+      'General Notifications',
+      importance: Importance.max,
+      priority: Priority.high,
+    );
+
+    const ios = DarwinNotificationDetails();
+
+    const details = NotificationDetails(
+      android: android,
+      iOS: ios,
+    );
+
+    await _notifications.show(
+      0,
+      title,
+      body,
+      details,
+    );
   }
 
   static bool isScheduled(Prayer prayer) {

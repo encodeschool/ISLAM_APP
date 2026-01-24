@@ -55,18 +55,21 @@ class LessonCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(24),
           boxShadow: [
             BoxShadow(
-              color: Colors.white,
-              // color: color.withOpacity(0.4),
-              blurRadius: 12,
-              offset: const Offset(0, 5),
+              color: Colors.black.withOpacity(0.05),
+              blurRadius: 10,
             ),
+            // BoxShadow(
+            //   color: color.withOpacity(0.4),
+            //   blurRadius: 12,
+            //   offset: const Offset(0, 5),
+            // ),
           ],
         ),
         child: Row(
           children: [
             CircleAvatar(
               radius: 26,
-              backgroundColor: Colors.white.withOpacity(0.2),
+              backgroundColor: Colors.green.withOpacity(0.2),
               child: Icon(icon, color: Colors.green[900], size: 28),
             ),
             const SizedBox(width: 16),
