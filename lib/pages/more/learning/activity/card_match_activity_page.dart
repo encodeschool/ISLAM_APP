@@ -75,10 +75,11 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Stack(
       children: [
         Padding(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
           child: Column(
             children: [
               const Text(
@@ -97,18 +98,25 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
                             if (matched.containsKey(letter) && matched[letter]!) {
                               return const SizedBox(height: 60);
                             }
-                            return Padding(
+                            return Container(
+                              width: size.width / 2,
                               padding: const EdgeInsets.symmetric(vertical: 4.0),
                               child: Draggable<String>(
                                 data: letter,
                                 feedback: Material(
-                                  child: Card(
+                                  child: Container(
+                                    width: size.width / 2,
                                     color: Colors.green[900],
                                     child: Padding(
                                       padding: const EdgeInsets.all(16.0),
-                                      child: Text(letter,
+                                      child: Text(
+                                          letter,
+                                          textAlign: TextAlign.center,
                                           style: const TextStyle(
-                                              fontSize: 24, color: Colors.white)),
+                                              fontSize: 24,
+                                              color: Colors.white
+                                          )
+                                      ),
                                     ),
                                   ),
                                 ),
@@ -116,7 +124,13 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
                                 child: Card(
                                   child: Padding(
                                     padding: const EdgeInsets.all(16.0),
-                                    child: Text(letter, style: const TextStyle(fontSize: 24)),
+                                    child: Text(
+                                        letter,
+                                        textAlign: TextAlign.center,
+                                        style: const TextStyle(
+                                            fontSize: 24
+                                        )
+                                    ),
                                   ),
                                 ),
                               ),
@@ -125,14 +139,15 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
                         ),
                       ),
                     ),
-                    const SizedBox(width: 20),
+                    SizedBox(width: 5),
                     // English column
                     Expanded(
                       child: SingleChildScrollView(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: englishCards.map((name) {
-                            return Padding(
+                            return Container(
+                              width: size.width / 2,
                               padding: const EdgeInsets.symmetric(vertical: 4.0),
                               child: DragTarget<String>(
                                 builder: (context, candidateData, rejectedData) {
@@ -142,6 +157,7 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
                                       padding: const EdgeInsets.all(16.0),
                                       child: Text(
                                         name,
+                                        textAlign: TextAlign.center,
                                         style: TextStyle(
                                           fontSize: 24,
                                           color: matched[name]! ? Colors.white : Colors.black,
