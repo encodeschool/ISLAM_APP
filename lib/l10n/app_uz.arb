@@ -73,5 +73,7 @@
   "remaining": "Qolgan",
   "reset": "Qayta tiklash",
   "mark_done": "Bajarildi deb belgilash",
-  "select_start_and_end_dates": "Boshlanish va tugash sanalarini tanlang"
+  "select_start_and_end_dates": "Boshlanish va tugash sanalarini tanlang",
+  "learnArabic": "Learn Arabic",
+  "learnArabic": "Arab tilini o'rganing"
 }

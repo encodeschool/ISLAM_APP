@@ -210,4 +210,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get select_start_and_end_dates => 'Boshlanish va tugash sanalarini tanlang';
+
+  @override
+  String get learnArabic => 'Arab tilini o\'rganing';
 }

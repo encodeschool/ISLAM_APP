@@ -210,4 +210,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get select_start_and_end_dates => 'Выберите даты начала и окончания';
+
+  @override
+  String get learnArabic => 'Изучайте арабский язык';
 }

@@ -166,7 +166,7 @@ class _SplashPageState extends State<SplashPage>
                     child: SlideTransition(
                       position: _textSlide,
                       child: const Text(
-                        "ISLAM",
+                        "FARZ",
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,

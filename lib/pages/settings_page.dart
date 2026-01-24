@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mosque/pages/more/hadith_detail_page.dart';
 import 'package:mosque/pages/more/99_names_page.dart';
+import 'package:mosque/pages/more/learning/learning_home_page.dart';
 import 'package:mosque/pages/more/live_stream_page.dart';
 import 'package:mosque/pages/more/motivation_page.dart';
 import 'package:mosque/pages/more/qaza_page.dart';
@@ -141,6 +142,7 @@ class SettingsPage extends StatelessWidget {
             ),
           ),
 
+          _extraButton(context, t.learnArabic, Icons.games, LearningHomePage(),t),
           _extraButton(context, t.calculate_qaza, Icons.calculate, QazaPage(),t),
           _extraButton(context, t.names99, Icons.auto_awesome_outlined, NinetyNineNames(), t),
           _extraButton(context, t.phrases40, Icons.format_list_bulleted, HadithListPage(),t),

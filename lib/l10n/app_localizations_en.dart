@@ -210,4 +210,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get select_start_and_end_dates => 'Select Start and End Dates';
+
+  @override
+  String get learnArabic => 'Learn Arabic';
 }

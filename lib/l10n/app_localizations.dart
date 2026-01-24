@@ -500,6 +500,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Select Start and End Dates'**
   String get select_start_and_end_dates;
+
+  /// No description provided for @learnArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn Arabic'**
+  String get learnArabic;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
