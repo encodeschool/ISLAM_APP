@@ -79,40 +79,43 @@ class _ListenActivityState extends State<ListenActivity> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            IconButton(
-              iconSize: 64,
-              icon: const Icon(Icons.volume_up),
-              onPressed: _playSound,
-            ),
-            const SizedBox(height: 24),
-            ...widget.options.map((option) {
-              return AnswerButton(
-                text: option,
-                isCorrect: option == widget.letter.name,
-                disabled: answered,
-                onTap: () => _handleAnswer(option),
-              );
-            }),
-          ],
-        ),
-        Align(
-          alignment: Alignment.topCenter,
-          child: ConfettiWidget(
-            confettiController: _confettiController,
-            blastDirectionality: BlastDirectionality.explosive,
-            shouldLoop: false,
-            emissionFrequency: 0.05,
-            numberOfParticles: 20,
-            maxBlastForce: 20,
-            minBlastForce: 5,
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Stack(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              IconButton(
+                iconSize: 64,
+                icon: const Icon(Icons.volume_up),
+                onPressed: _playSound,
+              ),
+              const SizedBox(height: 24),
+              ...widget.options.map((option) {
+                return AnswerButton(
+                  text: option,
+                  isCorrect: option == widget.letter.name,
+                  disabled: answered,
+                  onTap: () => _handleAnswer(option),
+                );
+              }),
+            ],
           ),
-        ),
-      ],
+          Align(
+            alignment: Alignment.topCenter,
+            child: ConfettiWidget(
+              confettiController: _confettiController,
+              blastDirectionality: BlastDirectionality.explosive,
+              shouldLoop: false,
+              emissionFrequency: 0.05,
+              numberOfParticles: 20,
+              maxBlastForce: 20,
+              minBlastForce: 5,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

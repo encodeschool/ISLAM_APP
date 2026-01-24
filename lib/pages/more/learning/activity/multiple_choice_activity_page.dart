@@ -82,75 +82,39 @@ class _MultipleChoiceActivityState extends State<MultipleChoiceActivity> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // Display letter
-        Text(
-          widget.letter.letter,
-          style: const TextStyle(fontSize: 80, fontFamily: 'Amiri'),
-        ),
-        const SizedBox(height: 24),
-        ...widget.options.map((option) {
-          final isCorrect = option == widget.letter.name;
-          final isSelected = option == selectedOption;
-          Color? color = Colors.green.shade50;
-
-          if (answered) {
-            if (isSelected) {
-              color = isCorrect ? Colors.green[900] : Colors.red;
-            } else if (isCorrect) {
-              color = Colors.green[900];
-            }
-          }
-
-          return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            child: GestureDetector(
-              onTap: () => _handleAnswer(option),
-              child: Container(
-                height: 60,
-                decoration: BoxDecoration(
-                  color: color,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: Colors.green.shade900),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.black12,
-                      blurRadius: 4,
-                    )
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    option,
-                    style: TextStyle(
-                      color: Colors.green[900],
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ).animate().scale(
-                  duration: 300.ms,
-                  curve: Curves.easeOut,
-                ),
-              ),
-            ),
-          );
-        }),
-        // Confetti widget overlay
-        Align(
-          alignment: Alignment.topCenter,
-          child: ConfettiWidget(
-            confettiController: _confettiController,
-            blastDirectionality: BlastDirectionality.explosive,
-            shouldLoop: false,
-            emissionFrequency: 0.05,
-            numberOfParticles: 20,
-            maxBlastForce: 20,
-            minBlastForce: 5,
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        children: [
+          // Display letter
+          Text(
+            widget.letter.letter,
+            style: const TextStyle(fontSize: 80, fontFamily: 'Amiri'),
           ),
-        ),
-      ],
+          const SizedBox(height: 24),
+          ...widget.options.map((option) {
+            return AnswerButton(
+              text: option,
+              isCorrect: option == widget.letter.name,
+              disabled: answered,
+              onTap: () => _handleAnswer(option),
+            );
+          }),
+          // Confetti widget overlay
+          Align(
+            alignment: Alignment.topCenter,
+            child: ConfettiWidget(
+              confettiController: _confettiController,
+              blastDirectionality: BlastDirectionality.explosive,
+              shouldLoop: false,
+              emissionFrequency: 0.05,
+              numberOfParticles: 20,
+              maxBlastForce: 20,
+              minBlastForce: 5,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

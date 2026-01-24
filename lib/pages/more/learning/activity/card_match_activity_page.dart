@@ -2,10 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
 import '../../../../widgets/learning/success_dialog.dart';
 
+import 'package:flutter/material.dart';
+import 'package:confetti/confetti.dart';
+import '../../../../models/learning/arabic_letter.dart';
+import '../../../../widgets/learning/success_dialog.dart';
+
+import 'package:flutter/material.dart';
+import 'package:confetti/confetti.dart';
+import '../../../../widgets/learning/success_dialog.dart';
+import '../../../../models/learning/arabic_letter.dart';
+
 class CardMatchActivity extends StatefulWidget {
-  final List<String> steps; // Arabic letter names
+  final List<ArabicLetter> steps; // Pass ArabicLetter instead of String
   final VoidCallback onComplete;
-  final VoidCallback onNext; // <-- for next step
+  final VoidCallback onNext; // for next step
 
   const CardMatchActivity({
     super.key,
@@ -28,9 +38,12 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
   @override
   void initState() {
     super.initState();
-    arabicCards = List.from(widget.steps)..shuffle();
-    englishCards = List.from(widget.steps)..shuffle();
-    matched = {for (var step in widget.steps) step: false};
+
+    // Map ArabicLetter -> String
+    arabicCards = widget.steps.map((e) => e.letter).toList()..shuffle();
+    englishCards = widget.steps.map((e) => e.name).toList()..shuffle();
+
+    matched = {for (var letter in widget.steps.map((e) => e.name)) letter: false};
 
     _confettiController =
         ConfettiController(duration: const Duration(seconds: 2));
@@ -53,7 +66,7 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
         builder: (_) => SuccessDialog(
           onContinue: () {
             Navigator.pop(context);
-            widget.onNext(); // move to next learning activity
+            widget.onNext(); // move to next activity
           },
         ),
       );
@@ -72,72 +85,87 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
                 "Match Arabic → English",
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
               ),
-              const SizedBox(height: 24),
               Expanded(
                 child: Row(
                   children: [
                     // Arabic column
                     Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: arabicCards.map((letter) {
-                          if (matched[letter]!) return const SizedBox(height: 60);
-                          return Draggable<String>(
-                            data: letter,
-                            feedback: Material(
-                              child: Card(
-                                color: Colors.green,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Text(letter,
-                                      style: const TextStyle(
-                                          fontSize: 24, color: Colors.white)),
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: arabicCards.map((letter) {
+                            if (matched.containsKey(letter) && matched[letter]!) {
+                              return const SizedBox(height: 60);
+                            }
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4.0),
+                              child: Draggable<String>(
+                                data: letter,
+                                feedback: Material(
+                                  child: Card(
+                                    color: Colors.green[900],
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Text(letter,
+                                          style: const TextStyle(
+                                              fontSize: 24, color: Colors.white)),
+                                    ),
+                                  ),
+                                ),
+                                childWhenDragging: const SizedBox(height: 60),
+                                child: Card(
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(16.0),
+                                    child: Text(letter, style: const TextStyle(fontSize: 24)),
+                                  ),
                                 ),
                               ),
-                            ),
-                            childWhenDragging: const SizedBox(height: 60),
-                            child: Card(
-                              child: Padding(
-                                padding: const EdgeInsets.all(16.0),
-                                child: Text(letter,
-                                    style: const TextStyle(fontSize: 24)),
-                              ),
-                            ),
-                          );
-                        }).toList(),
+                            );
+                          }).toList(),
+                        ),
                       ),
                     ),
                     const SizedBox(width: 20),
                     // English column
                     Expanded(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: englishCards.map((letter) {
-                          return DragTarget<String>(
-                            builder: (context, candidateData, rejectedData) {
-                              return Card(
-                                color: matched[letter]! ? Colors.green : Colors.white,
-                                child: Padding(
-                                  padding: const EdgeInsets.all(16.0),
-                                  child: Text(
-                                    letter,
-                                    style: TextStyle(
-                                      fontSize: 24,
-                                      color: matched[letter]! ? Colors.white : Colors.black,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: englishCards.map((name) {
+                            return Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 4.0),
+                              child: DragTarget<String>(
+                                builder: (context, candidateData, rejectedData) {
+                                  return Card(
+                                    color: matched[name]! ? Colors.green : Colors.white,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(16.0),
+                                      child: Text(
+                                        name,
+                                        style: TextStyle(
+                                          fontSize: 24,
+                                          color: matched[name]! ? Colors.white : Colors.black,
+                                        ),
+                                      ),
                                     ),
-                                  ),
-                                ),
-                              );
-                            },
-                            onWillAccept: (data) => data == letter,
-                            onAccept: (data) {
-                              setState(() {
-                                matched[letter] = true;
-                                _checkComplete();
-                              });
-                            },
-                          );
-                        }).toList(),
+                                  );
+                                },
+                                onWillAccept: (data) {
+                                  final correctLetter = widget.steps
+                                      .firstWhere((e) => e.name == name)
+                                      .letter;
+                                  return data == correctLetter;
+                                },
+                                onAccept: (data) {
+                                  setState(() {
+                                    matched[name] = true;
+                                    _checkComplete();
+                                  });
+                                },
+                              ),
+                            );
+                          }).toList(),
+                        ),
                       ),
                     ),
                   ],

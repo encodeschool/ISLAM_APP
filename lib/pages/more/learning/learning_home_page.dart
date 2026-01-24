@@ -26,7 +26,6 @@ class LearningHomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          XPBar(xp: learning.xp, level: learning.level),
           Expanded(
             child: ListView(
               padding: const EdgeInsets.symmetric(horizontal: 20),

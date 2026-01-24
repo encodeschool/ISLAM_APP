@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../../data/learning/arabic_letters.dart';
+import '../../../models/learning/arabic_letter.dart';
 import '../../../models/learning/learning_activity_type.dart';
 import '../../../providers/learning_provider.dart';
 import 'activity/card_match_activity_page.dart';
@@ -43,7 +45,7 @@ class LearningStepPage extends StatelessWidget {
         );
       case LearningActivityType.cardMatch:
         return CardMatchActivity(
-          steps: step.options!,
+          steps: arabicLetters,
           onComplete: learning.correctAnswer,
           onNext: learning.nextStep,
         );
