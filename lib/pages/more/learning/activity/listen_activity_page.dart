@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import 'package:mosque/models/learning/learning_item.dart';
 import '../../../../models/learning/arabic_letter.dart';
 import '../../../../widgets/learning/answer_button.dart';
 import '../../../../widgets/learning/success_dialog.dart';
 import 'package:audioplayers/audioplayers.dart';
 
 class ListenActivity extends StatefulWidget {
-  final ArabicLetter letter;
+  final LearningItem item;
   final List<String> options;
   final VoidCallback onCorrect;
   final VoidCallback onNext; // <-- new callback for next step
 
   const ListenActivity({
     super.key,
-    required this.letter,
+    required this.item,
     required this.options,
     required this.onCorrect,
     required this.onNext,
@@ -46,7 +47,7 @@ class _ListenActivityState extends State<ListenActivity> {
   void _handleAnswer(String option) {
     if (answered) return;
 
-    final isCorrect = option == widget.letter.name;
+    final isCorrect = option == widget.item.answer;
     setState(() {
       answered = true;
     });
@@ -73,7 +74,7 @@ class _ListenActivityState extends State<ListenActivity> {
       await _audioPlayer.stop();
       await _audioPlayer.setReleaseMode(ReleaseMode.stop);
       await _audioPlayer.play(
-        AssetSource(widget.letter.sound),
+        AssetSource(widget.item.audio),
         volume: 1.0,
       );
     } catch (e) {
@@ -101,7 +102,7 @@ class _ListenActivityState extends State<ListenActivity> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        widget.letter.letter,
+                        widget.item.display,
                         style: TextStyle(
                             fontSize: 48
                         ),
@@ -117,7 +118,7 @@ class _ListenActivityState extends State<ListenActivity> {
                           padding: const EdgeInsets.only(bottom: 4),
                           child: AnswerButton(
                             text: option,
-                            isCorrect: option == widget.letter.name,
+                            isCorrect: option == widget.item.answer,
                             disabled: answered,
                             onTap: () => _handleAnswer(option),
                           ),

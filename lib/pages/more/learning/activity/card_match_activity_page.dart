@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import 'package:mosque/models/learning/learning_item.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../widgets/learning/success_dialog.dart';
 
@@ -14,13 +15,13 @@ import '../../../../widgets/learning/success_dialog.dart';
 import '../../../../models/learning/arabic_letter.dart';
 
 class CardMatchActivity extends StatefulWidget {
-  final List<ArabicLetter> steps; // Pass ArabicLetter instead of String
+  final List<LearningItem> items; // Pass ArabicLetter instead of String
   final VoidCallback onComplete;
   final VoidCallback onNext; // for next step
 
   const CardMatchActivity({
     super.key,
-    required this.steps,
+    required this.items,
     required this.onComplete,
     required this.onNext,
   });
@@ -33,7 +34,7 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
   late List<String> arabicCards;
   late List<String> englishCards;
   Map<String, bool> matched = {};
-  late List<ArabicLetter> selectedSteps;
+  late List<LearningItem> selectedSteps;
 
   late ConfettiController _confettiController;
 
@@ -41,16 +42,16 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
   void initState() {
     super.initState();
 
-    selectedSteps = List<ArabicLetter>.from(widget.steps)..shuffle();
+    selectedSteps = List<LearningItem>.from(widget.items)..shuffle();
     if (selectedSteps.length > 5) {
       selectedSteps = selectedSteps.take(5).toList();
     }
 
-    arabicCards = selectedSteps.map((e) => e.letter).toList()..shuffle();
-    englishCards = selectedSteps.map((e) => e.name).toList()..shuffle();
+    arabicCards = selectedSteps.map((e) => e.display).toList()..shuffle();
+    englishCards = selectedSteps.map((e) => e.answer).toList()..shuffle();
 
     matched = {
-      for (var e in selectedSteps) e.name: false,
+      for (var e in selectedSteps) e.answer: false,
     };
 
     _confettiController =
@@ -177,8 +178,8 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
                                 },
                                 onWillAccept: (data) {
                                   final correctLetter = selectedSteps
-                                      .firstWhere((e) => e.name == name)
-                                      .letter;
+                                      .firstWhere((e) => e.answer == name)
+                                      .display;
                                   return data == correctLetter;
                                 },
                                 onAccept: (data) {

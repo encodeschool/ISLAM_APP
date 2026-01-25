@@ -6,6 +6,7 @@ import '../../../data/learning/arabic_letters.dart';
 import '../../../l10n/app_localizations.dart';
 import '../../../models/learning/arabic_letter.dart';
 import '../../../models/learning/learning_activity_type.dart';
+import '../../../models/learning/learning_item.dart';
 import '../../../models/learning/learning_step.dart';
 import '../../../models/learning/lesson.dart';
 import '../../../providers/learning_provider.dart';
@@ -34,37 +35,46 @@ class _ArabicLettersPageState extends State<ArabicLettersPage> {
 
   void _generateLesson() {
     lessonSteps = arabicLetters.map((letter) {
-      // Generate multiple choice options
-      List<String> options = [letter.name];
-      while (options.length < 4) {
-        final option = arabicLetters[Random().nextInt(arabicLetters.length)].name;
-        if (!options.contains(option)) options.add(option);
-      }
-      options.shuffle();
+      final item = LearningItem(
+        id: letter.id,
+        display: letter.letter,
+        answer: letter.name,
+        audio: letter.sound,
+      );
 
-      // Each letter lesson: multiple choice → write → listen → card match
+      // generate options
+      final options = <String>{item.answer};
+      final random = Random();
+
+      while (options.length < 4) {
+        options.add(
+          arabicLetters[random.nextInt(arabicLetters.length)].name,
+        );
+      }
+
+      final shuffledOptions = options.toList()..shuffle();
+
       return [
         LearningStep(
           type: LearningActivityType.multipleChoice,
-          letter: letter,
-          options: options,
+          item: item,
+          options: shuffledOptions,
         ),
         LearningStep(
           type: LearningActivityType.write,
-          letter: letter,
+          item: item,
         ),
         LearningStep(
           type: LearningActivityType.listen,
-          letter: letter,
-          options: options,
+          item: item,
+          options: shuffledOptions,
         ),
         LearningStep(
           type: LearningActivityType.cardMatch,
-          letter: letter,
-          options: options,
+          item: item,
         ),
       ];
-    }).expand((step) => step).toList();
+    }).expand((e) => e).toList();
   }
 
   @override

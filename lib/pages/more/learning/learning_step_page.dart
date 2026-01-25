@@ -18,39 +18,39 @@ class LearningStepPage extends StatelessWidget {
     final learning = context.watch<LearningProvider>();
     final step = learning.currentStep;
 
-
     switch (step.type) {
       case LearningActivityType.multipleChoice:
         return MultipleChoiceActivity(
-          letter: step.letter,
+          item: step.item,
           options: step.options!,
-          onCorrect: () {
-            context.read<LearningProvider>().correctAnswer();
-          }, onNext: () {
-            context.read<LearningProvider>().nextStep();
-          },
+          onCorrect: learning.correctAnswer,
+          onNext: learning.nextStep,
         );
+
       case LearningActivityType.write:
         return WriteLetterActivity(
-          letter: step.letter,
+          item: step.item,
           onCorrect: learning.correctAnswer,
           onNext: learning.nextStep,
         );
+
       case LearningActivityType.listen:
         return ListenActivity(
-          letter: step.letter,
+          item: step.item,
           options: step.options!,
           onCorrect: learning.correctAnswer,
           onNext: learning.nextStep,
         );
+
       case LearningActivityType.cardMatch:
         return CardMatchActivity(
-          steps: arabicLetters,
+          items: learning.currentLesson!.steps
+              .map((s) => s.item)
+              .toSet()
+              .toList(),
           onComplete: learning.correctAnswer,
           onNext: learning.nextStep,
         );
-      default:
-        return const SizedBox.shrink();
     }
   }
 }

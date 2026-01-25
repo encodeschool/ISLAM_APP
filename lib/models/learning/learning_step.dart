@@ -1,16 +1,16 @@
+import 'package:mosque/models/learning/learning_item.dart';
+
 import 'arabic_letter.dart';
 import 'learning_activity_type.dart';
 
 class LearningStep {
   final LearningActivityType type;
-  final ArabicLetter letter; // Or word
-  final List<String>? options; // For multiple choice / match
-  final String? audioPath;     // For listen activities
+  final LearningItem item;
+  final List<String>? options;
 
   LearningStep({
     required this.type,
-    required this.letter,
+    required this.item,
     this.options,
-    this.audioPath,
   });
 }

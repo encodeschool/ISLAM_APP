@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:mosque/models/learning/learning_item.dart';
 import '../../../../models/learning/arabic_letter.dart';
 import '../../../../widgets/learning/answer_button.dart';
 import '../../../../widgets/learning/success_dialog.dart';
@@ -15,14 +16,14 @@ import 'package:confetti/confetti.dart';
 import '../../../../models/learning/arabic_letter.dart';
 
 class MultipleChoiceActivity extends StatefulWidget {
-  final ArabicLetter letter;
+  final LearningItem item;
   final List<String> options;
   final VoidCallback onCorrect;
   final VoidCallback onNext; // <-- callback to go to next letter/activity
 
   const MultipleChoiceActivity({
     super.key,
-    required this.letter,
+    required this.item,
     required this.options,
     required this.onCorrect,
     required this.onNext,
@@ -60,7 +61,7 @@ class _MultipleChoiceActivityState extends State<MultipleChoiceActivity> {
       selectedOption = option;
     });
 
-    final isCorrect = option == widget.letter.name;
+    final isCorrect = option == widget.item.answer;
 
     if (isCorrect) {
       widget.onCorrect(); // add XP / mark correct
@@ -88,14 +89,14 @@ class _MultipleChoiceActivityState extends State<MultipleChoiceActivity> {
         children: [
           // Display letter
           Text(
-            widget.letter.letter,
+            widget.item.display,
             style: const TextStyle(fontSize: 80, fontFamily: 'Amiri'),
           ),
           const SizedBox(height: 24),
           ...widget.options.map((option) {
             return AnswerButton(
               text: option,
-              isCorrect: option == widget.letter.name,
+              isCorrect: option == widget.item.answer,
               disabled: answered,
               onTap: () => _handleAnswer(option),
             );

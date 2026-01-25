@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:confetti/confetti.dart';
+import 'package:mosque/models/learning/learning_item.dart';
 import '../../../../l10n/app_localizations.dart';
 import '../../../../models/learning/arabic_letter.dart';
 import '../../../../widgets/learning/success_dialog.dart';
 
 class WriteLetterActivity extends StatefulWidget {
-  final ArabicLetter letter;
+  final LearningItem item;
   final VoidCallback onCorrect;
   final VoidCallback onNext; // go to next step
 
   const WriteLetterActivity({
     super.key,
-    required this.letter,
+    required this.item,
     required this.onCorrect,
     required this.onNext,
   });
@@ -44,7 +45,7 @@ class _WriteLetterActivityState extends State<WriteLetterActivity> {
     if (answered) return;
 
     if (controller.text.trim().toLowerCase() ==
-        widget.letter.name.toLowerCase()) {
+        widget.item.answer.toLowerCase()) {
       setState(() => answered = true);
 
       widget.onCorrect();
@@ -77,7 +78,7 @@ class _WriteLetterActivityState extends State<WriteLetterActivity> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              widget.letter.letter,
+              widget.item.display,
               style: const TextStyle(fontSize: 80, fontFamily: 'Amiri'),
             ),
             const SizedBox(height: 24),
