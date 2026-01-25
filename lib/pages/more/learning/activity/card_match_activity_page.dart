@@ -33,6 +33,7 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
   late List<String> arabicCards;
   late List<String> englishCards;
   Map<String, bool> matched = {};
+  late List<ArabicLetter> selectedSteps;
 
   late ConfettiController _confettiController;
 
@@ -40,11 +41,17 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
   void initState() {
     super.initState();
 
-    // Map ArabicLetter -> String
-    arabicCards = widget.steps.map((e) => e.letter).toList()..shuffle();
-    englishCards = widget.steps.map((e) => e.name).toList()..shuffle();
+    selectedSteps = List<ArabicLetter>.from(widget.steps)..shuffle();
+    if (selectedSteps.length > 5) {
+      selectedSteps = selectedSteps.take(5).toList();
+    }
 
-    matched = {for (var letter in widget.steps.map((e) => e.name)) letter: false};
+    arabicCards = selectedSteps.map((e) => e.letter).toList()..shuffle();
+    englishCards = selectedSteps.map((e) => e.name).toList()..shuffle();
+
+    matched = {
+      for (var e in selectedSteps) e.name: false,
+    };
 
     _confettiController =
         ConfettiController(duration: const Duration(seconds: 2));
@@ -169,7 +176,7 @@ class _CardMatchActivityState extends State<CardMatchActivity> {
                                   );
                                 },
                                 onWillAccept: (data) {
-                                  final correctLetter = widget.steps
+                                  final correctLetter = selectedSteps
                                       .firstWhere((e) => e.name == name)
                                       .letter;
                                   return data == correctLetter;
