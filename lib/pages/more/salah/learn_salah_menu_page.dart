@@ -28,12 +28,14 @@ class LearnSalahMenuPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Learn Salah'),
+        scrolledUnderElevation: 0,
+        backgroundColor: Colors.transparent,
       ),
       body: ListView(
         padding: EdgeInsets.all(16),
         children: [
           _SalahTile(
-            icon: Icons.water_drop,
+            icon: 'assets/icons/ablution.png',
             title: 'Learn Ablution (Wudu)',
             subtitle: 'Step-by-step purification',
             onTap: () {
@@ -46,7 +48,7 @@ class LearnSalahMenuPage extends StatelessWidget {
           ),
 
           _SalahTile(
-            icon: Icons.wb_twilight,
+            icon: 'assets/icons/fajr.png',
             title: 'Fajr Prayer',
             subtitle: '2 rakah obligatory prayer',
             onTap: () {
@@ -63,8 +65,29 @@ class LearnSalahMenuPage extends StatelessWidget {
           ),
 
           _SalahTile(
-            icon: Icons.sunny,
+            icon: 'assets/icons/dhuhr.png',
             title: 'Zuhr Prayer',
+            subtitle: '4 rakah obligatory prayer',
+            onTap: () {},
+          ),
+
+          _SalahTile(
+            icon: 'assets/icons/asr.png',
+            title: 'Asr Prayer',
+            subtitle: '4 rakah obligatory prayer',
+            onTap: () {},
+          ),
+
+          _SalahTile(
+            icon: 'assets/icons/maghrib.png',
+            title: 'Maghrib Prayer',
+            subtitle: '4 rakah obligatory prayer',
+            onTap: () {},
+          ),
+
+          _SalahTile(
+            icon: 'assets/icons/isha.png',
+            title: 'Isha Prayer',
             subtitle: '4 rakah obligatory prayer',
             onTap: () {},
           ),
@@ -77,7 +100,7 @@ class LearnSalahMenuPage extends StatelessWidget {
 }
 
 class _SalahTile extends StatelessWidget {
-  final IconData icon;
+  final String icon;
   final String title;
   final String subtitle;
   final VoidCallback onTap;
@@ -106,10 +129,7 @@ class _SalahTile extends StatelessWidget {
         ],
       ),
       child: ListTile(
-        leading: CircleAvatar(
-          backgroundColor: Colors.green.shade100,
-          child: Icon(icon, color: Colors.green[900]),
-        ),
+        leading: Image.asset(icon),
         title: Text(
             title,
             style: const TextStyle(fontWeight: FontWeight.bold),

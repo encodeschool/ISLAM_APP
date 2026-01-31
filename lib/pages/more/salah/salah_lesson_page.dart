@@ -75,7 +75,7 @@ class _SalahLessonPageState extends State<SalahLessonPage> {
                 return SingleChildScrollView(
                   padding: const EdgeInsets.all(20),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center, // ← often looks better
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(s.image, height: 220),
                       const SizedBox(height: 10),
