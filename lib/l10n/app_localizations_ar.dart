@@ -218,7 +218,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get arabicLetter => 'الحروف العربية';
 
   @override
-  String get basicWords => 'الكلمات الأساسية';
+  String get basicWords => 'كلمات أساسية';
 
   @override
   String get everyDayArabic => 'اللغة العربية الدارجة';
@@ -249,4 +249,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get level => 'المستوى';
+
+  @override
+  String get learnSalah => 'تعلم صلاح';
 }

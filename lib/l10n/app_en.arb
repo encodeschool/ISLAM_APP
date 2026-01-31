@@ -89,5 +89,9 @@
   "match": "Match Arabic → English",
   "correct": "Correct! 🎉",
   "continueBtn": "Continue",
-  "level": "Lv"
+  "level": "Lv",
+  "basicWords": "Basic Words",
+  "prayerWords": "Prayer Words",
+
+  "learnSalah": "Learn salah"
 }

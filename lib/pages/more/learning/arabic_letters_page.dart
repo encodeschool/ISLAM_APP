@@ -90,6 +90,7 @@ class _ArabicLettersPageState extends State<ArabicLettersPage> {
 
     return Scaffold(
       appBar: AppBar(
+        scrolledUnderElevation: 0,
         title: Text(
           t.arabicLetter
         ),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../../data/learning/prayer_words.dart';
+import '../../../l10n/app_localizations.dart';
 import '../../../models/learning/lesson.dart';
 import '../../../providers/learning_provider.dart';
 import '../../../utils/learning/lesson_generator.dart';
@@ -35,6 +36,7 @@ class _PrayerWordsPageState extends State<PrayerWordsPage> {
   @override
   Widget build(BuildContext context) {
     final learning = context.watch<LearningProvider>();
+    final t = AppLocalizations.of(context)!;
 
     if (learning.currentLesson == null) {
       return const Scaffold(
@@ -44,7 +46,9 @@ class _PrayerWordsPageState extends State<PrayerWordsPage> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Prayer Words'),
+        title: Text(
+          t.prayerWords
+        ),
       ),
       body: Column(
         children: [

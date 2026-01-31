@@ -20,6 +20,7 @@ class MultipleChoiceActivity extends StatefulWidget {
   final List<String> options;
   final VoidCallback onCorrect;
   final VoidCallback onNext; // <-- callback to go to next letter/activity
+  final VoidCallback onWrong;
 
   const MultipleChoiceActivity({
     super.key,
@@ -27,6 +28,7 @@ class MultipleChoiceActivity extends StatefulWidget {
     required this.options,
     required this.onCorrect,
     required this.onNext,
+    required this.onWrong
   });
 
   @override
@@ -37,6 +39,7 @@ class MultipleChoiceActivity extends StatefulWidget {
 class _MultipleChoiceActivityState extends State<MultipleChoiceActivity> {
   bool answered = false;
   String? selectedOption;
+  bool isWrong = false;
 
   late ConfettiController _confettiController;
 
@@ -64,20 +67,24 @@ class _MultipleChoiceActivityState extends State<MultipleChoiceActivity> {
     final isCorrect = option == widget.item.answer;
 
     if (isCorrect) {
-      widget.onCorrect(); // add XP / mark correct
-      _confettiController.play(); // show confetti
+      widget.onCorrect();
+      _confettiController.play();
 
-      // Show success dialog
       showDialog(
         context: context,
         barrierDismissible: false,
         builder: (_) => SuccessDialog(
           onContinue: () {
-            Navigator.pop(context); // close dialog
-            widget.onNext(); // move to next letter/activity
+            Navigator.pop(context);
+            widget.onNext();
           },
         ),
       );
+    } else {
+      setState(() {
+        isWrong = true;
+      });
+      widget.onWrong();
     }
   }
 
@@ -85,36 +92,59 @@ class _MultipleChoiceActivityState extends State<MultipleChoiceActivity> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(20.0),
-      child: Column(
-        children: [
-          // Display letter
-          Text(
-            widget.item.display,
-            style: const TextStyle(fontSize: 80, fontFamily: 'Amiri'),
-          ),
-          const SizedBox(height: 24),
-          ...widget.options.map((option) {
-            return AnswerButton(
-              text: option,
-              isCorrect: option == widget.item.answer,
-              disabled: answered,
-              onTap: () => _handleAnswer(option),
-            );
-          }),
-          // Confetti widget overlay
-          Align(
-            alignment: Alignment.topCenter,
-            child: ConfettiWidget(
-              confettiController: _confettiController,
-              blastDirectionality: BlastDirectionality.explosive,
-              shouldLoop: false,
-              emissionFrequency: 0.05,
-              numberOfParticles: 20,
-              maxBlastForce: 20,
-              minBlastForce: 5,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        child: Column(
+          children: [
+            // Display letter
+            Text(
+              widget.item.display,
+              style: const TextStyle(fontSize: 80, fontFamily: 'Amiri'),
             ),
-          ),
-        ],
+            const SizedBox(height: 24),
+            ...widget.options.map((option) {
+              return AnswerButton(
+                text: option,
+                isCorrect: option == widget.item.answer,
+                disabled: answered,
+                onTap: () => _handleAnswer(option),
+              );
+            }),
+            if (answered && isWrong)
+              Padding(
+                padding: const EdgeInsets.only(top: 24, bottom: 24),
+                child: ElevatedButton(
+                  onPressed: widget.onNext,
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green[900],
+                    padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 40),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                  child: Text(
+                      "Continue",
+                      style: TextStyle(
+                        color: Colors.white
+                      ),
+                  ),
+                ),
+              ),
+            // Confetti widget overlay
+            Align(
+              alignment: Alignment.topCenter,
+              child: ConfettiWidget(
+                confettiController: _confettiController,
+                blastDirectionality: BlastDirectionality.explosive,
+                shouldLoop: false,
+                emissionFrequency: 0.05,
+                numberOfParticles: 20,
+                maxBlastForce: 20,
+                minBlastForce: 5,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

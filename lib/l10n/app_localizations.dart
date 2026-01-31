@@ -578,6 +578,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Lv'**
   String get level;
+
+  /// No description provided for @learnSalah.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn salah'**
+  String get learnSalah;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

@@ -24,6 +24,9 @@ class LearningStepPage extends StatelessWidget {
           item: step.item,
           options: step.options!,
           onCorrect: learning.correctAnswer,
+          onWrong: () {
+            context.read<LearningProvider>().wrongAnswer();
+          },
           onNext: learning.nextStep,
         );
 
@@ -40,6 +43,9 @@ class LearningStepPage extends StatelessWidget {
           options: step.options!,
           onCorrect: learning.correctAnswer,
           onNext: learning.nextStep,
+          onWrong: () {
+            context.read<LearningProvider>().wrongAnswer();
+          },
         );
 
       case LearningActivityType.cardMatch:

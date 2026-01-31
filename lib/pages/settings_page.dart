@@ -15,6 +15,8 @@ import '../providers/prayer_provider.dart';
 import 'package:adhan/adhan.dart';
 
 import 'more/hadith_list_page.dart';
+import 'more/salah/learn_salah_menu_page.dart';
+import 'more/salah/salah_lesson_page.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({super.key});
@@ -144,6 +146,7 @@ class SettingsPage extends StatelessWidget {
           ),
 
           _extraButton(context, t.learnArabic, 'assets/icons/arabic.png', LearningHomePage(),t),
+          _extraButton(context, t.learnSalah, 'assets/icons/prayer.png', LearnSalahMenuPage(),t),
           _extraButton(context, t.calculate_qaza, 'assets/icons/calculator.png', QazaPage(),t),
           _extraButton(context, t.names99, 'assets/icons/99Names.png', NinetyNineNames(), t),
           _extraButton(context, t.phrases40, 'assets/icons/hadith.png', HadithListPage(),t),

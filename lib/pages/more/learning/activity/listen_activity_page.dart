@@ -11,6 +11,7 @@ class ListenActivity extends StatefulWidget {
   final List<String> options;
   final VoidCallback onCorrect;
   final VoidCallback onNext; // <-- new callback for next step
+  final VoidCallback onWrong;
 
   const ListenActivity({
     super.key,
@@ -18,6 +19,7 @@ class ListenActivity extends StatefulWidget {
     required this.options,
     required this.onCorrect,
     required this.onNext,
+    required this.onWrong
   });
 
   @override
@@ -27,6 +29,7 @@ class ListenActivity extends StatefulWidget {
 class _ListenActivityState extends State<ListenActivity> {
   bool answered = false;
   late ConfettiController _confettiController;
+  bool isWrong = false;
   final AudioPlayer _audioPlayer = AudioPlayer();
 
   @override
@@ -66,6 +69,11 @@ class _ListenActivityState extends State<ListenActivity> {
           },
         ),
       );
+    } else {
+      setState(() {
+        isWrong = true;
+      });
+      widget.onWrong();
     }
   }
 
@@ -124,6 +132,26 @@ class _ListenActivityState extends State<ListenActivity> {
                           ),
                         ),
                       ),
+                      if (answered && isWrong)
+                        Padding(
+                          padding: const EdgeInsets.only(top: 24, bottom: 24),
+                          child: ElevatedButton(
+                            onPressed: widget.onNext,
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.green[900],
+                              padding: const EdgeInsets.symmetric(vertical: 14, horizontal: 40),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(20),
+                              ),
+                            ),
+                            child: Text(
+                              "Continue",
+                              style: TextStyle(
+                                  color: Colors.white
+                              ),
+                            ),
+                          ),
+                        ),
                     ],
                   ),
                 ),

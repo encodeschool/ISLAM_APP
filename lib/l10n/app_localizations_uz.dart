@@ -224,7 +224,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get everyDayArabic => 'Har kuni arabcha';
 
   @override
-  String get prayerWords => 'Namoz so\'zlari';
+  String get prayerWords => 'Ibodat so\'zlari';
 
   @override
   String get islamicWords => 'Islomiy lug\'at';
@@ -249,4 +249,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get level => 'Dar';
+
+  @override
+  String get learnSalah => 'Salohni o\'rganing';
 }

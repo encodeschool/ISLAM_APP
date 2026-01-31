@@ -42,4 +42,10 @@ class LearningProvider extends ChangeNotifier {
       notifyListeners();
     });
   }
+
+  void wrongAnswer() {
+    xp = (xp - 5).clamp(0, xp);
+    notifyListeners();
+  }
+
 }

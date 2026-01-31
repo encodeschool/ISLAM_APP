@@ -87,5 +87,9 @@
   "match": "Arabcha → Inglizcha moslash",
   "correct": "To'g'ri! 🎉",
   "continueBtn": "Davom etish",
-  "level": "Dar"
+  "level": "Dar",
+  "basicWords": "Asosiy so'zlar",
+  "prayerWords": "Ibodat so'zlari",
+
+  "learnSalah": "Salohni o'rganing"
 }

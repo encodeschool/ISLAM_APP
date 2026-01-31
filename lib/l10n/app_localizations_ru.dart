@@ -249,4 +249,7 @@ class AppLocalizationsRu extends AppLocalizations {
 
   @override
   String get level => 'Ур';
+
+  @override
+  String get learnSalah => 'Изучите Салах';
 }
