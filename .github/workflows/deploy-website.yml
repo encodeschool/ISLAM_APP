@@ -1,0 +1,68 @@
+name: Deploy Website to VDS
+
+on:
+  push:
+    branches: [ project ]
+    paths:
+      - 'website/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: website/farz-website
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+          cache-dependency-path: website/farz-website/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run build
+
+      # 🧹 Clean old build on server
+      - name: Clean old build on VDS
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          script: |
+            echo "Cleaning old build..."
+            rm -rf ~/farzuz/website/farz-website/build
+
+      # 📦 Upload new build
+      - name: Copy build to VDS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          source: "website/farz-website/build"
+          target: "~/farzuz/website/farz-website"
+
+      # 🔁 Reload Nginx
+      - name: Reload Nginx
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          script: |
+            echo "Reloading Nginx..."
+            sudo systemctl reload nginx
+
+      # ✅ Done
+      - name: Done
+        run: echo "Frontend deployed successfully!"
