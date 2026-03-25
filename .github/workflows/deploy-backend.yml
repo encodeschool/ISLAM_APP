@@ -2,7 +2,7 @@ name: Deploy Backend to VDS
 
 on:
   push:
-    branches: [ project ]
+    branches: [ main, project ]
     paths:
       - 'backend/**'
 

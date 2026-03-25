@@ -2,7 +2,7 @@ name: Deploy Website to VDS
 
 on:
   push:
-    branches: [ project ]
+    branches: [ main, project ]
     paths:
       - 'website/**'
 
