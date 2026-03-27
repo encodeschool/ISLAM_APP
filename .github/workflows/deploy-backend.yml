@@ -13,9 +13,11 @@ jobs:
         working-directory: backend/services
 
     steps:
+      # 1️⃣ Checkout code
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Java
       - name: Set up Java
         uses: actions/setup-java@v4
         with:
@@ -23,24 +25,38 @@ jobs:
           java-version: '17'
           cache: 'maven'
 
+      # 3️⃣ Build JAR
       - name: Build JAR
         run: mvn clean package -DskipTests
 
+      # 4️⃣ Rename JAR
       - name: Rename JAR
         run: mv target/*.jar app.jar
 
-      # 📦 Upload JAR to VDS
-      - name: Copy to VDS
+      # 5️⃣ Clean old backend folder on VDS
+      - name: Clean backend folder on VDS
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          script: |
+            echo "Cleaning backend folder..."
+            rm -rf ~/farzuz/backend/services
+            mkdir -p ~/farzuz/backend/services
+
+      # 6️⃣ Upload JAR to VDS
+      - name: Copy backend JAR to VDS
         uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.VDS_HOST }}
           username: ${{ secrets.VDS_USER }}
           key: ${{ secrets.VDS_SSH_KEY }}
-          source: "backend/services/app.jar"
+          source: "app.jar"
           target: "~/farzuz/backend/services"
 
-      # 🔁 Restart backend safely
-      - name: Restart backend via systemd
+      # 7️⃣ Restart backend safely
+      - name: Restart backend service
         uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.VDS_HOST }}
@@ -49,4 +65,4 @@ jobs:
           script: |
             echo "Restarting backend service..."
             sudo systemctl restart farzuz-backend
-            echo "Deployment done!"
+            echo "Backend deployed successfully!"

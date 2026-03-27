@@ -17,7 +17,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2️⃣ Setup Node with proper cache path
+      # 2️⃣ Setup Node with cache
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -29,11 +29,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      # 4️⃣ Build the React project
+      # 4️⃣ Build the React project (ignore CI warnings)
       - name: Build project
         run: CI=false npm run build
 
-      # 5️⃣ Clean old build on VDS
+      # 5️⃣ Clean old frontend folder on VDS
       - name: Clean old build on VDS
         uses: appleboy/ssh-action@v0.1.8
         with:
@@ -41,8 +41,9 @@ jobs:
           username: ${{ secrets.VDS_USER }}
           key: ${{ secrets.VDS_SSH_KEY }}
           script: |
-            echo "Cleaning old build..."
-            rm -rf ~/farzuz/website/farz-website/build
+            echo "Cleaning old frontend folder..."
+            rm -rf ~/farzuz/website/farz-website
+            mkdir -p ~/farzuz/website/farz-website
 
       # 6️⃣ Upload new build to VDS
       - name: Copy build to VDS
@@ -54,7 +55,7 @@ jobs:
           source: "website/farz-website/build"
           target: "~/farzuz/website/farz-website"
 
-      # 7️⃣ Reload Nginx to serve new build
+      # 7️⃣ Reload Nginx safely
       - name: Reload Nginx
         uses: appleboy/ssh-action@v0.1.8
         with:
@@ -64,7 +65,4 @@ jobs:
           script: |
             echo "Reloading Nginx..."
             sudo systemctl reload nginx
-
-      # 8️⃣ Done
-      - name: Done
-        run: echo "Frontend deployed successfully!"
+            echo "Frontend deployed successfully!"

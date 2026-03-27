@@ -34,6 +34,18 @@ jobs:
       - name: Rename JAR
         run: mv target/*.jar app.jar
 
+      # 🧹 Clean old backend folder on VDS
+      - name: Clean old backend folder on VDS
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          script: |
+            echo "Cleaning old backend..."
+            rm -rf ~/farzuz/backend/services
+            mkdir -p ~/farzuz/backend/services
+
       # 📦 Upload backend to VDS
       - name: Copy backend to VDS
         uses: appleboy/scp-action@v0.1.4
@@ -44,7 +56,7 @@ jobs:
           source: "backend/services/app.jar"
           target: "~/farzuz/backend/services"
 
-      # 🔁 Restart backend safely
+      # 🔁 Restart backend service safely
       - name: Restart backend service
         uses: appleboy/ssh-action@v0.1.8
         with:
@@ -72,7 +84,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 🔹 Setup Node with proper cache
+      # 🔹 Setup Node with cache
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
@@ -83,11 +95,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # ⚡ Build React app (ignore CI warnings)
       - name: Build project
         run: CI=false npm run build
 
-      # 🧹 Clean old frontend build on VDS
-      - name: Clean old build on VDS
+      # 🧹 Clean old frontend folder completely
+      - name: Clean old frontend build on VDS
         uses: appleboy/ssh-action@v0.1.8
         with:
           host: ${{ secrets.VDS_HOST }}
@@ -95,7 +108,8 @@ jobs:
           key: ${{ secrets.VDS_SSH_KEY }}
           script: |
             echo "Cleaning old frontend build..."
-            rm -rf ~/farzuz/website/farz-website/build
+            rm -rf ~/farzuz/website/farz-website
+            mkdir -p ~/farzuz/website/farz-website
 
       # 📦 Upload new build to VDS
       - name: Copy frontend to VDS
@@ -107,7 +121,7 @@ jobs:
           source: "website/farz-website/build"
           target: "~/farzuz/website/farz-website"
 
-      # 🔁 Reload Nginx to serve new build
+      # 🔁 Reload Nginx safely
       - name: Reload Nginx
         uses: appleboy/ssh-action@v0.1.8
         with:
