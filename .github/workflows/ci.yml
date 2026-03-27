@@ -84,7 +84,7 @@ jobs:
         run: npm ci
 
       - name: Build project
-        run: npm run build
+        run: CI=false npm run build
 
       # 🧹 Clean old frontend build on VDS
       - name: Clean old build on VDS

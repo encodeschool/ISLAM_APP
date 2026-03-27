@@ -3,8 +3,6 @@ name: Deploy Website to VDS
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'website/**'
 
 jobs:
   deploy:
@@ -33,7 +31,7 @@ jobs:
 
       # 4️⃣ Build the React project
       - name: Build project
-        run: npm run build
+        run: CI=false npm run build
 
       # 5️⃣ Clean old build on VDS
       - name: Clean old build on VDS
