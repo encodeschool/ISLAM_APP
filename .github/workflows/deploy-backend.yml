@@ -52,7 +52,7 @@ jobs:
           host: ${{ secrets.VDS_HOST }}
           username: ${{ secrets.VDS_USER }}
           key: ${{ secrets.VDS_SSH_KEY }}
-          source: "app.jar"
+          source: "backend/services/app.jar"
           target: "~/farzuz/backend/services"
 
       # 7️⃣ Restart backend safely
