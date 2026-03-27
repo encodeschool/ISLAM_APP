@@ -3,6 +3,8 @@ name: Deploy Website to VDS
 on:
   push:
     branches: [ main ]
+    paths:
+      - 'website/**'
 
 jobs:
   deploy:
@@ -13,23 +15,27 @@ jobs:
         working-directory: website/farz-website
 
     steps:
+      # 1️⃣ Checkout the code
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # 2️⃣ Setup Node with proper cache path
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 18
           cache: 'npm'
-          # cache-dependency-path: package-lock.json
+          cache-dependency-path: website/farz-website/package-lock.json
 
+      # 3️⃣ Install dependencies
       - name: Install dependencies
         run: npm ci
 
+      # 4️⃣ Build the React project
       - name: Build project
         run: npm run build
 
-      # 🧹 Clean old build on server
+      # 5️⃣ Clean old build on VDS
       - name: Clean old build on VDS
         uses: appleboy/ssh-action@v0.1.8
         with:
@@ -40,7 +46,7 @@ jobs:
             echo "Cleaning old build..."
             rm -rf ~/farzuz/website/farz-website/build
 
-      # 📦 Upload new build
+      # 6️⃣ Upload new build to VDS
       - name: Copy build to VDS
         uses: appleboy/scp-action@v0.1.4
         with:
@@ -50,7 +56,7 @@ jobs:
           source: "website/farz-website/build"
           target: "~/farzuz/website/farz-website"
 
-      # 🔁 Reload Nginx
+      # 7️⃣ Reload Nginx to serve new build
       - name: Reload Nginx
         uses: appleboy/ssh-action@v0.1.8
         with:
@@ -61,6 +67,6 @@ jobs:
             echo "Reloading Nginx..."
             sudo systemctl reload nginx
 
-      # ✅ Done
+      # 8️⃣ Done
       - name: Done
         run: echo "Frontend deployed successfully!"
