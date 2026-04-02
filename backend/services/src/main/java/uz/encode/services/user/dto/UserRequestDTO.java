@@ -21,7 +21,9 @@ public record UserRequestDTO(
     String email,
     
     @Size(min = 6)
-    String password
+    String password,
+
+    String role
     
 ) {
     

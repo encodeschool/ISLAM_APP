@@ -132,3 +132,67 @@ jobs:
             echo "Reloading Nginx..."
             sudo systemctl reload nginx
             echo "Frontend deployed successfully!"
+
+  # -------------------------
+  # 🛠️ ADMIN PANEL (React)
+  # -------------------------
+  admin:
+    name: Build & Deploy Admin Panel
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: admin/farz-admin
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: admin/farz-admin/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: CI=false npm run build
+        env:
+          VITE_API_BASE_URL: ${{ secrets.API_BASE_URL }}
+
+      # 🧹 Clean old admin folder on VDS
+      - name: Clean old admin build on VDS
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          script: |
+            echo "Cleaning old admin build..."
+            rm -rf ~/farzuz/admin/farz-admin
+            mkdir -p ~/farzuz/admin/farz-admin
+
+      # 📦 Upload admin build to VDS
+      - name: Copy admin panel to VDS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          source: "admin/farz-admin/dist"
+          target: "~/farzuz/admin/farz-admin"
+
+      # 🔁 Reload Nginx
+      - name: Reload Nginx
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          script: |
+            echo "Reloading Nginx..."
+            sudo systemctl reload nginx
+            echo "Admin panel deployed successfully!"

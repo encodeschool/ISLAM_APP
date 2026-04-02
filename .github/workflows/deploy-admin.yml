@@ -1,0 +1,72 @@
+name: Deploy Admin Panel to VDS
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'admin/farz-admin/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: admin/farz-admin
+
+    steps:
+      # 1️⃣ Checkout the code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup Node with cache
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: admin/farz-admin/package-lock.json
+
+      # 3️⃣ Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 4️⃣ Build the admin panel
+      - name: Build project
+        run: CI=false npm run build
+        env:
+          VITE_API_BASE_URL: ${{ secrets.API_BASE_URL }}
+
+      # 5️⃣ Clean old admin folder on VDS
+      - name: Clean old build on VDS
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          script: |
+            echo "Cleaning old admin folder..."
+            rm -rf ~/farzuz/admin/farz-admin
+            mkdir -p ~/farzuz/admin/farz-admin
+
+      # 6️⃣ Upload new build to VDS
+      - name: Copy build to VDS
+        uses: appleboy/scp-action@v0.1.4
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          source: "admin/farz-admin/dist"
+          target: "~/farzuz/admin/farz-admin"
+
+      # 7️⃣ Reload Nginx safely
+      - name: Reload Nginx
+        uses: appleboy/ssh-action@v0.1.8
+        with:
+          host: ${{ secrets.VDS_HOST }}
+          username: ${{ secrets.VDS_USER }}
+          key: ${{ secrets.VDS_SSH_KEY }}
+          script: |
+            echo "Reloading Nginx..."
+            sudo systemctl reload nginx
+            echo "Admin panel deployed successfully!"

@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(grep -E \"\\\\.\\(md|dockerfile|docker-compose|json|yml|yaml\\)$\")",
+      "Bash(grep:*)",
+      "Bash(npm install:*)"
     ]
   }
 }

@@ -69,6 +69,7 @@ public class UserServiceImpl implements UserService{
         user.setFirstName(request.firstName());
         user.setLastName(request.lastName());
         user.setEmail(request.email());
+        user.setRole(request.role() != null ? Role.valueOf(request.role()) : user.getRole());
 
         return userMapper.toDto(userRepository.save(user));
     }
