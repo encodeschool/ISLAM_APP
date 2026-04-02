@@ -381,4 +381,55 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get rating => 'Rating';
+
+  @override
+  String get dhuhrTitle => 'Dhuhr Salah';
+
+  @override
+  String get asrTitle => 'Asr Salah';
+
+  @override
+  String get maghribTitle => 'Maghrib Salah';
+
+  @override
+  String get ishaTitle => 'Isha Salah';
+
+  @override
+  String get prayer_qa_ula_sitting => 'After the second prostration, sit and recite the <b>Tashahhud</b> (Qa\'da Ula). Do not recite Salawat or supplication here — stand up for the next rakat after finishing the Tashahhud.<br><br><b>At-tahiyyatu lillahi was-salawatu wat-tayyibat,<br>Assalamu \'alayka ayyuhan-nabiyyu wa rahmatullahi wa barakatuh,<br>Assalamu \'alayna wa \'ala \'ibadillahis-salihin,<br>Ashhadu alla ilaha illallahu wa ashhadu anna Muhammadan \'abduhu wa rasuluh.</b>';
+
+  @override
+  String get farz_kiraat_fatiha_only => 'In the 3rd and 4th rakats of obligatory (Fard) prayer, recite only <b>Surah Al-Fatiha</b> — without an additional surah.<br><br><b>Al-hamdu lillahi rabbil-\'alamin<br>Ar-Rahmanir-Rahim<br>Maliki yawmid-din<br>Iyyaka na\'budu wa iyyaka nasta\'in<br>Ihdinas-siratal-mustaqim<br>Siratal-ladhina an\'amta \'alayhim<br>Ghayril-maghdubi \'alayhim wa lad-dallin</b><br><br><i>(Amin is said quietly)</i>';
+
+  @override
+  String get zuhr_farz_info => 'Now perform 4 rakats of obligatory (Fard) Dhuhr prayer. Recitation is done silently. In the 1st and 2nd rakats, recite Al-Fatiha and an additional surah. In the 3rd and 4th rakats, recite Al-Fatiha only.';
+
+  @override
+  String get zuhr_second_sunnah_info => 'Now perform 2 rakats of the after-prayer Sunnah (Ba\'diyya) of Dhuhr.';
+
+  @override
+  String get asr_sunnah_info => 'Perform 4 rakats of the Asr Sunnah prayer (Hanafi school).';
+
+  @override
+  String get asr_farz_info => 'Now perform 4 rakats of obligatory (Fard) Asr prayer. Recitation is done silently. In the 1st and 2nd rakats, recite Al-Fatiha and an additional surah. In the 3rd and 4th rakats, recite Al-Fatiha only.';
+
+  @override
+  String get maghrib_farz_info => 'Perform 3 rakats of obligatory (Fard) Maghrib prayer. Recitation is aloud in the 1st and 2nd rakats, and silent in the 3rd. In the 1st and 2nd rakats, recite Al-Fatiha and an additional surah. In the 3rd rakat, recite Al-Fatiha only.';
+
+  @override
+  String get maghrib_sunnah_info => 'Now perform 2 rakats of the after-prayer Sunnah (Ba\'diyya) of Maghrib.';
+
+  @override
+  String get isha_first_sunnah_info => 'Perform 4 rakats of the before-prayer Sunnah (Qabliyya) of Isha.';
+
+  @override
+  String get isha_farz_info => 'Now perform 4 rakats of obligatory (Fard) Isha prayer. Recitation is done silently. In the 1st and 2nd rakats, recite Al-Fatiha and an additional surah. In the 3rd and 4th rakats, recite Al-Fatiha only.';
+
+  @override
+  String get isha_second_sunnah_info => 'Now perform 2 rakats of the after-prayer Sunnah (Ba\'diyya) of Isha.';
+
+  @override
+  String get isha_witr_info => 'Now perform 3 rakats of Witr prayer. In the Hanafi school, Witr is Wajib (obligatory). In the 3rd rakat, after Al-Fatiha and a surah, raise both hands, say Allahu Akbar, fold them, and recite Dua al-Qunut before going into ruku\'.';
+
+  @override
+  String get witr_qunut => 'Raise both hands to ear level, say <b>Allahu Akbar</b>, fold them, and recite <b>Dua al-Qunut</b>:<br><br><b>Allahumma inna nasta\'inuka wa nastaghfiruka,<br>wa nu\'minu bika wa natawakkalu \'alayk,<br>wa nuthni \'alayka al-khayra kullah,<br>wa nashkuruka wa la nakfuruk,<br>wa nakhla\'u wa natruku man yafjuruk.<br><br>Allahumma iyyaka na\'budu,<br>wa laka nusalli wa nasjud,<br>wa ilayka nas\'a wa nahfid,<br>narjuu rahmatak wa nakhsha \'adhabak,<br>inna \'adhabaka bil-kuffari mulhaq.</b>';
 }

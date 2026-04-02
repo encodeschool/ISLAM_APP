@@ -381,4 +381,55 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get rating => 'Reyting';
+
+  @override
+  String get dhuhrTitle => 'Peshin namozi';
+
+  @override
+  String get asrTitle => 'Asr namozi';
+
+  @override
+  String get maghribTitle => 'Shom namozi';
+
+  @override
+  String get ishaTitle => 'Xufton namozi';
+
+  @override
+  String get prayer_qa_ula_sitting => 'Ikkinchi sajdadan so\'ng o\'tirib <b>tashahhud</b>ni o\'qing (qa\'da awal). Bu yerda salovat va duo o\'qilmaydi — tashahhuddan so\'ng keyingi rakatga turing.<br><br><b>At-tahiyyatu lillahi vas-solavatu vat-toyyibat,<br>Assalamu \'alayka ayyuhan-nabiyyu va rohmatullohi va barokatuh,<br>Assalamu \'alayna va \'ala \'ibadillohis-solihin,<br>Ashhadu alla ilaha illallohu va ashhadu anna Muhammadan \'abduhu va rosuluh.</b>';
+
+  @override
+  String get farz_kiraat_fatiha_only => 'Farz namozning 3 va 4-rakaatlarida faqat <b>Fotiha surasi</b> o\'qiladi — qo\'shimcha sura o\'qilmaydi.<br><br><b>Alhamdu lillahi robbil-\'olamin<br>Ar-Rahmanir-Rahim<br>Maliki yawmid-din<br>Iyyaka na\'budu va iyyaka nasta\'in<br>Ihdinas-sirotol-mustaqim<br>Sirotollazina an\'amta \'alayhim<br>G\'oyril-mag\'dubi \'alayhim va lad-dollin</b><br><br><i>(Omin sekin aytiladi)</i>';
+
+  @override
+  String get zuhr_farz_info => 'Endi peshin farz namozini 4 rakat o\'qing. O\'qish ichda. 1 va 2-rakaatlarda Fotiha va qo\'shimcha sura, 3 va 4-rakaatlarda faqat Fotiha o\'qiladi.';
+
+  @override
+  String get zuhr_second_sunnah_info => 'Endi peshin namozidan keyingi sunnat (ba\'diyya) 2 rakatini o\'qing.';
+
+  @override
+  String get asr_sunnah_info => 'Asr sunnat namozini 4 rakat o\'qing (Hanafiy mazhabi bo\'yicha).';
+
+  @override
+  String get asr_farz_info => 'Endi asr farz namozini 4 rakat o\'qing. O\'qish ichda. 1 va 2-rakaatlarda Fotiha va sura, 3 va 4-rakaatlarda faqat Fotiha.';
+
+  @override
+  String get maghrib_farz_info => 'Shom farz namozini 3 rakat o\'qing. 1 va 2-rakaatlarda ovoz chiqarib, 3-rakaatda ichda o\'qiladi. 1 va 2-rakaatlarda Fotiha va sura, 3-rakaatda faqat Fotiha.';
+
+  @override
+  String get maghrib_sunnah_info => 'Endi shom namozidan keyingi sunnat (ba\'diyya) 2 rakatini o\'qing.';
+
+  @override
+  String get isha_first_sunnah_info => 'Xufton namozidan oldingi sunnat (qabliyya) 4 rakatini o\'qing.';
+
+  @override
+  String get isha_farz_info => 'Endi xufton farz namozini 4 rakat o\'qing. O\'qish ichda. 1 va 2-rakaatlarda Fotiha va sura, 3 va 4-rakaatlarda faqat Fotiha.';
+
+  @override
+  String get isha_second_sunnah_info => 'Endi xufton namozidan keyingi sunnat (ba\'diyya) 2 rakatini o\'qing.';
+
+  @override
+  String get isha_witr_info => 'Endi 3 rakat vitr namozini o\'qing. Hanafiy mazhabida vitr vojibdir. 3-rakaatda Fotiha va suradan keyin qo\'llarni ko\'tarib Allohu Akbar deyiladi, bog\'lanadi va Qunut duosi o\'qiladi, so\'ng rukuga kiriladi.';
+
+  @override
+  String get witr_qunut => 'Qo\'llarni quloq barobariga ko\'taring, <b>Allohu Akbar</b> deng, so\'ng bog\'lang va <b>Qunut duosini</b> o\'qing:<br><br><b>Allohumma inna nasta\'inuka va nastagfiruka,<br>va nu\'minu bika va natavakkalu \'alayk,<br>va nusni \'alaykal-xayra kullahu,<br>va nashkuruka va la nakfuruk,<br>va naxla\'u va nataruku man yafjuruk.<br><br>Allohumma iyyaka na\'budu,<br>va laka nusalli va nasjud,<br>va ilayka nas\'a va nahfid,<br>narjuu rahmatak va naxsha \'azabak,<br>inna \'azabaka bil-kuffari mulhaq.</b>';
 }

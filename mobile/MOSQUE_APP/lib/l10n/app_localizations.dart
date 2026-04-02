@@ -842,6 +842,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Rating'**
   String get rating;
+
+  String get dhuhrTitle;
+  String get asrTitle;
+  String get maghribTitle;
+  String get ishaTitle;
+  String get prayer_qa_ula_sitting;
+  String get farz_kiraat_fatiha_only;
+  String get zuhr_farz_info;
+  String get zuhr_second_sunnah_info;
+  String get asr_sunnah_info;
+  String get asr_farz_info;
+  String get maghrib_farz_info;
+  String get maghrib_sunnah_info;
+  String get isha_first_sunnah_info;
+  String get isha_farz_info;
+  String get isha_second_sunnah_info;
+  String get isha_witr_info;
+  String get witr_qunut;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
